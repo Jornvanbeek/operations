@@ -1,3 +1,6 @@
 https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5752242 - Taxiway routing and runway scheduling, rolling time window, prevent conflicts/overtaking
 https://www.sciencedirect.com/science/article/pii/S0969699716000181 - Optimizing runway usage under uncertainty, flight plans are first general and later optimized when more accurate data becomes available
 https://www.sciencedirect.com/science/article/pii/S0003682X21002322 - Aircraft noise 
+https://www.sciencedirect.com/science/article/pii/S0305054812001335 - 
+http://people.brunel.ac.uk/~mastjjb/jeb/orlib/airlandinfo.html - OR library, aircraft landing problem data, often used
+
