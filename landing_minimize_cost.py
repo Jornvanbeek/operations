@@ -22,6 +22,9 @@ model = Model()
 """Model parameters/data"""
 
 
+model.update()
+
+
 # %%
 """Variables"""
 
