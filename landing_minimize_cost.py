@@ -19,14 +19,10 @@ model = Model()
 
 
 # %%
-
-
-"""Model parameters"""
+"""Model parameters/data"""
 
 
 # %%
-
-
 """Variables"""
 
 
@@ -34,8 +30,6 @@ model.update()
 
 
 # %%
-
-
 """Constraints"""
 
 # %%
@@ -43,8 +37,6 @@ model.update()
 
 
 # %%
-
-
 """Objective function"""
 
 obj = 0  # Objective function (aanpassen)
@@ -56,7 +48,6 @@ model.update()
 
 
 # %%
-
 """Modelling stuff"""
 
 
