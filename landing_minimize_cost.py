@@ -70,3 +70,4 @@ print(solution)
 
 
 calc_time = datetime.now()-start_time
+print(calc_time)
