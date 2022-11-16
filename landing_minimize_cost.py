@@ -42,7 +42,7 @@ model.update()
 # %%
 """Constraints"""
 
-# %%
+
 model.update()
 
 
