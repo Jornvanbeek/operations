@@ -20,7 +20,10 @@ model = Model()
 
 # %%
 """Model parameters/data"""
+planes = 5
 
+g = 5  # penalty cost (≥0) per unit of time for landing before the target time
+h = 5  # penalty cost (≥0) per unit of time for landing after the target time
 
 model.update()
 
@@ -28,6 +31,10 @@ model.update()
 # %%
 """Variables"""
 
+alpha = {}
+
+
+beta = {}
 
 model.update()
 
@@ -42,8 +49,9 @@ model.update()
 # %%
 """Objective function"""
 
-obj = 0  # Objective function (aanpassen)
-
+obj = LinExpr()  # Objective function (aanpassen)
+for i in range(planes):
+    obj += g[i]*alpha[i]+h[i]*beta[i]
 
 model.setObjective(obj, GRB.MINIMIZE)
 # Updating the model
