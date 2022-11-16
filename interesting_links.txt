@@ -4,3 +4,4 @@ https://www.sciencedirect.com/science/article/pii/S0003682X21002322 - Aircraft n
 https://www.sciencedirect.com/science/article/pii/S0305054812001335 - 
 http://people.brunel.ac.uk/~mastjjb/jeb/orlib/airlandinfo.html - OR library, aircraft landing problem data, often used
 
+https://link.springer.com/article/10.1057/palgrave.jors.2601650 - Displacement problem
