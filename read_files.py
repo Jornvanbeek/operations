@@ -25,5 +25,5 @@ def read_file(N):
         separations[i] = np.array(sep_i)
     return planes,separations
 
-outpt = read_file(10)
-print(outpt[1])
+# outpt = read_file(10)
+# print(outpt[1])

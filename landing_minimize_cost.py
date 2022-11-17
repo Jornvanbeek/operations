@@ -10,30 +10,35 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from gurobipy import Model, GRB, LinExpr
 from datetime import datetime
+from read_files import read_file
 
 start_time = datetime.now()
 
 """Initiate model"""
+
+file = 2
+data, S = read_file(file)
 
 model = Model()
 
 
 # %%
 """Model parameters/data"""
-planes = 5
+planes = len(data)
 
-g = 5  # penalty cost (≥0) per unit of time for landing before the target time
-h = 5  # penalty cost (≥0) per unit of time for landing after the target time
+g = data[:,4]  # penalty cost (≥0) per unit of time for landing before the target time
+h = data[:,5]  # penalty cost (≥0) per unit of time for landing after the target time
 
 model.update()
 
 
 # %%
 """Variables"""
-T= [1]
-E = [0]
-L = [2]
-S = [1,2]
+
+E = data[:,1]
+T= data[:,2]
+L = data[:,3]
+
     
 alpha = {}
 beta = {}
@@ -42,11 +47,11 @@ delta = {}
 x = {}
 
 for i in range(planes):
-    alpha[i]=model.addVar(lb=0, ub=T[i] - E[i], vtype=GRB.INTEGER,name="Alpha_max[%s]"%(i)) #T[i] - E[i] = eq 15
-    beta[i]=model.addVar(lb=0, ub=L[i] - T[i], vtype=GRB.INTEGER,name="Beta_max[%s]"%(i)) #eq 17 DONT FORGET TO CHANGE 0 TO i !!!
-    x[i]=model.addVar(lb= E[i], ub=L[i], vtype=GRB.INTEGER,name="x_bounds[%s]"%(i)) #eq 1 DONT FORGET TO CHANGE 0 TO i !!!
+    alpha[i]=model.addVar(lb=0, ub=T[i] - E[i], vtype=GRB.INTEGER,name="alpha_[%s]"%(i)) #T[i] - E[i] = eq 15
+    beta[i]=model.addVar(lb=0, ub=L[i] - T[i], vtype=GRB.INTEGER,name="beta_[%s]"%(i)) #eq 17 DONT FORGET TO CHANGE 0 TO i !!!
+    x[i]=model.addVar(lb= E[i], ub=L[i], vtype=GRB.INTEGER,name="x_[%s]"%(i)) #eq 1 DONT FORGET TO CHANGE 0 TO i !!!
     for j in range(planes):
-        delta[i,j]=model.addVar(lb=0, ub=1, vtype=GRB.BINARY,name="delta_bounds[%s,%s]"%(i,j))
+        delta[i,j]=model.addVar(lb=0, ub=1, vtype=GRB.BINARY,name="delta_[%s,%s]"%(i,j))
 
 
 model.update()
@@ -72,7 +77,7 @@ for i in range(planes):
     thisLHS += x[i]
     model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs= T[i] - alpha[i] + beta[i], name="x[%s]"%(i))
     
-    for j in range(i,planes): # maybe remove the i part? though this should be fewer constraints overall
+    for j in range(planes): # maybe remove the i part? though this should be fewer constraints overall
         if j != i:
             
             #constraint 2 (i or j always lands before the other)
