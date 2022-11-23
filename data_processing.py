@@ -26,9 +26,14 @@ for i in range(planes):
 
 # print(solution)
 
-
-
-
+""""generate array with time spacings"""
+x_land_t = np.zeros(planes)
+for i in range(planes):
+    x_land_t[i] = sol[2 + (planes + 3) * i][1]
+spacing = np.zeros((planes, planes))
+for i in range(planes):
+    for j in range(planes):
+        spacing[i][j] = x_land_t[i] - x_land_t[j]
 
 
 """plotting """
