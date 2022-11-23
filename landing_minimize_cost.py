@@ -16,7 +16,7 @@ start_time = datetime.now()
 
 """Initiate model"""
 
-file = 2
+file = 1
 data, S = read_file(file)
 
 model = Model()
@@ -147,14 +147,28 @@ model.write('model_formulation.lp')
 
 model.optimize()
 
-
+solution = {'alpha': np.zeros(planes), "beta": np.zeros(planes), "x": np.zeros(planes), "delta": np.zeros((planes,planes))}
 # Saving our solution in the form [name of variable, value of variable]
-solution = []
+sol = []
 for v in model.getVars():
-    solution.append([v.varName, v.x])
+    sol.append([v.varName, v.x])
+    
+    
+for i in range(planes):
+    solution['alpha'][i] = alpha[i].x
+    solution['beta'][i] = beta[i].x
+    solution['x'][i] = x[i].x
+    for j in range(planes):
+        solution['delta'][i,j] = delta[(i,j)].x
 
 print(solution)
 
 
 calc_time = datetime.now()-start_time
 print(calc_time)
+
+#for i in range(planes):
+
+figure()
+plt.plot([])
+

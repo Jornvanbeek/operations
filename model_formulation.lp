@@ -7,569 +7,270 @@ Minimize
    + 0 delta_[5,5] + 30 alpha_[6] + 30 beta_[6] + 0 delta_[6,6]
    + 30 alpha_[7] + 30 beta_[7] + 0 delta_[7,7] + 30 alpha_[8]
    + 30 beta_[8] + 0 delta_[8,8] + 30 alpha_[9] + 30 beta_[9]
-   + 0 delta_[9,9] + 10 alpha_[10] + 10 beta_[10] + 0 delta_[10,10]
-   + 10 alpha_[11] + 10 beta_[11] + 0 delta_[11,11] + 30 alpha_[12]
-   + 30 beta_[12] + 0 delta_[12,12] + 30 alpha_[13] + 30 beta_[13]
-   + 0 delta_[13,13] + 10 alpha_[14] + 10 beta_[14] + 0 delta_[14,14]
+   + 0 delta_[9,9]
 Subject To
  Alpha[0]: alpha_[0] + x_[0] >= 155
  Beta[0]: beta_[0] - x_[0] >= -155
  x[0]: alpha_[0] - beta_[0] + x_[0] = 155
  delta[0,1]: delta_[0,1] + delta_[1,0] = 1
- x_set_U[1]: - x_[0] + x_[1] + 372 delta_[1,0] >= 3
+ x_set_U[1]: - x_[0] + x_[1] + 367 delta_[1,0] >= 3
  delta[0,2]: delta_[0,2] + delta_[2,0] = 1
- x_set_U[2]: - x_[0] + x_[2] + 490 delta_[2,0] >= 15
+ x_set_U[2]: - x_[0] + x_[2] + 485 delta_[2,0] >= 15
  delta[0,3]: delta_[0,3] + delta_[3,0] = 1
- x_set_U[3]: - x_[0] + x_[3] + 485 delta_[3,0] >= 15
+ x_set_U[3]: - x_[0] + x_[3] + 478 delta_[3,0] >= 15
  delta[0,4]: delta_[0,4] + delta_[4,0] = 1
- x_set_U[4]: - x_[0] + x_[4] + 474 delta_[4,0] >= 15
+ x_set_U[4]: - x_[0] + x_[4] + 464 delta_[4,0] >= 15
  delta[0,5]: delta_[0,5] + delta_[5,0] = 1
- x_set_U[5]: - x_[0] + x_[5] + 467 delta_[5,0] >= 15
+ x_set_U[5]: - x_[0] + x_[5] + 454 delta_[5,0] >= 15
  delta[0,6]: delta_[0,6] + delta_[6,0] = 1
- x_set_U[6]: - x_[0] + x_[6] + 465 delta_[6,0] >= 15
+ x_set_U[6]: - x_[0] + x_[6] + 450 delta_[6,0] >= 15
  delta[0,7]: delta_[0,7] + delta_[7,0] = 1
- x_set_U[7]: - x_[0] + x_[7] + 465 delta_[7,0] >= 15
+ x_set_U[7]: - x_[0] + x_[7] + 448 delta_[7,0] >= 15
  delta[0,8]: delta_[0,8] + delta_[8,0] = 1
- x_set_U[8]: - x_[0] + x_[8] + 459 delta_[8,0] >= 15
+ x_set_U[8]: - x_[0] + x_[8] + 439 delta_[8,0] >= 15
  delta[0,9]: delta_[0,9] + delta_[9,0] = 1
- x_set_U[9]: - x_[0] + x_[9] + 440 delta_[9,0] >= 15
- delta[0,10]: delta_[0,10] + delta_[10,0] = 1
- x_set_U[10]: - x_[0] + x_[10] + 296 delta_[10,0] >= 3
- delta[0,11]: delta_[0,11] + delta_[11,0] = 1
- x_set_U[11]: - x_[0] + x_[11] + 311 delta_[11,0] >= 3
- delta[0,12]: delta_[0,12] + delta_[12,0] = 1
- x_set_U[12]: - x_[0] + x_[12] + 414 delta_[12,0] >= 15
- delta[0,13]: delta_[0,13] + delta_[13,0] = 1
- x_set_U[13]: - x_[0] + x_[13] + 422 delta_[13,0] >= 15
- delta[0,14]: delta_[0,14] + delta_[14,0] = 1
- x_set_U[14]: - x_[0] + x_[14] + 286 delta_[14,0] >= 3
- Alpha[1]: alpha_[1] + x_[1] >= 250
- Beta[1]: beta_[1] - x_[1] >= -250
- x[1]: alpha_[1] - beta_[1] + x_[1] = 250
+ x_set_U[9]: - x_[0] + x_[9] + 414 delta_[9,0] >= 15
+ Alpha[1]: alpha_[1] + x_[1] >= 258
+ Beta[1]: beta_[1] - x_[1] >= -258
+ x[1]: alpha_[1] - beta_[1] + x_[1] = 258
  delta[1,0]: delta_[0,1] + delta_[1,0] = 1
- x_set_U[0]: x_[0] + 606 delta_[0,1] - x_[1] >= 3
+ x_set_U[0]: x_[0] + 618 delta_[0,1] - x_[1] >= 3
  delta[1,2]: delta_[1,2] + delta_[2,1] = 1
- x_set_U[2]: - x_[1] + x_[2] + 663 delta_[2,1] >= 15
+ x_set_U[2]: - x_[1] + x_[2] + 670 delta_[2,1] >= 15
  delta[1,3]: delta_[1,3] + delta_[3,1] = 1
- x_set_U[3]: - x_[1] + x_[3] + 658 delta_[3,1] >= 15
+ x_set_U[3]: - x_[1] + x_[3] + 663 delta_[3,1] >= 15
  delta[1,4]: delta_[1,4] + delta_[4,1] = 1
- x_set_U[4]: - x_[1] + x_[4] + 647 delta_[4,1] >= 15
+ x_set_U[4]: - x_[1] + x_[4] + 649 delta_[4,1] >= 15
  delta[1,5]: delta_[1,5] + delta_[5,1] = 1
- x_set_U[5]: - x_[1] + x_[5] + 640 delta_[5,1] >= 15
+ x_set_U[5]: - x_[1] + x_[5] + 639 delta_[5,1] >= 15
  delta[1,6]: delta_[1,6] + delta_[6,1] = 1
- x_set_U[6]: - x_[1] + x_[6] + 638 delta_[6,1] >= 15
+ x_set_U[6]: - x_[1] + x_[6] + 635 delta_[6,1] >= 15
  delta[1,7]: delta_[1,7] + delta_[7,1] = 1
- x_set_U[7]: - x_[1] + x_[7] + 638 delta_[7,1] >= 15
+ x_set_U[7]: - x_[1] + x_[7] + 633 delta_[7,1] >= 15
  delta[1,8]: delta_[1,8] + delta_[8,1] = 1
- x_set_U[8]: - x_[1] + x_[8] + 632 delta_[8,1] >= 15
+ x_set_U[8]: - x_[1] + x_[8] + 624 delta_[8,1] >= 15
  delta[1,9]: delta_[1,9] + delta_[9,1] = 1
- x_set_U[9]: - x_[1] + x_[9] + 613 delta_[9,1] >= 15
- delta[1,10]: delta_[1,10] + delta_[10,1] = 1
- x_set_U[10]: - x_[1] + x_[10] + 469 delta_[10,1] >= 3
- delta[1,11]: delta_[1,11] + delta_[11,1] = 1
- x_set_U[11]: - x_[1] + x_[11] + 484 delta_[11,1] >= 3
- delta[1,12]: delta_[1,12] + delta_[12,1] = 1
- x_set_U[12]: - x_[1] + x_[12] + 587 delta_[12,1] >= 15
- delta[1,13]: delta_[1,13] + delta_[13,1] = 1
- x_set_U[13]: - x_[1] + x_[13] + 595 delta_[13,1] >= 15
- delta[1,14]: delta_[1,14] + delta_[14,1] = 1
- x_set_U[14]: - x_[1] + x_[14] + 459 delta_[14,1] >= 3
- Alpha[2]: alpha_[2] + x_[2] >= 93
- Beta[2]: beta_[2] - x_[2] >= -93
- x[2]: alpha_[2] - beta_[2] + x_[2] = 93
+ x_set_U[9]: - x_[1] + x_[9] + 599 delta_[9,1] >= 15
+ Alpha[2]: alpha_[2] + x_[2] >= 98
+ Beta[2]: beta_[2] - x_[2] >= -98
+ x[2]: alpha_[2] - beta_[2] + x_[2] = 98
  delta[2,0]: delta_[0,2] + delta_[2,0] = 1
- x_set_U[0]: x_[0] + 387 delta_[0,2] - x_[2] >= 15
+ x_set_U[0]: x_[0] + 396 delta_[0,2] - x_[2] >= 15
  delta[2,1]: delta_[1,2] + delta_[2,1] = 1
- x_set_U[1]: x_[1] + 326 delta_[1,2] - x_[2] >= 15
+ x_set_U[1]: x_[1] + 330 delta_[1,2] - x_[2] >= 15
  delta[2,3]: delta_[2,3] + delta_[3,2] = 1
- x_set_U[3]: - x_[2] + x_[3] + 420 delta_[3,2] >= 8
+ x_set_U[3]: - x_[2] + x_[3] + 422 delta_[3,2] >= 8
  delta[2,4]: delta_[2,4] + delta_[4,2] = 1
- x_set_U[4]: - x_[2] + x_[4] + 409 delta_[4,2] >= 8
+ x_set_U[4]: - x_[2] + x_[4] + 408 delta_[4,2] >= 8
  delta[2,5]: delta_[2,5] + delta_[5,2] = 1
- x_set_U[5]: - x_[2] + x_[5] + 402 delta_[5,2] >= 8
+ x_set_U[5]: - x_[2] + x_[5] + 398 delta_[5,2] >= 8
  delta[2,6]: delta_[2,6] + delta_[6,2] = 1
- x_set_U[6]: - x_[2] + x_[6] + 400 delta_[6,2] >= 8
+ x_set_U[6]: - x_[2] + x_[6] + 394 delta_[6,2] >= 8
  delta[2,7]: delta_[2,7] + delta_[7,2] = 1
- x_set_U[7]: - x_[2] + x_[7] + 400 delta_[7,2] >= 8
+ x_set_U[7]: - x_[2] + x_[7] + 392 delta_[7,2] >= 8
  delta[2,8]: delta_[2,8] + delta_[8,2] = 1
- x_set_U[8]: - x_[2] + x_[8] + 394 delta_[8,2] >= 8
+ x_set_U[8]: - x_[2] + x_[8] + 383 delta_[8,2] >= 8
  delta[2,9]: delta_[2,9] + delta_[9,2] = 1
- x_set_U[9]: - x_[2] + x_[9] + 375 delta_[9,2] >= 8
- delta[2,10]: delta_[2,10] + delta_[10,2] = 1
- x_set_U[10]: - x_[2] + x_[10] + 250 delta_[10,2] >= 15
- delta[2,11]: delta_[2,11] + delta_[11,2] = 1
- x_set_U[11]: - x_[2] + x_[11] + 265 delta_[11,2] >= 15
- delta[2,12]: delta_[2,12] + delta_[12,2] = 1
- x_set_U[12]: - x_[2] + x_[12] + 349 delta_[12,2] >= 8
- delta[2,13]: delta_[2,13] + delta_[13,2] = 1
- x_set_U[13]: - x_[2] + x_[13] + 357 delta_[13,2] >= 8
- delta[2,14]: delta_[2,14] + delta_[14,2] = 1
- x_set_U[14]: - x_[2] + x_[14] + 240 delta_[14,2] >= 15
- Alpha[3]: alpha_[3] + x_[3] >= 98
- Beta[3]: beta_[3] - x_[3] >= -98
- x[3]: alpha_[3] - beta_[3] + x_[3] = 98
+ x_set_U[9]: - x_[2] + x_[9] + 358 delta_[9,2] >= 8
+ Alpha[3]: alpha_[3] + x_[3] >= 106
+ Beta[3]: beta_[3] - x_[3] >= -106
+ x[3]: alpha_[3] - beta_[3] + x_[3] = 106
  delta[3,0]: delta_[0,3] + delta_[3,0] = 1
- x_set_U[0]: x_[0] + 395 delta_[0,3] - x_[3] >= 15
+ x_set_U[0]: x_[0] + 407 delta_[0,3] - x_[3] >= 15
  delta[3,1]: delta_[1,3] + delta_[3,1] = 1
- x_set_U[1]: x_[1] + 334 delta_[1,3] - x_[3] >= 15
+ x_set_U[1]: x_[1] + 341 delta_[1,3] - x_[3] >= 15
  delta[3,2]: delta_[2,3] + delta_[3,2] = 1
- x_set_U[2]: x_[2] + 433 delta_[2,3] - x_[3] >= 8
+ x_set_U[2]: x_[2] + 440 delta_[2,3] - x_[3] >= 8
  delta[3,4]: delta_[3,4] + delta_[4,3] = 1
- x_set_U[4]: - x_[3] + x_[4] + 417 delta_[4,3] >= 8
+ x_set_U[4]: - x_[3] + x_[4] + 419 delta_[4,3] >= 8
  delta[3,5]: delta_[3,5] + delta_[5,3] = 1
- x_set_U[5]: - x_[3] + x_[5] + 410 delta_[5,3] >= 8
+ x_set_U[5]: - x_[3] + x_[5] + 409 delta_[5,3] >= 8
  delta[3,6]: delta_[3,6] + delta_[6,3] = 1
- x_set_U[6]: - x_[3] + x_[6] + 408 delta_[6,3] >= 8
+ x_set_U[6]: - x_[3] + x_[6] + 405 delta_[6,3] >= 8
  delta[3,7]: delta_[3,7] + delta_[7,3] = 1
- x_set_U[7]: - x_[3] + x_[7] + 408 delta_[7,3] >= 8
+ x_set_U[7]: - x_[3] + x_[7] + 403 delta_[7,3] >= 8
  delta[3,8]: delta_[3,8] + delta_[8,3] = 1
- x_set_U[8]: - x_[3] + x_[8] + 402 delta_[8,3] >= 8
+ x_set_U[8]: - x_[3] + x_[8] + 394 delta_[8,3] >= 8
  delta[3,9]: delta_[3,9] + delta_[9,3] = 1
- x_set_U[9]: - x_[3] + x_[9] + 383 delta_[9,3] >= 8
- delta[3,10]: delta_[3,10] + delta_[10,3] = 1
- x_set_U[10]: - x_[3] + x_[10] + 258 delta_[10,3] >= 15
- delta[3,11]: delta_[3,11] + delta_[11,3] = 1
- x_set_U[11]: - x_[3] + x_[11] + 273 delta_[11,3] >= 15
- delta[3,12]: delta_[3,12] + delta_[12,3] = 1
- x_set_U[12]: - x_[3] + x_[12] + 357 delta_[12,3] >= 8
- delta[3,13]: delta_[3,13] + delta_[13,3] = 1
- x_set_U[13]: - x_[3] + x_[13] + 365 delta_[13,3] >= 8
- delta[3,14]: delta_[3,14] + delta_[14,3] = 1
- x_set_U[14]: - x_[3] + x_[14] + 248 delta_[14,3] >= 15
- Alpha[4]: alpha_[4] + x_[4] >= 111
- Beta[4]: beta_[4] - x_[4] >= -111
- x[4]: alpha_[4] - beta_[4] + x_[4] = 111
+ x_set_U[9]: - x_[3] + x_[9] + 369 delta_[9,3] >= 8
+ Alpha[4]: alpha_[4] + x_[4] >= 123
+ Beta[4]: beta_[4] - x_[4] >= -123
+ x[4]: alpha_[4] - beta_[4] + x_[4] = 123
  delta[4,0]: delta_[0,4] + delta_[4,0] = 1
- x_set_U[0]: x_[0] + 422 delta_[0,4] - x_[4] >= 15
+ x_set_U[0]: x_[0] + 441 delta_[0,4] - x_[4] >= 15
  delta[4,1]: delta_[1,4] + delta_[4,1] = 1
- x_set_U[1]: x_[1] + 361 delta_[1,4] - x_[4] >= 15
+ x_set_U[1]: x_[1] + 375 delta_[1,4] - x_[4] >= 15
  delta[4,2]: delta_[2,4] + delta_[4,2] = 1
- x_set_U[2]: x_[2] + 460 delta_[2,4] - x_[4] >= 8
+ x_set_U[2]: x_[2] + 474 delta_[2,4] - x_[4] >= 8
  delta[4,3]: delta_[3,4] + delta_[4,3] = 1
- x_set_U[3]: x_[3] + 455 delta_[3,4] - x_[4] >= 8
+ x_set_U[3]: x_[3] + 467 delta_[3,4] - x_[4] >= 8
  delta[4,5]: delta_[4,5] + delta_[5,4] = 1
- x_set_U[5]: - x_[4] + x_[5] + 437 delta_[5,4] >= 8
+ x_set_U[5]: - x_[4] + x_[5] + 443 delta_[5,4] >= 8
  delta[4,6]: delta_[4,6] + delta_[6,4] = 1
- x_set_U[6]: - x_[4] + x_[6] + 435 delta_[6,4] >= 8
+ x_set_U[6]: - x_[4] + x_[6] + 439 delta_[6,4] >= 8
  delta[4,7]: delta_[4,7] + delta_[7,4] = 1
- x_set_U[7]: - x_[4] + x_[7] + 435 delta_[7,4] >= 8
+ x_set_U[7]: - x_[4] + x_[7] + 437 delta_[7,4] >= 8
  delta[4,8]: delta_[4,8] + delta_[8,4] = 1
- x_set_U[8]: - x_[4] + x_[8] + 429 delta_[8,4] >= 8
+ x_set_U[8]: - x_[4] + x_[8] + 428 delta_[8,4] >= 8
  delta[4,9]: delta_[4,9] + delta_[9,4] = 1
- x_set_U[9]: - x_[4] + x_[9] + 410 delta_[9,4] >= 8
- delta[4,10]: delta_[4,10] + delta_[10,4] = 1
- x_set_U[10]: - x_[4] + x_[10] + 285 delta_[10,4] >= 15
- delta[4,11]: delta_[4,11] + delta_[11,4] = 1
- x_set_U[11]: - x_[4] + x_[11] + 300 delta_[11,4] >= 15
- delta[4,12]: delta_[4,12] + delta_[12,4] = 1
- x_set_U[12]: - x_[4] + x_[12] + 384 delta_[12,4] >= 8
- delta[4,13]: delta_[4,13] + delta_[13,4] = 1
- x_set_U[13]: - x_[4] + x_[13] + 392 delta_[13,4] >= 8
- delta[4,14]: delta_[4,14] + delta_[14,4] = 1
- x_set_U[14]: - x_[4] + x_[14] + 275 delta_[14,4] >= 15
- Alpha[5]: alpha_[5] + x_[5] >= 120
- Beta[5]: beta_[5] - x_[5] >= -120
- x[5]: alpha_[5] - beta_[5] + x_[5] = 120
+ x_set_U[9]: - x_[4] + x_[9] + 403 delta_[9,4] >= 8
+ Alpha[5]: alpha_[5] + x_[5] >= 135
+ Beta[5]: beta_[5] - x_[5] >= -135
+ x[5]: alpha_[5] - beta_[5] + x_[5] = 135
  delta[5,0]: delta_[0,5] + delta_[5,0] = 1
- x_set_U[0]: x_[0] + 438 delta_[0,5] - x_[5] >= 15
+ x_set_U[0]: x_[0] + 462 delta_[0,5] - x_[5] >= 15
  delta[5,1]: delta_[1,5] + delta_[5,1] = 1
- x_set_U[1]: x_[1] + 377 delta_[1,5] - x_[5] >= 15
+ x_set_U[1]: x_[1] + 396 delta_[1,5] - x_[5] >= 15
  delta[5,2]: delta_[2,5] + delta_[5,2] = 1
- x_set_U[2]: x_[2] + 476 delta_[2,5] - x_[5] >= 8
+ x_set_U[2]: x_[2] + 495 delta_[2,5] - x_[5] >= 8
  delta[5,3]: delta_[3,5] + delta_[5,3] = 1
- x_set_U[3]: x_[3] + 471 delta_[3,5] - x_[5] >= 8
+ x_set_U[3]: x_[3] + 488 delta_[3,5] - x_[5] >= 8
  delta[5,4]: delta_[4,5] + delta_[5,4] = 1
- x_set_U[4]: x_[4] + 460 delta_[4,5] - x_[5] >= 8
+ x_set_U[4]: x_[4] + 474 delta_[4,5] - x_[5] >= 8
  delta[5,6]: delta_[5,6] + delta_[6,5] = 1
- x_set_U[6]: - x_[5] + x_[6] + 451 delta_[6,5] >= 8
+ x_set_U[6]: - x_[5] + x_[6] + 460 delta_[6,5] >= 8
  delta[5,7]: delta_[5,7] + delta_[7,5] = 1
- x_set_U[7]: - x_[5] + x_[7] + 451 delta_[7,5] >= 8
+ x_set_U[7]: - x_[5] + x_[7] + 458 delta_[7,5] >= 8
  delta[5,8]: delta_[5,8] + delta_[8,5] = 1
- x_set_U[8]: - x_[5] + x_[8] + 445 delta_[8,5] >= 8
+ x_set_U[8]: - x_[5] + x_[8] + 449 delta_[8,5] >= 8
  delta[5,9]: delta_[5,9] + delta_[9,5] = 1
- x_set_U[9]: - x_[5] + x_[9] + 426 delta_[9,5] >= 8
- delta[5,10]: delta_[5,10] + delta_[10,5] = 1
- x_set_U[10]: - x_[5] + x_[10] + 301 delta_[10,5] >= 15
- delta[5,11]: delta_[5,11] + delta_[11,5] = 1
- x_set_U[11]: - x_[5] + x_[11] + 316 delta_[11,5] >= 15
- delta[5,12]: delta_[5,12] + delta_[12,5] = 1
- x_set_U[12]: - x_[5] + x_[12] + 400 delta_[12,5] >= 8
- delta[5,13]: delta_[5,13] + delta_[13,5] = 1
- x_set_U[13]: - x_[5] + x_[13] + 408 delta_[13,5] >= 8
- delta[5,14]: delta_[5,14] + delta_[14,5] = 1
- x_set_U[14]: - x_[5] + x_[14] + 291 delta_[14,5] >= 15
- Alpha[6]: alpha_[6] + x_[6] >= 121
- Beta[6]: beta_[6] - x_[6] >= -121
- x[6]: alpha_[6] - beta_[6] + x_[6] = 121
+ x_set_U[9]: - x_[5] + x_[9] + 424 delta_[9,5] >= 8
+ Alpha[6]: alpha_[6] + x_[6] >= 138
+ Beta[6]: beta_[6] - x_[6] >= -138
+ x[6]: alpha_[6] - beta_[6] + x_[6] = 138
  delta[6,0]: delta_[0,6] + delta_[6,0] = 1
- x_set_U[0]: x_[0] + 436 delta_[0,6] - x_[6] >= 15
+ x_set_U[0]: x_[0] + 463 delta_[0,6] - x_[6] >= 15
  delta[6,1]: delta_[1,6] + delta_[6,1] = 1
- x_set_U[1]: x_[1] + 375 delta_[1,6] - x_[6] >= 15
+ x_set_U[1]: x_[1] + 397 delta_[1,6] - x_[6] >= 15
  delta[6,2]: delta_[2,6] + delta_[6,2] = 1
- x_set_U[2]: x_[2] + 474 delta_[2,6] - x_[6] >= 8
+ x_set_U[2]: x_[2] + 496 delta_[2,6] - x_[6] >= 8
  delta[6,3]: delta_[3,6] + delta_[6,3] = 1
- x_set_U[3]: x_[3] + 469 delta_[3,6] - x_[6] >= 8
+ x_set_U[3]: x_[3] + 489 delta_[3,6] - x_[6] >= 8
  delta[6,4]: delta_[4,6] + delta_[6,4] = 1
- x_set_U[4]: x_[4] + 458 delta_[4,6] - x_[6] >= 8
+ x_set_U[4]: x_[4] + 475 delta_[4,6] - x_[6] >= 8
  delta[6,5]: delta_[5,6] + delta_[6,5] = 1
- x_set_U[5]: x_[5] + 451 delta_[5,6] - x_[6] >= 8
+ x_set_U[5]: x_[5] + 465 delta_[5,6] - x_[6] >= 8
  delta[6,7]: delta_[6,7] + delta_[7,6] = 1
- x_set_U[7]: - x_[6] + x_[7] + 449 delta_[7,6] >= 8
+ x_set_U[7]: - x_[6] + x_[7] + 459 delta_[7,6] >= 8
  delta[6,8]: delta_[6,8] + delta_[8,6] = 1
- x_set_U[8]: - x_[6] + x_[8] + 443 delta_[8,6] >= 8
+ x_set_U[8]: - x_[6] + x_[8] + 450 delta_[8,6] >= 8
  delta[6,9]: delta_[6,9] + delta_[9,6] = 1
- x_set_U[9]: - x_[6] + x_[9] + 424 delta_[9,6] >= 8
- delta[6,10]: delta_[6,10] + delta_[10,6] = 1
- x_set_U[10]: - x_[6] + x_[10] + 299 delta_[10,6] >= 15
- delta[6,11]: delta_[6,11] + delta_[11,6] = 1
- x_set_U[11]: - x_[6] + x_[11] + 314 delta_[11,6] >= 15
- delta[6,12]: delta_[6,12] + delta_[12,6] = 1
- x_set_U[12]: - x_[6] + x_[12] + 398 delta_[12,6] >= 8
- delta[6,13]: delta_[6,13] + delta_[13,6] = 1
- x_set_U[13]: - x_[6] + x_[13] + 406 delta_[13,6] >= 8
- delta[6,14]: delta_[6,14] + delta_[14,6] = 1
- x_set_U[14]: - x_[6] + x_[14] + 289 delta_[14,6] >= 15
- Alpha[7]: alpha_[7] + x_[7] >= 120
- Beta[7]: beta_[7] - x_[7] >= -120
- x[7]: alpha_[7] - beta_[7] + x_[7] = 120
+ x_set_U[9]: - x_[6] + x_[9] + 425 delta_[9,6] >= 8
+ Alpha[7]: alpha_[7] + x_[7] >= 140
+ Beta[7]: beta_[7] - x_[7] >= -140
+ x[7]: alpha_[7] - beta_[7] + x_[7] = 140
  delta[7,0]: delta_[0,7] + delta_[7,0] = 1
- x_set_U[0]: x_[0] + 430 delta_[0,7] - x_[7] >= 15
+ x_set_U[0]: x_[0] + 459 delta_[0,7] - x_[7] >= 15
  delta[7,1]: delta_[1,7] + delta_[7,1] = 1
- x_set_U[1]: x_[1] + 369 delta_[1,7] - x_[7] >= 15
+ x_set_U[1]: x_[1] + 393 delta_[1,7] - x_[7] >= 15
  delta[7,2]: delta_[2,7] + delta_[7,2] = 1
- x_set_U[2]: x_[2] + 468 delta_[2,7] - x_[7] >= 8
+ x_set_U[2]: x_[2] + 492 delta_[2,7] - x_[7] >= 8
  delta[7,3]: delta_[3,7] + delta_[7,3] = 1
- x_set_U[3]: x_[3] + 463 delta_[3,7] - x_[7] >= 8
+ x_set_U[3]: x_[3] + 485 delta_[3,7] - x_[7] >= 8
  delta[7,4]: delta_[4,7] + delta_[7,4] = 1
- x_set_U[4]: x_[4] + 452 delta_[4,7] - x_[7] >= 8
+ x_set_U[4]: x_[4] + 471 delta_[4,7] - x_[7] >= 8
  delta[7,5]: delta_[5,7] + delta_[7,5] = 1
- x_set_U[5]: x_[5] + 445 delta_[5,7] - x_[7] >= 8
+ x_set_U[5]: x_[5] + 461 delta_[5,7] - x_[7] >= 8
  delta[7,6]: delta_[6,7] + delta_[7,6] = 1
- x_set_U[6]: x_[6] + 443 delta_[6,7] - x_[7] >= 8
+ x_set_U[6]: x_[6] + 457 delta_[6,7] - x_[7] >= 8
  delta[7,8]: delta_[7,8] + delta_[8,7] = 1
- x_set_U[8]: - x_[7] + x_[8] + 437 delta_[8,7] >= 8
+ x_set_U[8]: - x_[7] + x_[8] + 446 delta_[8,7] >= 8
  delta[7,9]: delta_[7,9] + delta_[9,7] = 1
- x_set_U[9]: - x_[7] + x_[9] + 418 delta_[9,7] >= 8
- delta[7,10]: delta_[7,10] + delta_[10,7] = 1
- x_set_U[10]: - x_[7] + x_[10] + 293 delta_[10,7] >= 15
- delta[7,11]: delta_[7,11] + delta_[11,7] = 1
- x_set_U[11]: - x_[7] + x_[11] + 308 delta_[11,7] >= 15
- delta[7,12]: delta_[7,12] + delta_[12,7] = 1
- x_set_U[12]: - x_[7] + x_[12] + 392 delta_[12,7] >= 8
- delta[7,13]: delta_[7,13] + delta_[13,7] = 1
- x_set_U[13]: - x_[7] + x_[13] + 400 delta_[13,7] >= 8
- delta[7,14]: delta_[7,14] + delta_[14,7] = 1
- x_set_U[14]: - x_[7] + x_[14] + 283 delta_[14,7] >= 15
- Alpha[8]: alpha_[8] + x_[8] >= 128
- Beta[8]: beta_[8] - x_[8] >= -128
- x[8]: alpha_[8] - beta_[8] + x_[8] = 128
+ x_set_U[9]: - x_[7] + x_[9] + 421 delta_[9,7] >= 8
+ Alpha[8]: alpha_[8] + x_[8] >= 150
+ Beta[8]: beta_[8] - x_[8] >= -150
+ x[8]: alpha_[8] - beta_[8] + x_[8] = 150
  delta[8,0]: delta_[0,8] + delta_[8,0] = 1
- x_set_U[0]: x_[0] + 443 delta_[0,8] - x_[8] >= 15
+ x_set_U[0]: x_[0] + 477 delta_[0,8] - x_[8] >= 15
  delta[8,1]: delta_[1,8] + delta_[8,1] = 1
- x_set_U[1]: x_[1] + 382 delta_[1,8] - x_[8] >= 15
+ x_set_U[1]: x_[1] + 411 delta_[1,8] - x_[8] >= 15
  delta[8,2]: delta_[2,8] + delta_[8,2] = 1
- x_set_U[2]: x_[2] + 481 delta_[2,8] - x_[8] >= 8
+ x_set_U[2]: x_[2] + 510 delta_[2,8] - x_[8] >= 8
  delta[8,3]: delta_[3,8] + delta_[8,3] = 1
- x_set_U[3]: x_[3] + 476 delta_[3,8] - x_[8] >= 8
+ x_set_U[3]: x_[3] + 503 delta_[3,8] - x_[8] >= 8
  delta[8,4]: delta_[4,8] + delta_[8,4] = 1
- x_set_U[4]: x_[4] + 465 delta_[4,8] - x_[8] >= 8
+ x_set_U[4]: x_[4] + 489 delta_[4,8] - x_[8] >= 8
  delta[8,5]: delta_[5,8] + delta_[8,5] = 1
- x_set_U[5]: x_[5] + 458 delta_[5,8] - x_[8] >= 8
+ x_set_U[5]: x_[5] + 479 delta_[5,8] - x_[8] >= 8
  delta[8,6]: delta_[6,8] + delta_[8,6] = 1
- x_set_U[6]: x_[6] + 456 delta_[6,8] - x_[8] >= 8
+ x_set_U[6]: x_[6] + 475 delta_[6,8] - x_[8] >= 8
  delta[8,7]: delta_[7,8] + delta_[8,7] = 1
- x_set_U[7]: x_[7] + 456 delta_[7,8] - x_[8] >= 8
+ x_set_U[7]: x_[7] + 473 delta_[7,8] - x_[8] >= 8
  delta[8,9]: delta_[8,9] + delta_[9,8] = 1
- x_set_U[9]: - x_[8] + x_[9] + 431 delta_[9,8] >= 8
- delta[8,10]: delta_[8,10] + delta_[10,8] = 1
- x_set_U[10]: - x_[8] + x_[10] + 306 delta_[10,8] >= 15
- delta[8,11]: delta_[8,11] + delta_[11,8] = 1
- x_set_U[11]: - x_[8] + x_[11] + 321 delta_[11,8] >= 15
- delta[8,12]: delta_[8,12] + delta_[12,8] = 1
- x_set_U[12]: - x_[8] + x_[12] + 405 delta_[12,8] >= 8
- delta[8,13]: delta_[8,13] + delta_[13,8] = 1
- x_set_U[13]: - x_[8] + x_[13] + 413 delta_[13,8] >= 8
- delta[8,14]: delta_[8,14] + delta_[14,8] = 1
- x_set_U[14]: - x_[8] + x_[14] + 296 delta_[14,8] >= 15
- Alpha[9]: alpha_[9] + x_[9] >= 151
- Beta[9]: beta_[9] - x_[9] >= -151
- x[9]: alpha_[9] - beta_[9] + x_[9] = 151
+ x_set_U[9]: - x_[8] + x_[9] + 439 delta_[9,8] >= 8
+ Alpha[9]: alpha_[9] + x_[9] >= 180
+ Beta[9]: beta_[9] - x_[9] >= -180
+ x[9]: alpha_[9] - beta_[9] + x_[9] = 180
  delta[9,0]: delta_[0,9] + delta_[9,0] = 1
- x_set_U[0]: x_[0] + 496 delta_[0,9] - x_[9] >= 15
+ x_set_U[0]: x_[0] + 543 delta_[0,9] - x_[9] >= 15
  delta[9,1]: delta_[1,9] + delta_[9,1] = 1
- x_set_U[1]: x_[1] + 435 delta_[1,9] - x_[9] >= 15
+ x_set_U[1]: x_[1] + 477 delta_[1,9] - x_[9] >= 15
  delta[9,2]: delta_[2,9] + delta_[9,2] = 1
- x_set_U[2]: x_[2] + 534 delta_[2,9] - x_[9] >= 8
+ x_set_U[2]: x_[2] + 576 delta_[2,9] - x_[9] >= 8
  delta[9,3]: delta_[3,9] + delta_[9,3] = 1
- x_set_U[3]: x_[3] + 529 delta_[3,9] - x_[9] >= 8
+ x_set_U[3]: x_[3] + 569 delta_[3,9] - x_[9] >= 8
  delta[9,4]: delta_[4,9] + delta_[9,4] = 1
- x_set_U[4]: x_[4] + 518 delta_[4,9] - x_[9] >= 8
+ x_set_U[4]: x_[4] + 555 delta_[4,9] - x_[9] >= 8
  delta[9,5]: delta_[5,9] + delta_[9,5] = 1
- x_set_U[5]: x_[5] + 511 delta_[5,9] - x_[9] >= 8
+ x_set_U[5]: x_[5] + 545 delta_[5,9] - x_[9] >= 8
  delta[9,6]: delta_[6,9] + delta_[9,6] = 1
- x_set_U[6]: x_[6] + 509 delta_[6,9] - x_[9] >= 8
+ x_set_U[6]: x_[6] + 541 delta_[6,9] - x_[9] >= 8
  delta[9,7]: delta_[7,9] + delta_[9,7] = 1
- x_set_U[7]: x_[7] + 509 delta_[7,9] - x_[9] >= 8
+ x_set_U[7]: x_[7] + 539 delta_[7,9] - x_[9] >= 8
  delta[9,8]: delta_[8,9] + delta_[9,8] = 1
- x_set_U[8]: x_[8] + 503 delta_[8,9] - x_[9] >= 8
- delta[9,10]: delta_[9,10] + delta_[10,9] = 1
- x_set_U[10]: - x_[9] + x_[10] + 359 delta_[10,9] >= 15
- delta[9,11]: delta_[9,11] + delta_[11,9] = 1
- x_set_U[11]: - x_[9] + x_[11] + 374 delta_[11,9] >= 15
- delta[9,12]: delta_[9,12] + delta_[12,9] = 1
- x_set_U[12]: - x_[9] + x_[12] + 458 delta_[12,9] >= 8
- delta[9,13]: delta_[9,13] + delta_[13,9] = 1
- x_set_U[13]: - x_[9] + x_[13] + 466 delta_[13,9] >= 8
- delta[9,14]: delta_[9,14] + delta_[14,9] = 1
- x_set_U[14]: - x_[9] + x_[14] + 349 delta_[14,9] >= 15
- Alpha[10]: alpha_[10] + x_[10] >= 341
- Beta[10]: beta_[10] - x_[10] >= -341
- x[10]: alpha_[10] - beta_[10] + x_[10] = 341
- delta[10,0]: delta_[0,10] + delta_[10,0] = 1
- x_set_U[0]: x_[0] + 711 delta_[0,10] - x_[10] >= 3
- delta[10,1]: delta_[1,10] + delta_[10,1] = 1
- x_set_U[1]: x_[1] + 650 delta_[1,10] - x_[10] >= 3
- delta[10,2]: delta_[2,10] + delta_[10,2] = 1
- x_set_U[2]: x_[2] + 768 delta_[2,10] - x_[10] >= 15
- delta[10,3]: delta_[3,10] + delta_[10,3] = 1
- x_set_U[3]: x_[3] + 763 delta_[3,10] - x_[10] >= 15
- delta[10,4]: delta_[4,10] + delta_[10,4] = 1
- x_set_U[4]: x_[4] + 752 delta_[4,10] - x_[10] >= 15
- delta[10,5]: delta_[5,10] + delta_[10,5] = 1
- x_set_U[5]: x_[5] + 745 delta_[5,10] - x_[10] >= 15
- delta[10,6]: delta_[6,10] + delta_[10,6] = 1
- x_set_U[6]: x_[6] + 743 delta_[6,10] - x_[10] >= 15
- delta[10,7]: delta_[7,10] + delta_[10,7] = 1
- x_set_U[7]: x_[7] + 743 delta_[7,10] - x_[10] >= 15
- delta[10,8]: delta_[8,10] + delta_[10,8] = 1
- x_set_U[8]: x_[8] + 737 delta_[8,10] - x_[10] >= 15
- delta[10,9]: delta_[9,10] + delta_[10,9] = 1
- x_set_U[9]: x_[9] + 718 delta_[9,10] - x_[10] >= 15
- delta[10,11]: delta_[10,11] + delta_[11,10] = 1
- x_set_U[11]: - x_[10] + x_[11] + 589 delta_[11,10] >= 3
- delta[10,12]: delta_[10,12] + delta_[12,10] = 1
- x_set_U[12]: - x_[10] + x_[12] + 692 delta_[12,10] >= 15
- delta[10,13]: delta_[10,13] + delta_[13,10] = 1
- x_set_U[13]: - x_[10] + x_[13] + 700 delta_[13,10] >= 15
- delta[10,14]: delta_[10,14] + delta_[14,10] = 1
- x_set_U[14]: - x_[10] + x_[14] + 564 delta_[14,10] >= 3
- Alpha[11]: alpha_[11] + x_[11] >= 313
- Beta[11]: beta_[11] - x_[11] >= -313
- x[11]: alpha_[11] - beta_[11] + x_[11] = 313
- delta[11,0]: delta_[0,11] + delta_[11,0] = 1
- x_set_U[0]: x_[0] + 652 delta_[0,11] - x_[11] >= 3
- delta[11,1]: delta_[1,11] + delta_[11,1] = 1
- x_set_U[1]: x_[1] + 591 delta_[1,11] - x_[11] >= 3
- delta[11,2]: delta_[2,11] + delta_[11,2] = 1
- x_set_U[2]: x_[2] + 709 delta_[2,11] - x_[11] >= 15
- delta[11,3]: delta_[3,11] + delta_[11,3] = 1
- x_set_U[3]: x_[3] + 704 delta_[3,11] - x_[11] >= 15
- delta[11,4]: delta_[4,11] + delta_[11,4] = 1
- x_set_U[4]: x_[4] + 693 delta_[4,11] - x_[11] >= 15
- delta[11,5]: delta_[5,11] + delta_[11,5] = 1
- x_set_U[5]: x_[5] + 686 delta_[5,11] - x_[11] >= 15
- delta[11,6]: delta_[6,11] + delta_[11,6] = 1
- x_set_U[6]: x_[6] + 684 delta_[6,11] - x_[11] >= 15
- delta[11,7]: delta_[7,11] + delta_[11,7] = 1
- x_set_U[7]: x_[7] + 684 delta_[7,11] - x_[11] >= 15
- delta[11,8]: delta_[8,11] + delta_[11,8] = 1
- x_set_U[8]: x_[8] + 678 delta_[8,11] - x_[11] >= 15
- delta[11,9]: delta_[9,11] + delta_[11,9] = 1
- x_set_U[9]: x_[9] + 659 delta_[9,11] - x_[11] >= 15
- delta[11,10]: delta_[10,11] + delta_[11,10] = 1
- x_set_U[10]: x_[10] + 515 delta_[10,11] - x_[11] >= 3
- delta[11,12]: delta_[11,12] + delta_[12,11] = 1
- x_set_U[12]: - x_[11] + x_[12] + 633 delta_[12,11] >= 15
- delta[11,13]: delta_[11,13] + delta_[13,11] = 1
- x_set_U[13]: - x_[11] + x_[13] + 641 delta_[13,11] >= 15
- delta[11,14]: delta_[11,14] + delta_[14,11] = 1
- x_set_U[14]: - x_[11] + x_[14] + 505 delta_[14,11] >= 3
- Alpha[12]: alpha_[12] + x_[12] >= 181
- Beta[12]: beta_[12] - x_[12] >= -181
- x[12]: alpha_[12] - beta_[12] + x_[12] = 181
- delta[12,0]: delta_[0,12] + delta_[12,0] = 1
- x_set_U[0]: x_[0] + 560 delta_[0,12] - x_[12] >= 15
- delta[12,1]: delta_[1,12] + delta_[12,1] = 1
- x_set_U[1]: x_[1] + 499 delta_[1,12] - x_[12] >= 15
- delta[12,2]: delta_[2,12] + delta_[12,2] = 1
- x_set_U[2]: x_[2] + 598 delta_[2,12] - x_[12] >= 8
- delta[12,3]: delta_[3,12] + delta_[12,3] = 1
- x_set_U[3]: x_[3] + 593 delta_[3,12] - x_[12] >= 8
- delta[12,4]: delta_[4,12] + delta_[12,4] = 1
- x_set_U[4]: x_[4] + 582 delta_[4,12] - x_[12] >= 8
- delta[12,5]: delta_[5,12] + delta_[12,5] = 1
- x_set_U[5]: x_[5] + 575 delta_[5,12] - x_[12] >= 8
- delta[12,6]: delta_[6,12] + delta_[12,6] = 1
- x_set_U[6]: x_[6] + 573 delta_[6,12] - x_[12] >= 8
- delta[12,7]: delta_[7,12] + delta_[12,7] = 1
- x_set_U[7]: x_[7] + 573 delta_[7,12] - x_[12] >= 8
- delta[12,8]: delta_[8,12] + delta_[12,8] = 1
- x_set_U[8]: x_[8] + 567 delta_[8,12] - x_[12] >= 8
- delta[12,9]: delta_[9,12] + delta_[12,9] = 1
- x_set_U[9]: x_[9] + 548 delta_[9,12] - x_[12] >= 8
- delta[12,10]: delta_[10,12] + delta_[12,10] = 1
- x_set_U[10]: x_[10] + 423 delta_[10,12] - x_[12] >= 15
- delta[12,11]: delta_[11,12] + delta_[12,11] = 1
- x_set_U[11]: x_[11] + 438 delta_[11,12] - x_[12] >= 15
- delta[12,13]: delta_[12,13] + delta_[13,12] = 1
- x_set_U[13]: - x_[12] + x_[13] + 530 delta_[13,12] >= 8
- delta[12,14]: delta_[12,14] + delta_[14,12] = 1
- x_set_U[14]: - x_[12] + x_[14] + 413 delta_[14,12] >= 15
- Alpha[13]: alpha_[13] + x_[13] >= 171
- Beta[13]: beta_[13] - x_[13] >= -171
- x[13]: alpha_[13] - beta_[13] + x_[13] = 171
- delta[13,0]: delta_[0,13] + delta_[13,0] = 1
- x_set_U[0]: x_[0] + 523 delta_[0,13] - x_[13] >= 15
- delta[13,1]: delta_[1,13] + delta_[13,1] = 1
- x_set_U[1]: x_[1] + 462 delta_[1,13] - x_[13] >= 15
- delta[13,2]: delta_[2,13] + delta_[13,2] = 1
- x_set_U[2]: x_[2] + 561 delta_[2,13] - x_[13] >= 8
- delta[13,3]: delta_[3,13] + delta_[13,3] = 1
- x_set_U[3]: x_[3] + 556 delta_[3,13] - x_[13] >= 8
- delta[13,4]: delta_[4,13] + delta_[13,4] = 1
- x_set_U[4]: x_[4] + 545 delta_[4,13] - x_[13] >= 8
- delta[13,5]: delta_[5,13] + delta_[13,5] = 1
- x_set_U[5]: x_[5] + 538 delta_[5,13] - x_[13] >= 8
- delta[13,6]: delta_[6,13] + delta_[13,6] = 1
- x_set_U[6]: x_[6] + 536 delta_[6,13] - x_[13] >= 8
- delta[13,7]: delta_[7,13] + delta_[13,7] = 1
- x_set_U[7]: x_[7] + 536 delta_[7,13] - x_[13] >= 8
- delta[13,8]: delta_[8,13] + delta_[13,8] = 1
- x_set_U[8]: x_[8] + 530 delta_[8,13] - x_[13] >= 8
- delta[13,9]: delta_[9,13] + delta_[13,9] = 1
- x_set_U[9]: x_[9] + 511 delta_[9,13] - x_[13] >= 8
- delta[13,10]: delta_[10,13] + delta_[13,10] = 1
- x_set_U[10]: x_[10] + 386 delta_[10,13] - x_[13] >= 15
- delta[13,11]: delta_[11,13] + delta_[13,11] = 1
- x_set_U[11]: x_[11] + 401 delta_[11,13] - x_[13] >= 15
- delta[13,12]: delta_[12,13] + delta_[13,12] = 1
- x_set_U[12]: x_[12] + 485 delta_[12,13] - x_[13] >= 8
- delta[13,14]: delta_[13,14] + delta_[14,13] = 1
- x_set_U[14]: - x_[13] + x_[14] + 376 delta_[14,13] >= 15
- Alpha[14]: alpha_[14] + x_[14] >= 342
- Beta[14]: beta_[14] - x_[14] >= -342
- x[14]: alpha_[14] - beta_[14] + x_[14] = 342
- delta[14,0]: delta_[0,14] + delta_[14,0] = 1
- x_set_U[0]: x_[0] + 689 delta_[0,14] - x_[14] >= 3
- delta[14,1]: delta_[1,14] + delta_[14,1] = 1
- x_set_U[1]: x_[1] + 628 delta_[1,14] - x_[14] >= 3
- delta[14,2]: delta_[2,14] + delta_[14,2] = 1
- x_set_U[2]: x_[2] + 746 delta_[2,14] - x_[14] >= 15
- delta[14,3]: delta_[3,14] + delta_[14,3] = 1
- x_set_U[3]: x_[3] + 741 delta_[3,14] - x_[14] >= 15
- delta[14,4]: delta_[4,14] + delta_[14,4] = 1
- x_set_U[4]: x_[4] + 730 delta_[4,14] - x_[14] >= 15
- delta[14,5]: delta_[5,14] + delta_[14,5] = 1
- x_set_U[5]: x_[5] + 723 delta_[5,14] - x_[14] >= 15
- delta[14,6]: delta_[6,14] + delta_[14,6] = 1
- x_set_U[6]: x_[6] + 721 delta_[6,14] - x_[14] >= 15
- delta[14,7]: delta_[7,14] + delta_[14,7] = 1
- x_set_U[7]: x_[7] + 721 delta_[7,14] - x_[14] >= 15
- delta[14,8]: delta_[8,14] + delta_[14,8] = 1
- x_set_U[8]: x_[8] + 715 delta_[8,14] - x_[14] >= 15
- delta[14,9]: delta_[9,14] + delta_[14,9] = 1
- x_set_U[9]: x_[9] + 696 delta_[9,14] - x_[14] >= 15
- delta[14,10]: delta_[10,14] + delta_[14,10] = 1
- x_set_U[10]: x_[10] + 552 delta_[10,14] - x_[14] >= 3
- delta[14,11]: delta_[11,14] + delta_[14,11] = 1
- x_set_U[11]: x_[11] + 567 delta_[11,14] - x_[14] >= 3
- delta[14,12]: delta_[12,14] + delta_[14,12] = 1
- x_set_U[12]: x_[12] + 670 delta_[12,14] - x_[14] >= 15
- delta[14,13]: delta_[13,14] + delta_[14,13] = 1
- x_set_U[13]: x_[13] + 678 delta_[13,14] - x_[14] >= 15
+ x_set_U[8]: x_[8] + 530 delta_[8,9] - x_[9] >= 8
 Bounds
  alpha_[0] <= 26
  beta_[0] <= 404
  129 <= x_[0] <= 559
- alpha_[1] <= 60
- beta_[1] <= 482
- 190 <= x_[1] <= 732
+ alpha_[1] <= 63
+ beta_[1] <= 486
+ 195 <= x_[1] <= 744
  alpha_[2] <= 9
- beta_[2] <= 408
- 84 <= x_[2] <= 501
- alpha_[3] <= 9
- beta_[3] <= 411
- 89 <= x_[3] <= 509
- alpha_[4] <= 11
- beta_[4] <= 425
- 100 <= x_[4] <= 536
- alpha_[5] <= 13
- beta_[5] <= 432
- 107 <= x_[5] <= 552
- alpha_[6] <= 12
- beta_[6] <= 429
- 109 <= x_[6] <= 550
- alpha_[7] <= 11
- beta_[7] <= 424
- 109 <= x_[7] <= 544
- alpha_[8] <= 13
- beta_[8] <= 429
- 115 <= x_[8] <= 557
- alpha_[9] <= 17
- beta_[9] <= 459
- 134 <= x_[9] <= 610
- alpha_[10] <= 75
- beta_[10] <= 496
- 266 <= x_[10] <= 837
- alpha_[11] <= 62
- beta_[11] <= 465
- 251 <= x_[11] <= 778
- alpha_[12] <= 21
- beta_[12] <= 493
- 160 <= x_[12] <= 674
- alpha_[13] <= 19
- beta_[13] <= 466
- 152 <= x_[13] <= 637
- alpha_[14] <= 66
- beta_[14] <= 473
- 276 <= x_[14] <= 815
+ beta_[2] <= 412
+ 89 <= x_[2] <= 510
+ alpha_[3] <= 10
+ beta_[3] <= 415
+ 96 <= x_[3] <= 521
+ alpha_[4] <= 13
+ beta_[4] <= 432
+ 110 <= x_[4] <= 555
+ alpha_[5] <= 15
+ beta_[5] <= 441
+ 120 <= x_[5] <= 576
+ alpha_[6] <= 14
+ beta_[6] <= 439
+ 124 <= x_[6] <= 577
+ alpha_[7] <= 14
+ beta_[7] <= 433
+ 126 <= x_[7] <= 573
+ alpha_[8] <= 15
+ beta_[8] <= 441
+ 135 <= x_[8] <= 591
+ alpha_[9] <= 20
+ beta_[9] <= 477
+ 160 <= x_[9] <= 657
 Binaries
  delta_[0,0] delta_[0,1] delta_[0,2] delta_[0,3] delta_[0,4] delta_[0,5]
- delta_[0,6] delta_[0,7] delta_[0,8] delta_[0,9] delta_[0,10] delta_[0,11]
- delta_[0,12] delta_[0,13] delta_[0,14] delta_[1,0] delta_[1,1] delta_[1,2]
- delta_[1,3] delta_[1,4] delta_[1,5] delta_[1,6] delta_[1,7] delta_[1,8]
- delta_[1,9] delta_[1,10] delta_[1,11] delta_[1,12] delta_[1,13]
- delta_[1,14] delta_[2,0] delta_[2,1] delta_[2,2] delta_[2,3] delta_[2,4]
- delta_[2,5] delta_[2,6] delta_[2,7] delta_[2,8] delta_[2,9] delta_[2,10]
- delta_[2,11] delta_[2,12] delta_[2,13] delta_[2,14] delta_[3,0]
- delta_[3,1] delta_[3,2] delta_[3,3] delta_[3,4] delta_[3,5] delta_[3,6]
- delta_[3,7] delta_[3,8] delta_[3,9] delta_[3,10] delta_[3,11] delta_[3,12]
- delta_[3,13] delta_[3,14] delta_[4,0] delta_[4,1] delta_[4,2] delta_[4,3]
- delta_[4,4] delta_[4,5] delta_[4,6] delta_[4,7] delta_[4,8] delta_[4,9]
- delta_[4,10] delta_[4,11] delta_[4,12] delta_[4,13] delta_[4,14]
- delta_[5,0] delta_[5,1] delta_[5,2] delta_[5,3] delta_[5,4] delta_[5,5]
- delta_[5,6] delta_[5,7] delta_[5,8] delta_[5,9] delta_[5,10] delta_[5,11]
- delta_[5,12] delta_[5,13] delta_[5,14] delta_[6,0] delta_[6,1] delta_[6,2]
- delta_[6,3] delta_[6,4] delta_[6,5] delta_[6,6] delta_[6,7] delta_[6,8]
- delta_[6,9] delta_[6,10] delta_[6,11] delta_[6,12] delta_[6,13]
- delta_[6,14] delta_[7,0] delta_[7,1] delta_[7,2] delta_[7,3] delta_[7,4]
- delta_[7,5] delta_[7,6] delta_[7,7] delta_[7,8] delta_[7,9] delta_[7,10]
- delta_[7,11] delta_[7,12] delta_[7,13] delta_[7,14] delta_[8,0]
- delta_[8,1] delta_[8,2] delta_[8,3] delta_[8,4] delta_[8,5] delta_[8,6]
- delta_[8,7] delta_[8,8] delta_[8,9] delta_[8,10] delta_[8,11] delta_[8,12]
- delta_[8,13] delta_[8,14] delta_[9,0] delta_[9,1] delta_[9,2] delta_[9,3]
- delta_[9,4] delta_[9,5] delta_[9,6] delta_[9,7] delta_[9,8] delta_[9,9]
- delta_[9,10] delta_[9,11] delta_[9,12] delta_[9,13] delta_[9,14]
- delta_[10,0] delta_[10,1] delta_[10,2] delta_[10,3] delta_[10,4]
- delta_[10,5] delta_[10,6] delta_[10,7] delta_[10,8] delta_[10,9]
- delta_[10,10] delta_[10,11] delta_[10,12] delta_[10,13] delta_[10,14]
- delta_[11,0] delta_[11,1] delta_[11,2] delta_[11,3] delta_[11,4]
- delta_[11,5] delta_[11,6] delta_[11,7] delta_[11,8] delta_[11,9]
- delta_[11,10] delta_[11,11] delta_[11,12] delta_[11,13] delta_[11,14]
- delta_[12,0] delta_[12,1] delta_[12,2] delta_[12,3] delta_[12,4]
- delta_[12,5] delta_[12,6] delta_[12,7] delta_[12,8] delta_[12,9]
- delta_[12,10] delta_[12,11] delta_[12,12] delta_[12,13] delta_[12,14]
- delta_[13,0] delta_[13,1] delta_[13,2] delta_[13,3] delta_[13,4]
- delta_[13,5] delta_[13,6] delta_[13,7] delta_[13,8] delta_[13,9]
- delta_[13,10] delta_[13,11] delta_[13,12] delta_[13,13] delta_[13,14]
- delta_[14,0] delta_[14,1] delta_[14,2] delta_[14,3] delta_[14,4]
- delta_[14,5] delta_[14,6] delta_[14,7] delta_[14,8] delta_[14,9]
- delta_[14,10] delta_[14,11] delta_[14,12] delta_[14,13] delta_[14,14]
+ delta_[0,6] delta_[0,7] delta_[0,8] delta_[0,9] delta_[1,0] delta_[1,1]
+ delta_[1,2] delta_[1,3] delta_[1,4] delta_[1,5] delta_[1,6] delta_[1,7]
+ delta_[1,8] delta_[1,9] delta_[2,0] delta_[2,1] delta_[2,2] delta_[2,3]
+ delta_[2,4] delta_[2,5] delta_[2,6] delta_[2,7] delta_[2,8] delta_[2,9]
+ delta_[3,0] delta_[3,1] delta_[3,2] delta_[3,3] delta_[3,4] delta_[3,5]
+ delta_[3,6] delta_[3,7] delta_[3,8] delta_[3,9] delta_[4,0] delta_[4,1]
+ delta_[4,2] delta_[4,3] delta_[4,4] delta_[4,5] delta_[4,6] delta_[4,7]
+ delta_[4,8] delta_[4,9] delta_[5,0] delta_[5,1] delta_[5,2] delta_[5,3]
+ delta_[5,4] delta_[5,5] delta_[5,6] delta_[5,7] delta_[5,8] delta_[5,9]
+ delta_[6,0] delta_[6,1] delta_[6,2] delta_[6,3] delta_[6,4] delta_[6,5]
+ delta_[6,6] delta_[6,7] delta_[6,8] delta_[6,9] delta_[7,0] delta_[7,1]
+ delta_[7,2] delta_[7,3] delta_[7,4] delta_[7,5] delta_[7,6] delta_[7,7]
+ delta_[7,8] delta_[7,9] delta_[8,0] delta_[8,1] delta_[8,2] delta_[8,3]
+ delta_[8,4] delta_[8,5] delta_[8,6] delta_[8,7] delta_[8,8] delta_[8,9]
+ delta_[9,0] delta_[9,1] delta_[9,2] delta_[9,3] delta_[9,4] delta_[9,5]
+ delta_[9,6] delta_[9,7] delta_[9,8] delta_[9,9]
 Generals
  alpha_[0] beta_[0] x_[0] alpha_[1] beta_[1] x_[1] alpha_[2] beta_[2] x_[2]
  alpha_[3] beta_[3] x_[3] alpha_[4] beta_[4] x_[4] alpha_[5] beta_[5] x_[5]
  alpha_[6] beta_[6] x_[6] alpha_[7] beta_[7] x_[7] alpha_[8] beta_[8] x_[8]
- alpha_[9] beta_[9] x_[9] alpha_[10] beta_[10] x_[10] alpha_[11] beta_[11]
- x_[11] alpha_[12] beta_[12] x_[12] alpha_[13] beta_[13] x_[13] alpha_[14]
- beta_[14] x_[14]
+ alpha_[9] beta_[9] x_[9]
 End
