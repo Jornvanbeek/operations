@@ -30,16 +30,18 @@ planes = len(data)
 g = data[:, 4]  # penalty cost (≥0) per unit of time for landing before the target time
 h = data[:, 5]  # penalty cost (≥0) per unit of time for landing after the target time
 s = []
+
 for i in range(planes):
     temp = []
     for j in range(planes):
         if i != j:
-            temp.append(3)  # separation time, aanpassen!
+            temp.append(0)  # separation time, aanpassen!
         else:
             temp.append(0)
     s.append(temp)
 s = np.array(s)
-landing_cost = [50, 100]
+
+landing_cost = [50, 60]
 
 runways = len(landing_cost)
 
@@ -70,13 +72,13 @@ for i in range(planes):
     x[i] = model.addVar(lb=E[i], ub=L[i], vtype=GRB.INTEGER, name="x_[%s]" %
                         (i))  # eq 1 DONT FORGET TO CHANGE 0 TO i !!!
     for k in range(runways):
-        rw[i, k] = model.addVar(lb=0, ub=1, vtype=GRB.INTEGER, name="runway_[%s]")
+        rw[i, k] = model.addVar(lb=0, ub=1, vtype=GRB.BINARY, name="runway_[%s]")
 
     for j in range(planes):
         delta[i, j] = model.addVar(lb=0, ub=1, vtype=GRB.BINARY, name="delta_[%s,%s]" % (i, j))
         z[i, j] = model.addVar(lb=0, ub=1, vtype=GRB.BINARY, name="z_[%s,%s]" %
                                (i, j))  # do 2 aircraft land on the same runway
-
+# print(rw)
 
 model.update()
 
@@ -85,80 +87,78 @@ model.update()
 """Constraints"""
 
 for i in range(planes):
-    # for k in range(runways):
-    """Runways toevoegen"""
+    for k in range(runways):
+        """Runways toevoegen"""
+        # an aircraft lands at 1 runway max.
+        thisLHS = LinExpr()
+        thisLHS += rw[i, 0] + rw[i, 1]  # rw[i,2]+rw[i,3]rw[i,4]+rw[i,5]
+        model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name="runway_[%s]" % (i))
 
-    # an aircraft lands at 1 runway max.
-    thisLHS = LinExpr()
-    thisLHS += rw[i, 0]+rw[i, 1]  # rw[i,2]+rw[i,3]rw[i,4]+rw[i,5]
-    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name="runway_[%s]" % (i))
+        # constraint 14 (define alpha as the early time)
+        thisLHS = LinExpr()
+        thisLHS += alpha[i]
+        model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=T[i] - x[i], name="Alpha[%s]" % (i))
 
-    # constraint 14 (define alpha as the early time)
-    thisLHS = LinExpr()
-    thisLHS += alpha[i]
-    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=T[i] - x[i], name="Alpha[%s]" % (i))
+        # constraint 16 (define beta as the delay)
+        thisLHS = LinExpr()
+        thisLHS += beta[i]
+        model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=x[i] - T[i], name="Beta[%s]" % (i))
 
-    # constraint 16 (define beta as the delay)
-    thisLHS = LinExpr()
-    thisLHS += beta[i]
-    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=x[i] - T[i], name="Beta[%s]" % (i))
+        # constraint 18 (define that the delay and early time combined with target is xi) (alpha and beta are minimized by cost function)
+        thisLHS = LinExpr()
+        thisLHS += x[i]
+        model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=T[i] - alpha[i] + beta[i], name="x[%s]" % (i))
 
-    # constraint 18 (define that the delay and early time combined with target is xi) (alpha and beta are minimized by cost function)
-    thisLHS = LinExpr()
-    thisLHS += x[i]
-    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=T[i] - alpha[i] + beta[i], name="x[%s]" % (i))
+        for j in range(planes):  # maybe remove the i part? though this should be fewer constraints overall
+            if j != i:
 
-    for j in range(planes):  # maybe remove the i part? though this should be fewer constraints overall
-        if j != i:
-
-            # constraint 2 (i or j always lands before the other)
-            thisLHS = LinExpr()
-            thisLHS += delta[i, j] + delta[j, i]
-            print(thisLHS)
-            model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta[%s,%s]' % (i, j))
-
-            # Symmetry: if 1 lands on the same runway as 2, 2 also lands at the same runway as 1
-            thisLHS = LinExpr()
-            thisLHS += z[i, j]
-            thisRHS = LinExpr()
-            thisRHS += z[j, i]
-            model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=thisRHS, name="z_[%s]" % (i))
-
-            thisLHS = LinExpr()
-            thisLHS += z[i, j]
-            thisRHS = LinExpr()
-            print(rw[i, k])
-            thisRHS += rw[i, k]+rw[j, k]-1
-            model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name="z_[%s]" % (i))
-
-            if L[i] < E[j] and L[i] + S[i, j] <= E[j]:  # set W
-                # constraint 6 (i before j is 1, as latest i is before earliest j)
+                # constraint 2 (i or j always lands before the other)
                 thisLHS = LinExpr()
-                thisLHS += delta[i, j]
-                model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta_set_W[%s,%s]' % (i, j))
+                thisLHS += delta[i, j] + delta[j, i]
+                # print(thisLHS)
+                model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta[%s,%s]' % (i, j))
 
-            elif L[i] < E[j] and L[i] + S[i, j] > E[j]:  # set V
-                # constraint 6 (i before j is 1, as latest i is before earliest j)
+                # Symmetry: if 1 lands on the same runway as 2, 2 also lands at the same runway as 1
                 thisLHS = LinExpr()
-                thisLHS += delta[i, j]
-                model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta_set_V[%s,%s]' % (i, j))
-
-                # constraint 7 (xj is after xi plus separation)
-                thisLHS = LinExpr()
-                thisLHS += x[j]
+                thisLHS += z[i, j]
                 thisRHS = LinExpr()
-                thisRHS += x[i] + S[i, j]*z[i, j]+s[i, j]*(1-z[i, j])
-                model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name='x_set_V[%s]' % (j))
+                thisRHS += z[j, i]
+                model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=thisRHS, name="z_[%s]" % (i))
 
-            else:  # set U
-                # constraint 11 (either xj lands after xi with separation, or xj is after or equal to earliest j)
                 thisLHS = LinExpr()
-                thisLHS += x[j]
+                thisLHS += z[i, j]
                 thisRHS = LinExpr()
-                thisRHS += x[i] + S[i, j] - (L[i] + S[i, j] - E[j]) * delta[j, i]  # CHECK IF THESE INDICES ARE CORRECT
-                thisRHS += x[i] + S[i, j]*z[i, j] + s[i][j] * \
-                    (1-z[i, j]) - (L[i] + max(S[i, j], s[i, j]) - E[j])*delta[j, i]
-                model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name='x_set_U[%s]' % (j))
+                # print(rw[i, k])
+                thisRHS += rw[i, k]+rw[j, k]-1
+                model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name="z_[%s]" % (i))
+
+                if L[i] < E[j] and L[i] + S[i, j] <= E[j]:  # set W
+                    # constraint 6 (i before j is 1, as latest i is before earliest j)
+                    thisLHS = LinExpr()
+                    thisLHS += delta[i, j]
+                    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta_set_W[%s,%s]' % (i, j))
+
+                elif L[i] < E[j] and L[i] + S[i, j] > E[j]:  # set V
+                    # constraint 6 (i before j is 1, as latest i is before earliest j)
+                    thisLHS = LinExpr()
+                    thisLHS += delta[i, j]
+                    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta_set_V[%s,%s]' % (i, j))
+
+                    # constraint 7 (xj is after xi plus separation)
+                    thisLHS = LinExpr()
+                    thisLHS += x[j]
+                    thisRHS = LinExpr()
+                    thisRHS += x[i] + S[i, j]*z[i, j]+s[i, j]*(1-z[i, j])
+                    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name='x_set_V[%s]' % (j))
+
+                else:  # set U
+                    # constraint 11 (either xj lands after xi with separation, or xj is after or equal to earliest j)
+                    thisLHS = LinExpr()
+                    thisLHS += x[j]
+                    thisRHS = LinExpr()
+                    thisRHS += x[i] + S[i, j]*z[i, j] + s[i][j] * \
+                        (1-z[i, j]) - (L[i] + max(S[i, j], s[i, j]) - E[j])*delta[j, i]
+                    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name='x_set_U[%s]' % (j))
 
     # elif j == i:
     # make sure that delta ii gets skipped!
