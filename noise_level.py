@@ -10,7 +10,7 @@ def weight_indexes(spacing_array):
         req_spacing = np.delete(S[i], i)
         avg_spacing[i] = np.average(req_spacing)
 
-    #unq_idx is a list with the weight class of the a/c: 0,1,2 (light,medium,heavy)
+    # unq_idx is a list with the weight class of the a/c: 0,1,2 (light,medium,heavy)
     unq, unq_idx, unq_cnt = np.unique(avg_spacing, return_inverse=True, return_counts=True)
     return unq_idx
 
