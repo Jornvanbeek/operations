@@ -14,7 +14,7 @@ Minimize
    + 10 alpha_[13] + 10 beta_[13] + 0 delta_[13,13] + 0 z_[13,13]
    + 10 alpha_[14] + 10 beta_[14] + 0 delta_[14,14] + 0 z_[14,14]
 Subject To
- runway_[0]: runway_[%s] + runway_[%s] = 1
+ runway_[0]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[0]: alpha_[0] + x_[0] >= 93
  Beta[0]: beta_[0] - x_[0] >= -93
  x[0]: alpha_[0] - beta_[0] + x_[0] = 93
@@ -22,9 +22,11 @@ Subject To
  z_[0]: z_[0,1] - z_[1,0] = 0
  z_[0]: - runway_[%s] + z_[0,1] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,1] - runway_[%s] >= -1
+ z_[0]: - runway_[%s] + z_[0,1] - runway_[%s] >= -1
  x_set_U[1]: - x_[0] - 8 z_[0,1] + x_[1] + 420 delta_[1,0] >= 0
  delta[0,2]: delta_[0,2] + delta_[2,0] = 1
  z_[0]: z_[0,2] - z_[2,0] = 0
+ z_[0]: - runway_[%s] + z_[0,2] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,2] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,2] - runway_[%s] >= -1
  x_set_U[2]: - x_[0] - 8 z_[0,2] + x_[2] + 409 delta_[2,0] >= 0
@@ -32,9 +34,11 @@ Subject To
  z_[0]: z_[0,3] - z_[3,0] = 0
  z_[0]: - runway_[%s] + z_[0,3] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,3] - runway_[%s] >= -1
+ z_[0]: - runway_[%s] + z_[0,3] - runway_[%s] >= -1
  x_set_U[3]: - x_[0] - 8 z_[0,3] + x_[3] + 402 delta_[3,0] >= 0
  delta[0,4]: delta_[0,4] + delta_[4,0] = 1
  z_[0]: z_[0,4] - z_[4,0] = 0
+ z_[0]: - runway_[%s] + z_[0,4] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,4] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,4] - runway_[%s] >= -1
  x_set_U[4]: - x_[0] - 8 z_[0,4] + x_[4] + 400 delta_[4,0] >= 0
@@ -42,9 +46,11 @@ Subject To
  z_[0]: z_[0,5] - z_[5,0] = 0
  z_[0]: - runway_[%s] + z_[0,5] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,5] - runway_[%s] >= -1
+ z_[0]: - runway_[%s] + z_[0,5] - runway_[%s] >= -1
  x_set_U[5]: - x_[0] - 8 z_[0,5] + x_[5] + 400 delta_[5,0] >= 0
  delta[0,6]: delta_[0,6] + delta_[6,0] = 1
  z_[0]: z_[0,6] - z_[6,0] = 0
+ z_[0]: - runway_[%s] + z_[0,6] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,6] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,6] - runway_[%s] >= -1
  x_set_U[6]: - x_[0] - 8 z_[0,6] + x_[6] + 394 delta_[6,0] >= 0
@@ -52,9 +58,11 @@ Subject To
  z_[0]: z_[0,7] - z_[7,0] = 0
  z_[0]: - runway_[%s] + z_[0,7] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,7] - runway_[%s] >= -1
+ z_[0]: - runway_[%s] + z_[0,7] - runway_[%s] >= -1
  x_set_U[7]: - x_[0] - 8 z_[0,7] + x_[7] + 375 delta_[7,0] >= 0
  delta[0,8]: delta_[0,8] + delta_[8,0] = 1
  z_[0]: z_[0,8] - z_[8,0] = 0
+ z_[0]: - runway_[%s] + z_[0,8] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,8] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,8] - runway_[%s] >= -1
  x_set_U[8]: - x_[0] - 15 z_[0,8] + x_[8] + 387 delta_[8,0] >= 0
@@ -62,9 +70,11 @@ Subject To
  z_[0]: z_[0,9] - z_[9,0] = 0
  z_[0]: - runway_[%s] + z_[0,9] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,9] - runway_[%s] >= -1
+ z_[0]: - runway_[%s] + z_[0,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[0] - 8 z_[0,9] + x_[9] + 357 delta_[9,0] >= 0
  delta[0,10]: delta_[0,10] + delta_[10,0] = 1
  z_[0]: z_[0,10] - z_[10,0] = 0
+ z_[0]: - runway_[%s] + z_[0,10] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,10] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[0] - 8 z_[0,10] + x_[10] + 349 delta_[10,0] >= 0
@@ -72,9 +82,11 @@ Subject To
  z_[0]: z_[0,11] - z_[11,0] = 0
  z_[0]: - runway_[%s] + z_[0,11] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,11] - runway_[%s] >= -1
+ z_[0]: - runway_[%s] + z_[0,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[0] - 15 z_[0,11] + x_[11] + 326 delta_[11,0] >= 0
  delta[0,12]: delta_[0,12] + delta_[12,0] = 1
  z_[0]: z_[0,12] - z_[12,0] = 0
+ z_[0]: - runway_[%s] + z_[0,12] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,12] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[0] - 15 z_[0,12] + x_[12] + 265 delta_[12,0] >= 0
@@ -82,13 +94,15 @@ Subject To
  z_[0]: z_[0,13] - z_[13,0] = 0
  z_[0]: - runway_[%s] + z_[0,13] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,13] - runway_[%s] >= -1
+ z_[0]: - runway_[%s] + z_[0,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[0] - 15 z_[0,13] + x_[13] + 250 delta_[13,0] >= 0
  delta[0,14]: delta_[0,14] + delta_[14,0] = 1
  z_[0]: z_[0,14] - z_[14,0] = 0
  z_[0]: - runway_[%s] + z_[0,14] - runway_[%s] >= -1
  z_[0]: - runway_[%s] + z_[0,14] - runway_[%s] >= -1
+ z_[0]: - runway_[%s] + z_[0,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[0] - 15 z_[0,14] + x_[14] + 240 delta_[14,0] >= 0
- runway_[1]: runway_[%s] + runway_[%s] = 1
+ runway_[1]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[1]: alpha_[1] + x_[1] >= 98
  Beta[1]: beta_[1] - x_[1] >= -98
  x[1]: alpha_[1] - beta_[1] + x_[1] = 98
@@ -96,9 +110,11 @@ Subject To
  z_[1]: - z_[0,1] + z_[1,0] = 0
  z_[1]: - runway_[%s] - runway_[%s] + z_[1,0] >= -1
  z_[1]: - runway_[%s] - runway_[%s] + z_[1,0] >= -1
+ z_[1]: - runway_[%s] - runway_[%s] + z_[1,0] >= -1
  x_set_U[0]: x_[0] + 433 delta_[0,1] - x_[1] - 8 z_[1,0] >= 0
  delta[1,2]: delta_[1,2] + delta_[2,1] = 1
  z_[1]: z_[1,2] - z_[2,1] = 0
+ z_[1]: - runway_[%s] + z_[1,2] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,2] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,2] - runway_[%s] >= -1
  x_set_U[2]: - x_[1] - 8 z_[1,2] + x_[2] + 417 delta_[2,1] >= 0
@@ -106,9 +122,11 @@ Subject To
  z_[1]: z_[1,3] - z_[3,1] = 0
  z_[1]: - runway_[%s] + z_[1,3] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,3] - runway_[%s] >= -1
+ z_[1]: - runway_[%s] + z_[1,3] - runway_[%s] >= -1
  x_set_U[3]: - x_[1] - 8 z_[1,3] + x_[3] + 410 delta_[3,1] >= 0
  delta[1,4]: delta_[1,4] + delta_[4,1] = 1
  z_[1]: z_[1,4] - z_[4,1] = 0
+ z_[1]: - runway_[%s] + z_[1,4] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,4] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,4] - runway_[%s] >= -1
  x_set_U[4]: - x_[1] - 8 z_[1,4] + x_[4] + 408 delta_[4,1] >= 0
@@ -116,9 +134,11 @@ Subject To
  z_[1]: z_[1,5] - z_[5,1] = 0
  z_[1]: - runway_[%s] + z_[1,5] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,5] - runway_[%s] >= -1
+ z_[1]: - runway_[%s] + z_[1,5] - runway_[%s] >= -1
  x_set_U[5]: - x_[1] - 8 z_[1,5] + x_[5] + 408 delta_[5,1] >= 0
  delta[1,6]: delta_[1,6] + delta_[6,1] = 1
  z_[1]: z_[1,6] - z_[6,1] = 0
+ z_[1]: - runway_[%s] + z_[1,6] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,6] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,6] - runway_[%s] >= -1
  x_set_U[6]: - x_[1] - 8 z_[1,6] + x_[6] + 402 delta_[6,1] >= 0
@@ -126,9 +146,11 @@ Subject To
  z_[1]: z_[1,7] - z_[7,1] = 0
  z_[1]: - runway_[%s] + z_[1,7] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,7] - runway_[%s] >= -1
+ z_[1]: - runway_[%s] + z_[1,7] - runway_[%s] >= -1
  x_set_U[7]: - x_[1] - 8 z_[1,7] + x_[7] + 383 delta_[7,1] >= 0
  delta[1,8]: delta_[1,8] + delta_[8,1] = 1
  z_[1]: z_[1,8] - z_[8,1] = 0
+ z_[1]: - runway_[%s] + z_[1,8] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,8] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,8] - runway_[%s] >= -1
  x_set_U[8]: - x_[1] - 15 z_[1,8] + x_[8] + 395 delta_[8,1] >= 0
@@ -136,9 +158,11 @@ Subject To
  z_[1]: z_[1,9] - z_[9,1] = 0
  z_[1]: - runway_[%s] + z_[1,9] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,9] - runway_[%s] >= -1
+ z_[1]: - runway_[%s] + z_[1,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[1] - 8 z_[1,9] + x_[9] + 365 delta_[9,1] >= 0
  delta[1,10]: delta_[1,10] + delta_[10,1] = 1
  z_[1]: z_[1,10] - z_[10,1] = 0
+ z_[1]: - runway_[%s] + z_[1,10] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,10] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[1] - 8 z_[1,10] + x_[10] + 357 delta_[10,1] >= 0
@@ -146,9 +170,11 @@ Subject To
  z_[1]: z_[1,11] - z_[11,1] = 0
  z_[1]: - runway_[%s] + z_[1,11] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,11] - runway_[%s] >= -1
+ z_[1]: - runway_[%s] + z_[1,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[1] - 15 z_[1,11] + x_[11] + 334 delta_[11,1] >= 0
  delta[1,12]: delta_[1,12] + delta_[12,1] = 1
  z_[1]: z_[1,12] - z_[12,1] = 0
+ z_[1]: - runway_[%s] + z_[1,12] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,12] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[1] - 15 z_[1,12] + x_[12] + 273 delta_[12,1] >= 0
@@ -156,13 +182,15 @@ Subject To
  z_[1]: z_[1,13] - z_[13,1] = 0
  z_[1]: - runway_[%s] + z_[1,13] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,13] - runway_[%s] >= -1
+ z_[1]: - runway_[%s] + z_[1,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[1] - 15 z_[1,13] + x_[13] + 258 delta_[13,1] >= 0
  delta[1,14]: delta_[1,14] + delta_[14,1] = 1
  z_[1]: z_[1,14] - z_[14,1] = 0
  z_[1]: - runway_[%s] + z_[1,14] - runway_[%s] >= -1
  z_[1]: - runway_[%s] + z_[1,14] - runway_[%s] >= -1
+ z_[1]: - runway_[%s] + z_[1,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[1] - 15 z_[1,14] + x_[14] + 248 delta_[14,1] >= 0
- runway_[2]: runway_[%s] + runway_[%s] = 1
+ runway_[2]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[2]: alpha_[2] + x_[2] >= 111
  Beta[2]: beta_[2] - x_[2] >= -111
  x[2]: alpha_[2] - beta_[2] + x_[2] = 111
@@ -170,9 +198,11 @@ Subject To
  z_[2]: - z_[0,2] + z_[2,0] = 0
  z_[2]: - runway_[%s] - runway_[%s] + z_[2,0] >= -1
  z_[2]: - runway_[%s] - runway_[%s] + z_[2,0] >= -1
+ z_[2]: - runway_[%s] - runway_[%s] + z_[2,0] >= -1
  x_set_U[0]: x_[0] + 460 delta_[0,2] - x_[2] - 8 z_[2,0] >= 0
  delta[2,1]: delta_[1,2] + delta_[2,1] = 1
  z_[2]: - z_[1,2] + z_[2,1] = 0
+ z_[2]: - runway_[%s] - runway_[%s] + z_[2,1] >= -1
  z_[2]: - runway_[%s] - runway_[%s] + z_[2,1] >= -1
  z_[2]: - runway_[%s] - runway_[%s] + z_[2,1] >= -1
  x_set_U[1]: x_[1] + 455 delta_[1,2] - x_[2] - 8 z_[2,1] >= 0
@@ -180,9 +210,11 @@ Subject To
  z_[2]: z_[2,3] - z_[3,2] = 0
  z_[2]: - runway_[%s] + z_[2,3] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,3] - runway_[%s] >= -1
+ z_[2]: - runway_[%s] + z_[2,3] - runway_[%s] >= -1
  x_set_U[3]: - x_[2] - 8 z_[2,3] + x_[3] + 437 delta_[3,2] >= 0
  delta[2,4]: delta_[2,4] + delta_[4,2] = 1
  z_[2]: z_[2,4] - z_[4,2] = 0
+ z_[2]: - runway_[%s] + z_[2,4] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,4] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,4] - runway_[%s] >= -1
  x_set_U[4]: - x_[2] - 8 z_[2,4] + x_[4] + 435 delta_[4,2] >= 0
@@ -190,9 +222,11 @@ Subject To
  z_[2]: z_[2,5] - z_[5,2] = 0
  z_[2]: - runway_[%s] + z_[2,5] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,5] - runway_[%s] >= -1
+ z_[2]: - runway_[%s] + z_[2,5] - runway_[%s] >= -1
  x_set_U[5]: - x_[2] - 8 z_[2,5] + x_[5] + 435 delta_[5,2] >= 0
  delta[2,6]: delta_[2,6] + delta_[6,2] = 1
  z_[2]: z_[2,6] - z_[6,2] = 0
+ z_[2]: - runway_[%s] + z_[2,6] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,6] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,6] - runway_[%s] >= -1
  x_set_U[6]: - x_[2] - 8 z_[2,6] + x_[6] + 429 delta_[6,2] >= 0
@@ -200,9 +234,11 @@ Subject To
  z_[2]: z_[2,7] - z_[7,2] = 0
  z_[2]: - runway_[%s] + z_[2,7] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,7] - runway_[%s] >= -1
+ z_[2]: - runway_[%s] + z_[2,7] - runway_[%s] >= -1
  x_set_U[7]: - x_[2] - 8 z_[2,7] + x_[7] + 410 delta_[7,2] >= 0
  delta[2,8]: delta_[2,8] + delta_[8,2] = 1
  z_[2]: z_[2,8] - z_[8,2] = 0
+ z_[2]: - runway_[%s] + z_[2,8] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,8] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,8] - runway_[%s] >= -1
  x_set_U[8]: - x_[2] - 15 z_[2,8] + x_[8] + 422 delta_[8,2] >= 0
@@ -210,9 +246,11 @@ Subject To
  z_[2]: z_[2,9] - z_[9,2] = 0
  z_[2]: - runway_[%s] + z_[2,9] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,9] - runway_[%s] >= -1
+ z_[2]: - runway_[%s] + z_[2,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[2] - 8 z_[2,9] + x_[9] + 392 delta_[9,2] >= 0
  delta[2,10]: delta_[2,10] + delta_[10,2] = 1
  z_[2]: z_[2,10] - z_[10,2] = 0
+ z_[2]: - runway_[%s] + z_[2,10] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,10] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[2] - 8 z_[2,10] + x_[10] + 384 delta_[10,2] >= 0
@@ -220,9 +258,11 @@ Subject To
  z_[2]: z_[2,11] - z_[11,2] = 0
  z_[2]: - runway_[%s] + z_[2,11] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,11] - runway_[%s] >= -1
+ z_[2]: - runway_[%s] + z_[2,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[2] - 15 z_[2,11] + x_[11] + 361 delta_[11,2] >= 0
  delta[2,12]: delta_[2,12] + delta_[12,2] = 1
  z_[2]: z_[2,12] - z_[12,2] = 0
+ z_[2]: - runway_[%s] + z_[2,12] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,12] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[2] - 15 z_[2,12] + x_[12] + 300 delta_[12,2] >= 0
@@ -230,13 +270,15 @@ Subject To
  z_[2]: z_[2,13] - z_[13,2] = 0
  z_[2]: - runway_[%s] + z_[2,13] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,13] - runway_[%s] >= -1
+ z_[2]: - runway_[%s] + z_[2,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[2] - 15 z_[2,13] + x_[13] + 285 delta_[13,2] >= 0
  delta[2,14]: delta_[2,14] + delta_[14,2] = 1
  z_[2]: z_[2,14] - z_[14,2] = 0
  z_[2]: - runway_[%s] + z_[2,14] - runway_[%s] >= -1
  z_[2]: - runway_[%s] + z_[2,14] - runway_[%s] >= -1
+ z_[2]: - runway_[%s] + z_[2,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[2] - 15 z_[2,14] + x_[14] + 275 delta_[14,2] >= 0
- runway_[3]: runway_[%s] + runway_[%s] = 1
+ runway_[3]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[3]: alpha_[3] + x_[3] >= 120
  Beta[3]: beta_[3] - x_[3] >= -120
  x[3]: alpha_[3] - beta_[3] + x_[3] = 120
@@ -244,9 +286,11 @@ Subject To
  z_[3]: - z_[0,3] + z_[3,0] = 0
  z_[3]: - runway_[%s] - runway_[%s] + z_[3,0] >= -1
  z_[3]: - runway_[%s] - runway_[%s] + z_[3,0] >= -1
+ z_[3]: - runway_[%s] - runway_[%s] + z_[3,0] >= -1
  x_set_U[0]: x_[0] + 476 delta_[0,3] - x_[3] - 8 z_[3,0] >= 0
  delta[3,1]: delta_[1,3] + delta_[3,1] = 1
  z_[3]: - z_[1,3] + z_[3,1] = 0
+ z_[3]: - runway_[%s] - runway_[%s] + z_[3,1] >= -1
  z_[3]: - runway_[%s] - runway_[%s] + z_[3,1] >= -1
  z_[3]: - runway_[%s] - runway_[%s] + z_[3,1] >= -1
  x_set_U[1]: x_[1] + 471 delta_[1,3] - x_[3] - 8 z_[3,1] >= 0
@@ -254,9 +298,11 @@ Subject To
  z_[3]: - z_[2,3] + z_[3,2] = 0
  z_[3]: - runway_[%s] - runway_[%s] + z_[3,2] >= -1
  z_[3]: - runway_[%s] - runway_[%s] + z_[3,2] >= -1
+ z_[3]: - runway_[%s] - runway_[%s] + z_[3,2] >= -1
  x_set_U[2]: x_[2] + 460 delta_[2,3] - x_[3] - 8 z_[3,2] >= 0
  delta[3,4]: delta_[3,4] + delta_[4,3] = 1
  z_[3]: z_[3,4] - z_[4,3] = 0
+ z_[3]: - runway_[%s] + z_[3,4] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,4] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,4] - runway_[%s] >= -1
  x_set_U[4]: - x_[3] - 8 z_[3,4] + x_[4] + 451 delta_[4,3] >= 0
@@ -264,9 +310,11 @@ Subject To
  z_[3]: z_[3,5] - z_[5,3] = 0
  z_[3]: - runway_[%s] + z_[3,5] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,5] - runway_[%s] >= -1
+ z_[3]: - runway_[%s] + z_[3,5] - runway_[%s] >= -1
  x_set_U[5]: - x_[3] - 8 z_[3,5] + x_[5] + 451 delta_[5,3] >= 0
  delta[3,6]: delta_[3,6] + delta_[6,3] = 1
  z_[3]: z_[3,6] - z_[6,3] = 0
+ z_[3]: - runway_[%s] + z_[3,6] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,6] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,6] - runway_[%s] >= -1
  x_set_U[6]: - x_[3] - 8 z_[3,6] + x_[6] + 445 delta_[6,3] >= 0
@@ -274,9 +322,11 @@ Subject To
  z_[3]: z_[3,7] - z_[7,3] = 0
  z_[3]: - runway_[%s] + z_[3,7] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,7] - runway_[%s] >= -1
+ z_[3]: - runway_[%s] + z_[3,7] - runway_[%s] >= -1
  x_set_U[7]: - x_[3] - 8 z_[3,7] + x_[7] + 426 delta_[7,3] >= 0
  delta[3,8]: delta_[3,8] + delta_[8,3] = 1
  z_[3]: z_[3,8] - z_[8,3] = 0
+ z_[3]: - runway_[%s] + z_[3,8] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,8] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,8] - runway_[%s] >= -1
  x_set_U[8]: - x_[3] - 15 z_[3,8] + x_[8] + 438 delta_[8,3] >= 0
@@ -284,9 +334,11 @@ Subject To
  z_[3]: z_[3,9] - z_[9,3] = 0
  z_[3]: - runway_[%s] + z_[3,9] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,9] - runway_[%s] >= -1
+ z_[3]: - runway_[%s] + z_[3,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[3] - 8 z_[3,9] + x_[9] + 408 delta_[9,3] >= 0
  delta[3,10]: delta_[3,10] + delta_[10,3] = 1
  z_[3]: z_[3,10] - z_[10,3] = 0
+ z_[3]: - runway_[%s] + z_[3,10] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,10] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[3] - 8 z_[3,10] + x_[10] + 400 delta_[10,3] >= 0
@@ -294,9 +346,11 @@ Subject To
  z_[3]: z_[3,11] - z_[11,3] = 0
  z_[3]: - runway_[%s] + z_[3,11] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,11] - runway_[%s] >= -1
+ z_[3]: - runway_[%s] + z_[3,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[3] - 15 z_[3,11] + x_[11] + 377 delta_[11,3] >= 0
  delta[3,12]: delta_[3,12] + delta_[12,3] = 1
  z_[3]: z_[3,12] - z_[12,3] = 0
+ z_[3]: - runway_[%s] + z_[3,12] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,12] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[3] - 15 z_[3,12] + x_[12] + 316 delta_[12,3] >= 0
@@ -304,13 +358,15 @@ Subject To
  z_[3]: z_[3,13] - z_[13,3] = 0
  z_[3]: - runway_[%s] + z_[3,13] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,13] - runway_[%s] >= -1
+ z_[3]: - runway_[%s] + z_[3,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[3] - 15 z_[3,13] + x_[13] + 301 delta_[13,3] >= 0
  delta[3,14]: delta_[3,14] + delta_[14,3] = 1
  z_[3]: z_[3,14] - z_[14,3] = 0
  z_[3]: - runway_[%s] + z_[3,14] - runway_[%s] >= -1
  z_[3]: - runway_[%s] + z_[3,14] - runway_[%s] >= -1
+ z_[3]: - runway_[%s] + z_[3,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[3] - 15 z_[3,14] + x_[14] + 291 delta_[14,3] >= 0
- runway_[4]: runway_[%s] + runway_[%s] = 1
+ runway_[4]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[4]: alpha_[4] + x_[4] >= 120
  Beta[4]: beta_[4] - x_[4] >= -120
  x[4]: alpha_[4] - beta_[4] + x_[4] = 120
@@ -318,9 +374,11 @@ Subject To
  z_[4]: - z_[0,4] + z_[4,0] = 0
  z_[4]: - runway_[%s] - runway_[%s] + z_[4,0] >= -1
  z_[4]: - runway_[%s] - runway_[%s] + z_[4,0] >= -1
+ z_[4]: - runway_[%s] - runway_[%s] + z_[4,0] >= -1
  x_set_U[0]: x_[0] + 468 delta_[0,4] - x_[4] - 8 z_[4,0] >= 0
  delta[4,1]: delta_[1,4] + delta_[4,1] = 1
  z_[4]: - z_[1,4] + z_[4,1] = 0
+ z_[4]: - runway_[%s] - runway_[%s] + z_[4,1] >= -1
  z_[4]: - runway_[%s] - runway_[%s] + z_[4,1] >= -1
  z_[4]: - runway_[%s] - runway_[%s] + z_[4,1] >= -1
  x_set_U[1]: x_[1] + 463 delta_[1,4] - x_[4] - 8 z_[4,1] >= 0
@@ -328,9 +386,11 @@ Subject To
  z_[4]: - z_[2,4] + z_[4,2] = 0
  z_[4]: - runway_[%s] - runway_[%s] + z_[4,2] >= -1
  z_[4]: - runway_[%s] - runway_[%s] + z_[4,2] >= -1
+ z_[4]: - runway_[%s] - runway_[%s] + z_[4,2] >= -1
  x_set_U[2]: x_[2] + 452 delta_[2,4] - x_[4] - 8 z_[4,2] >= 0
  delta[4,3]: delta_[3,4] + delta_[4,3] = 1
  z_[4]: - z_[3,4] + z_[4,3] = 0
+ z_[4]: - runway_[%s] - runway_[%s] + z_[4,3] >= -1
  z_[4]: - runway_[%s] - runway_[%s] + z_[4,3] >= -1
  z_[4]: - runway_[%s] - runway_[%s] + z_[4,3] >= -1
  x_set_U[3]: x_[3] + 445 delta_[3,4] - x_[4] - 8 z_[4,3] >= 0
@@ -338,9 +398,11 @@ Subject To
  z_[4]: z_[4,5] - z_[5,4] = 0
  z_[4]: - runway_[%s] + z_[4,5] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,5] - runway_[%s] >= -1
+ z_[4]: - runway_[%s] + z_[4,5] - runway_[%s] >= -1
  x_set_U[5]: - x_[4] - 8 z_[4,5] + x_[5] + 443 delta_[5,4] >= 0
  delta[4,6]: delta_[4,6] + delta_[6,4] = 1
  z_[4]: z_[4,6] - z_[6,4] = 0
+ z_[4]: - runway_[%s] + z_[4,6] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,6] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,6] - runway_[%s] >= -1
  x_set_U[6]: - x_[4] - 8 z_[4,6] + x_[6] + 437 delta_[6,4] >= 0
@@ -348,9 +410,11 @@ Subject To
  z_[4]: z_[4,7] - z_[7,4] = 0
  z_[4]: - runway_[%s] + z_[4,7] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,7] - runway_[%s] >= -1
+ z_[4]: - runway_[%s] + z_[4,7] - runway_[%s] >= -1
  x_set_U[7]: - x_[4] - 8 z_[4,7] + x_[7] + 418 delta_[7,4] >= 0
  delta[4,8]: delta_[4,8] + delta_[8,4] = 1
  z_[4]: z_[4,8] - z_[8,4] = 0
+ z_[4]: - runway_[%s] + z_[4,8] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,8] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,8] - runway_[%s] >= -1
  x_set_U[8]: - x_[4] - 15 z_[4,8] + x_[8] + 430 delta_[8,4] >= 0
@@ -358,9 +422,11 @@ Subject To
  z_[4]: z_[4,9] - z_[9,4] = 0
  z_[4]: - runway_[%s] + z_[4,9] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,9] - runway_[%s] >= -1
+ z_[4]: - runway_[%s] + z_[4,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[4] - 8 z_[4,9] + x_[9] + 400 delta_[9,4] >= 0
  delta[4,10]: delta_[4,10] + delta_[10,4] = 1
  z_[4]: z_[4,10] - z_[10,4] = 0
+ z_[4]: - runway_[%s] + z_[4,10] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,10] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[4] - 8 z_[4,10] + x_[10] + 392 delta_[10,4] >= 0
@@ -368,9 +434,11 @@ Subject To
  z_[4]: z_[4,11] - z_[11,4] = 0
  z_[4]: - runway_[%s] + z_[4,11] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,11] - runway_[%s] >= -1
+ z_[4]: - runway_[%s] + z_[4,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[4] - 15 z_[4,11] + x_[11] + 369 delta_[11,4] >= 0
  delta[4,12]: delta_[4,12] + delta_[12,4] = 1
  z_[4]: z_[4,12] - z_[12,4] = 0
+ z_[4]: - runway_[%s] + z_[4,12] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,12] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[4] - 15 z_[4,12] + x_[12] + 308 delta_[12,4] >= 0
@@ -378,13 +446,15 @@ Subject To
  z_[4]: z_[4,13] - z_[13,4] = 0
  z_[4]: - runway_[%s] + z_[4,13] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,13] - runway_[%s] >= -1
+ z_[4]: - runway_[%s] + z_[4,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[4] - 15 z_[4,13] + x_[13] + 293 delta_[13,4] >= 0
  delta[4,14]: delta_[4,14] + delta_[14,4] = 1
  z_[4]: z_[4,14] - z_[14,4] = 0
  z_[4]: - runway_[%s] + z_[4,14] - runway_[%s] >= -1
  z_[4]: - runway_[%s] + z_[4,14] - runway_[%s] >= -1
+ z_[4]: - runway_[%s] + z_[4,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[4] - 15 z_[4,14] + x_[14] + 283 delta_[14,4] >= 0
- runway_[5]: runway_[%s] + runway_[%s] = 1
+ runway_[5]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[5]: alpha_[5] + x_[5] >= 121
  Beta[5]: beta_[5] - x_[5] >= -121
  x[5]: alpha_[5] - beta_[5] + x_[5] = 121
@@ -392,9 +462,11 @@ Subject To
  z_[5]: - z_[0,5] + z_[5,0] = 0
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,0] >= -1
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,0] >= -1
+ z_[5]: - runway_[%s] - runway_[%s] + z_[5,0] >= -1
  x_set_U[0]: x_[0] + 474 delta_[0,5] - x_[5] - 8 z_[5,0] >= 0
  delta[5,1]: delta_[1,5] + delta_[5,1] = 1
  z_[5]: - z_[1,5] + z_[5,1] = 0
+ z_[5]: - runway_[%s] - runway_[%s] + z_[5,1] >= -1
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,1] >= -1
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,1] >= -1
  x_set_U[1]: x_[1] + 469 delta_[1,5] - x_[5] - 8 z_[5,1] >= 0
@@ -402,9 +474,11 @@ Subject To
  z_[5]: - z_[2,5] + z_[5,2] = 0
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,2] >= -1
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,2] >= -1
+ z_[5]: - runway_[%s] - runway_[%s] + z_[5,2] >= -1
  x_set_U[2]: x_[2] + 458 delta_[2,5] - x_[5] - 8 z_[5,2] >= 0
  delta[5,3]: delta_[3,5] + delta_[5,3] = 1
  z_[5]: - z_[3,5] + z_[5,3] = 0
+ z_[5]: - runway_[%s] - runway_[%s] + z_[5,3] >= -1
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,3] >= -1
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,3] >= -1
  x_set_U[3]: x_[3] + 451 delta_[3,5] - x_[5] - 8 z_[5,3] >= 0
@@ -412,9 +486,11 @@ Subject To
  z_[5]: - z_[4,5] + z_[5,4] = 0
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,4] >= -1
  z_[5]: - runway_[%s] - runway_[%s] + z_[5,4] >= -1
+ z_[5]: - runway_[%s] - runway_[%s] + z_[5,4] >= -1
  x_set_U[4]: x_[4] + 449 delta_[4,5] - x_[5] - 8 z_[5,4] >= 0
  delta[5,6]: delta_[5,6] + delta_[6,5] = 1
  z_[5]: z_[5,6] - z_[6,5] = 0
+ z_[5]: - runway_[%s] + z_[5,6] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,6] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,6] - runway_[%s] >= -1
  x_set_U[6]: - x_[5] - 8 z_[5,6] + x_[6] + 443 delta_[6,5] >= 0
@@ -422,9 +498,11 @@ Subject To
  z_[5]: z_[5,7] - z_[7,5] = 0
  z_[5]: - runway_[%s] + z_[5,7] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,7] - runway_[%s] >= -1
+ z_[5]: - runway_[%s] + z_[5,7] - runway_[%s] >= -1
  x_set_U[7]: - x_[5] - 8 z_[5,7] + x_[7] + 424 delta_[7,5] >= 0
  delta[5,8]: delta_[5,8] + delta_[8,5] = 1
  z_[5]: z_[5,8] - z_[8,5] = 0
+ z_[5]: - runway_[%s] + z_[5,8] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,8] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,8] - runway_[%s] >= -1
  x_set_U[8]: - x_[5] - 15 z_[5,8] + x_[8] + 436 delta_[8,5] >= 0
@@ -432,9 +510,11 @@ Subject To
  z_[5]: z_[5,9] - z_[9,5] = 0
  z_[5]: - runway_[%s] + z_[5,9] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,9] - runway_[%s] >= -1
+ z_[5]: - runway_[%s] + z_[5,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[5] - 8 z_[5,9] + x_[9] + 406 delta_[9,5] >= 0
  delta[5,10]: delta_[5,10] + delta_[10,5] = 1
  z_[5]: z_[5,10] - z_[10,5] = 0
+ z_[5]: - runway_[%s] + z_[5,10] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,10] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[5] - 8 z_[5,10] + x_[10] + 398 delta_[10,5] >= 0
@@ -442,9 +522,11 @@ Subject To
  z_[5]: z_[5,11] - z_[11,5] = 0
  z_[5]: - runway_[%s] + z_[5,11] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,11] - runway_[%s] >= -1
+ z_[5]: - runway_[%s] + z_[5,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[5] - 15 z_[5,11] + x_[11] + 375 delta_[11,5] >= 0
  delta[5,12]: delta_[5,12] + delta_[12,5] = 1
  z_[5]: z_[5,12] - z_[12,5] = 0
+ z_[5]: - runway_[%s] + z_[5,12] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,12] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[5] - 15 z_[5,12] + x_[12] + 314 delta_[12,5] >= 0
@@ -452,13 +534,15 @@ Subject To
  z_[5]: z_[5,13] - z_[13,5] = 0
  z_[5]: - runway_[%s] + z_[5,13] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,13] - runway_[%s] >= -1
+ z_[5]: - runway_[%s] + z_[5,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[5] - 15 z_[5,13] + x_[13] + 299 delta_[13,5] >= 0
  delta[5,14]: delta_[5,14] + delta_[14,5] = 1
  z_[5]: z_[5,14] - z_[14,5] = 0
  z_[5]: - runway_[%s] + z_[5,14] - runway_[%s] >= -1
  z_[5]: - runway_[%s] + z_[5,14] - runway_[%s] >= -1
+ z_[5]: - runway_[%s] + z_[5,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[5] - 15 z_[5,14] + x_[14] + 289 delta_[14,5] >= 0
- runway_[6]: runway_[%s] + runway_[%s] = 1
+ runway_[6]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[6]: alpha_[6] + x_[6] >= 128
  Beta[6]: beta_[6] - x_[6] >= -128
  x[6]: alpha_[6] - beta_[6] + x_[6] = 128
@@ -466,9 +550,11 @@ Subject To
  z_[6]: - z_[0,6] + z_[6,0] = 0
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,0] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,0] >= -1
+ z_[6]: - runway_[%s] - runway_[%s] + z_[6,0] >= -1
  x_set_U[0]: x_[0] + 481 delta_[0,6] - x_[6] - 8 z_[6,0] >= 0
  delta[6,1]: delta_[1,6] + delta_[6,1] = 1
  z_[6]: - z_[1,6] + z_[6,1] = 0
+ z_[6]: - runway_[%s] - runway_[%s] + z_[6,1] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,1] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,1] >= -1
  x_set_U[1]: x_[1] + 476 delta_[1,6] - x_[6] - 8 z_[6,1] >= 0
@@ -476,9 +562,11 @@ Subject To
  z_[6]: - z_[2,6] + z_[6,2] = 0
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,2] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,2] >= -1
+ z_[6]: - runway_[%s] - runway_[%s] + z_[6,2] >= -1
  x_set_U[2]: x_[2] + 465 delta_[2,6] - x_[6] - 8 z_[6,2] >= 0
  delta[6,3]: delta_[3,6] + delta_[6,3] = 1
  z_[6]: - z_[3,6] + z_[6,3] = 0
+ z_[6]: - runway_[%s] - runway_[%s] + z_[6,3] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,3] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,3] >= -1
  x_set_U[3]: x_[3] + 458 delta_[3,6] - x_[6] - 8 z_[6,3] >= 0
@@ -486,9 +574,11 @@ Subject To
  z_[6]: - z_[4,6] + z_[6,4] = 0
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,4] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,4] >= -1
+ z_[6]: - runway_[%s] - runway_[%s] + z_[6,4] >= -1
  x_set_U[4]: x_[4] + 456 delta_[4,6] - x_[6] - 8 z_[6,4] >= 0
  delta[6,5]: delta_[5,6] + delta_[6,5] = 1
  z_[6]: - z_[5,6] + z_[6,5] = 0
+ z_[6]: - runway_[%s] - runway_[%s] + z_[6,5] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,5] >= -1
  z_[6]: - runway_[%s] - runway_[%s] + z_[6,5] >= -1
  x_set_U[5]: x_[5] + 456 delta_[5,6] - x_[6] - 8 z_[6,5] >= 0
@@ -496,9 +586,11 @@ Subject To
  z_[6]: z_[6,7] - z_[7,6] = 0
  z_[6]: - runway_[%s] + z_[6,7] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,7] - runway_[%s] >= -1
+ z_[6]: - runway_[%s] + z_[6,7] - runway_[%s] >= -1
  x_set_U[7]: - x_[6] - 8 z_[6,7] + x_[7] + 431 delta_[7,6] >= 0
  delta[6,8]: delta_[6,8] + delta_[8,6] = 1
  z_[6]: z_[6,8] - z_[8,6] = 0
+ z_[6]: - runway_[%s] + z_[6,8] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,8] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,8] - runway_[%s] >= -1
  x_set_U[8]: - x_[6] - 15 z_[6,8] + x_[8] + 443 delta_[8,6] >= 0
@@ -506,9 +598,11 @@ Subject To
  z_[6]: z_[6,9] - z_[9,6] = 0
  z_[6]: - runway_[%s] + z_[6,9] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,9] - runway_[%s] >= -1
+ z_[6]: - runway_[%s] + z_[6,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[6] - 8 z_[6,9] + x_[9] + 413 delta_[9,6] >= 0
  delta[6,10]: delta_[6,10] + delta_[10,6] = 1
  z_[6]: z_[6,10] - z_[10,6] = 0
+ z_[6]: - runway_[%s] + z_[6,10] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,10] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[6] - 8 z_[6,10] + x_[10] + 405 delta_[10,6] >= 0
@@ -516,9 +610,11 @@ Subject To
  z_[6]: z_[6,11] - z_[11,6] = 0
  z_[6]: - runway_[%s] + z_[6,11] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,11] - runway_[%s] >= -1
+ z_[6]: - runway_[%s] + z_[6,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[6] - 15 z_[6,11] + x_[11] + 382 delta_[11,6] >= 0
  delta[6,12]: delta_[6,12] + delta_[12,6] = 1
  z_[6]: z_[6,12] - z_[12,6] = 0
+ z_[6]: - runway_[%s] + z_[6,12] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,12] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[6] - 15 z_[6,12] + x_[12] + 321 delta_[12,6] >= 0
@@ -526,13 +622,15 @@ Subject To
  z_[6]: z_[6,13] - z_[13,6] = 0
  z_[6]: - runway_[%s] + z_[6,13] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,13] - runway_[%s] >= -1
+ z_[6]: - runway_[%s] + z_[6,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[6] - 15 z_[6,13] + x_[13] + 306 delta_[13,6] >= 0
  delta[6,14]: delta_[6,14] + delta_[14,6] = 1
  z_[6]: z_[6,14] - z_[14,6] = 0
  z_[6]: - runway_[%s] + z_[6,14] - runway_[%s] >= -1
  z_[6]: - runway_[%s] + z_[6,14] - runway_[%s] >= -1
+ z_[6]: - runway_[%s] + z_[6,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[6] - 15 z_[6,14] + x_[14] + 296 delta_[14,6] >= 0
- runway_[7]: runway_[%s] + runway_[%s] = 1
+ runway_[7]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[7]: alpha_[7] + x_[7] >= 151
  Beta[7]: beta_[7] - x_[7] >= -151
  x[7]: alpha_[7] - beta_[7] + x_[7] = 151
@@ -540,9 +638,11 @@ Subject To
  z_[7]: - z_[0,7] + z_[7,0] = 0
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,0] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,0] >= -1
+ z_[7]: - runway_[%s] - runway_[%s] + z_[7,0] >= -1
  x_set_U[0]: x_[0] + 534 delta_[0,7] - x_[7] - 8 z_[7,0] >= 0
  delta[7,1]: delta_[1,7] + delta_[7,1] = 1
  z_[7]: - z_[1,7] + z_[7,1] = 0
+ z_[7]: - runway_[%s] - runway_[%s] + z_[7,1] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,1] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,1] >= -1
  x_set_U[1]: x_[1] + 529 delta_[1,7] - x_[7] - 8 z_[7,1] >= 0
@@ -550,9 +650,11 @@ Subject To
  z_[7]: - z_[2,7] + z_[7,2] = 0
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,2] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,2] >= -1
+ z_[7]: - runway_[%s] - runway_[%s] + z_[7,2] >= -1
  x_set_U[2]: x_[2] + 518 delta_[2,7] - x_[7] - 8 z_[7,2] >= 0
  delta[7,3]: delta_[3,7] + delta_[7,3] = 1
  z_[7]: - z_[3,7] + z_[7,3] = 0
+ z_[7]: - runway_[%s] - runway_[%s] + z_[7,3] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,3] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,3] >= -1
  x_set_U[3]: x_[3] + 511 delta_[3,7] - x_[7] - 8 z_[7,3] >= 0
@@ -560,9 +662,11 @@ Subject To
  z_[7]: - z_[4,7] + z_[7,4] = 0
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,4] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,4] >= -1
+ z_[7]: - runway_[%s] - runway_[%s] + z_[7,4] >= -1
  x_set_U[4]: x_[4] + 509 delta_[4,7] - x_[7] - 8 z_[7,4] >= 0
  delta[7,5]: delta_[5,7] + delta_[7,5] = 1
  z_[7]: - z_[5,7] + z_[7,5] = 0
+ z_[7]: - runway_[%s] - runway_[%s] + z_[7,5] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,5] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,5] >= -1
  x_set_U[5]: x_[5] + 509 delta_[5,7] - x_[7] - 8 z_[7,5] >= 0
@@ -570,9 +674,11 @@ Subject To
  z_[7]: - z_[6,7] + z_[7,6] = 0
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,6] >= -1
  z_[7]: - runway_[%s] - runway_[%s] + z_[7,6] >= -1
+ z_[7]: - runway_[%s] - runway_[%s] + z_[7,6] >= -1
  x_set_U[6]: x_[6] + 503 delta_[6,7] - x_[7] - 8 z_[7,6] >= 0
  delta[7,8]: delta_[7,8] + delta_[8,7] = 1
  z_[7]: z_[7,8] - z_[8,7] = 0
+ z_[7]: - runway_[%s] + z_[7,8] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,8] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,8] - runway_[%s] >= -1
  x_set_U[8]: - x_[7] - 15 z_[7,8] + x_[8] + 496 delta_[8,7] >= 0
@@ -580,9 +686,11 @@ Subject To
  z_[7]: z_[7,9] - z_[9,7] = 0
  z_[7]: - runway_[%s] + z_[7,9] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,9] - runway_[%s] >= -1
+ z_[7]: - runway_[%s] + z_[7,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[7] - 8 z_[7,9] + x_[9] + 466 delta_[9,7] >= 0
  delta[7,10]: delta_[7,10] + delta_[10,7] = 1
  z_[7]: z_[7,10] - z_[10,7] = 0
+ z_[7]: - runway_[%s] + z_[7,10] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,10] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[7] - 8 z_[7,10] + x_[10] + 458 delta_[10,7] >= 0
@@ -590,9 +698,11 @@ Subject To
  z_[7]: z_[7,11] - z_[11,7] = 0
  z_[7]: - runway_[%s] + z_[7,11] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,11] - runway_[%s] >= -1
+ z_[7]: - runway_[%s] + z_[7,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[7] - 15 z_[7,11] + x_[11] + 435 delta_[11,7] >= 0
  delta[7,12]: delta_[7,12] + delta_[12,7] = 1
  z_[7]: z_[7,12] - z_[12,7] = 0
+ z_[7]: - runway_[%s] + z_[7,12] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,12] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[7] - 15 z_[7,12] + x_[12] + 374 delta_[12,7] >= 0
@@ -600,13 +710,15 @@ Subject To
  z_[7]: z_[7,13] - z_[13,7] = 0
  z_[7]: - runway_[%s] + z_[7,13] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,13] - runway_[%s] >= -1
+ z_[7]: - runway_[%s] + z_[7,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[7] - 15 z_[7,13] + x_[13] + 359 delta_[13,7] >= 0
  delta[7,14]: delta_[7,14] + delta_[14,7] = 1
  z_[7]: z_[7,14] - z_[14,7] = 0
  z_[7]: - runway_[%s] + z_[7,14] - runway_[%s] >= -1
  z_[7]: - runway_[%s] + z_[7,14] - runway_[%s] >= -1
+ z_[7]: - runway_[%s] + z_[7,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[7] - 15 z_[7,14] + x_[14] + 349 delta_[14,7] >= 0
- runway_[8]: runway_[%s] + runway_[%s] = 1
+ runway_[8]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[8]: alpha_[8] + x_[8] >= 155
  Beta[8]: beta_[8] - x_[8] >= -155
  x[8]: alpha_[8] - beta_[8] + x_[8] = 155
@@ -614,9 +726,11 @@ Subject To
  z_[8]: - z_[0,8] + z_[8,0] = 0
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,0] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,0] >= -1
+ z_[8]: - runway_[%s] - runway_[%s] + z_[8,0] >= -1
  x_set_U[0]: x_[0] + 490 delta_[0,8] - x_[8] - 15 z_[8,0] >= 0
  delta[8,1]: delta_[1,8] + delta_[8,1] = 1
  z_[8]: - z_[1,8] + z_[8,1] = 0
+ z_[8]: - runway_[%s] - runway_[%s] + z_[8,1] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,1] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,1] >= -1
  x_set_U[1]: x_[1] + 485 delta_[1,8] - x_[8] - 15 z_[8,1] >= 0
@@ -624,9 +738,11 @@ Subject To
  z_[8]: - z_[2,8] + z_[8,2] = 0
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,2] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,2] >= -1
+ z_[8]: - runway_[%s] - runway_[%s] + z_[8,2] >= -1
  x_set_U[2]: x_[2] + 474 delta_[2,8] - x_[8] - 15 z_[8,2] >= 0
  delta[8,3]: delta_[3,8] + delta_[8,3] = 1
  z_[8]: - z_[3,8] + z_[8,3] = 0
+ z_[8]: - runway_[%s] - runway_[%s] + z_[8,3] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,3] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,3] >= -1
  x_set_U[3]: x_[3] + 467 delta_[3,8] - x_[8] - 15 z_[8,3] >= 0
@@ -634,9 +750,11 @@ Subject To
  z_[8]: - z_[4,8] + z_[8,4] = 0
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,4] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,4] >= -1
+ z_[8]: - runway_[%s] - runway_[%s] + z_[8,4] >= -1
  x_set_U[4]: x_[4] + 465 delta_[4,8] - x_[8] - 15 z_[8,4] >= 0
  delta[8,5]: delta_[5,8] + delta_[8,5] = 1
  z_[8]: - z_[5,8] + z_[8,5] = 0
+ z_[8]: - runway_[%s] - runway_[%s] + z_[8,5] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,5] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,5] >= -1
  x_set_U[5]: x_[5] + 465 delta_[5,8] - x_[8] - 15 z_[8,5] >= 0
@@ -644,9 +762,11 @@ Subject To
  z_[8]: - z_[6,8] + z_[8,6] = 0
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,6] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,6] >= -1
+ z_[8]: - runway_[%s] - runway_[%s] + z_[8,6] >= -1
  x_set_U[6]: x_[6] + 459 delta_[6,8] - x_[8] - 15 z_[8,6] >= 0
  delta[8,7]: delta_[7,8] + delta_[8,7] = 1
  z_[8]: - z_[7,8] + z_[8,7] = 0
+ z_[8]: - runway_[%s] - runway_[%s] + z_[8,7] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,7] >= -1
  z_[8]: - runway_[%s] - runway_[%s] + z_[8,7] >= -1
  x_set_U[7]: x_[7] + 440 delta_[7,8] - x_[8] - 15 z_[8,7] >= 0
@@ -654,9 +774,11 @@ Subject To
  z_[8]: z_[8,9] - z_[9,8] = 0
  z_[8]: - runway_[%s] + z_[8,9] - runway_[%s] >= -1
  z_[8]: - runway_[%s] + z_[8,9] - runway_[%s] >= -1
+ z_[8]: - runway_[%s] + z_[8,9] - runway_[%s] >= -1
  x_set_U[9]: - x_[8] - 15 z_[8,9] + x_[9] + 422 delta_[9,8] >= 0
  delta[8,10]: delta_[8,10] + delta_[10,8] = 1
  z_[8]: z_[8,10] - z_[10,8] = 0
+ z_[8]: - runway_[%s] + z_[8,10] - runway_[%s] >= -1
  z_[8]: - runway_[%s] + z_[8,10] - runway_[%s] >= -1
  z_[8]: - runway_[%s] + z_[8,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[8] - 15 z_[8,10] + x_[10] + 414 delta_[10,8] >= 0
@@ -664,9 +786,11 @@ Subject To
  z_[8]: z_[8,11] - z_[11,8] = 0
  z_[8]: - runway_[%s] + z_[8,11] - runway_[%s] >= -1
  z_[8]: - runway_[%s] + z_[8,11] - runway_[%s] >= -1
+ z_[8]: - runway_[%s] + z_[8,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[8] - 3 z_[8,11] + x_[11] + 372 delta_[11,8] >= 0
  delta[8,12]: delta_[8,12] + delta_[12,8] = 1
  z_[8]: z_[8,12] - z_[12,8] = 0
+ z_[8]: - runway_[%s] + z_[8,12] - runway_[%s] >= -1
  z_[8]: - runway_[%s] + z_[8,12] - runway_[%s] >= -1
  z_[8]: - runway_[%s] + z_[8,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[8] - 3 z_[8,12] + x_[12] + 311 delta_[12,8] >= 0
@@ -674,13 +798,15 @@ Subject To
  z_[8]: z_[8,13] - z_[13,8] = 0
  z_[8]: - runway_[%s] + z_[8,13] - runway_[%s] >= -1
  z_[8]: - runway_[%s] + z_[8,13] - runway_[%s] >= -1
+ z_[8]: - runway_[%s] + z_[8,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[8] - 3 z_[8,13] + x_[13] + 296 delta_[13,8] >= 0
  delta[8,14]: delta_[8,14] + delta_[14,8] = 1
  z_[8]: z_[8,14] - z_[14,8] = 0
  z_[8]: - runway_[%s] + z_[8,14] - runway_[%s] >= -1
  z_[8]: - runway_[%s] + z_[8,14] - runway_[%s] >= -1
+ z_[8]: - runway_[%s] + z_[8,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[8] - 3 z_[8,14] + x_[14] + 286 delta_[14,8] >= 0
- runway_[9]: runway_[%s] + runway_[%s] = 1
+ runway_[9]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[9]: alpha_[9] + x_[9] >= 171
  Beta[9]: beta_[9] - x_[9] >= -171
  x[9]: alpha_[9] - beta_[9] + x_[9] = 171
@@ -688,9 +814,11 @@ Subject To
  z_[9]: - z_[0,9] + z_[9,0] = 0
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,0] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,0] >= -1
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,0] >= -1
  x_set_U[0]: x_[0] + 561 delta_[0,9] - x_[9] - 8 z_[9,0] >= 0
  delta[9,1]: delta_[1,9] + delta_[9,1] = 1
  z_[9]: - z_[1,9] + z_[9,1] = 0
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,1] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,1] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,1] >= -1
  x_set_U[1]: x_[1] + 556 delta_[1,9] - x_[9] - 8 z_[9,1] >= 0
@@ -698,9 +826,11 @@ Subject To
  z_[9]: - z_[2,9] + z_[9,2] = 0
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,2] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,2] >= -1
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,2] >= -1
  x_set_U[2]: x_[2] + 545 delta_[2,9] - x_[9] - 8 z_[9,2] >= 0
  delta[9,3]: delta_[3,9] + delta_[9,3] = 1
  z_[9]: - z_[3,9] + z_[9,3] = 0
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,3] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,3] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,3] >= -1
  x_set_U[3]: x_[3] + 538 delta_[3,9] - x_[9] - 8 z_[9,3] >= 0
@@ -708,9 +838,11 @@ Subject To
  z_[9]: - z_[4,9] + z_[9,4] = 0
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,4] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,4] >= -1
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,4] >= -1
  x_set_U[4]: x_[4] + 536 delta_[4,9] - x_[9] - 8 z_[9,4] >= 0
  delta[9,5]: delta_[5,9] + delta_[9,5] = 1
  z_[9]: - z_[5,9] + z_[9,5] = 0
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,5] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,5] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,5] >= -1
  x_set_U[5]: x_[5] + 536 delta_[5,9] - x_[9] - 8 z_[9,5] >= 0
@@ -718,9 +850,11 @@ Subject To
  z_[9]: - z_[6,9] + z_[9,6] = 0
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,6] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,6] >= -1
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,6] >= -1
  x_set_U[6]: x_[6] + 530 delta_[6,9] - x_[9] - 8 z_[9,6] >= 0
  delta[9,7]: delta_[7,9] + delta_[9,7] = 1
  z_[9]: - z_[7,9] + z_[9,7] = 0
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,7] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,7] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,7] >= -1
  x_set_U[7]: x_[7] + 511 delta_[7,9] - x_[9] - 8 z_[9,7] >= 0
@@ -728,9 +862,11 @@ Subject To
  z_[9]: - z_[8,9] + z_[9,8] = 0
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,8] >= -1
  z_[9]: - runway_[%s] - runway_[%s] + z_[9,8] >= -1
+ z_[9]: - runway_[%s] - runway_[%s] + z_[9,8] >= -1
  x_set_U[8]: x_[8] + 523 delta_[8,9] - x_[9] - 15 z_[9,8] >= 0
  delta[9,10]: delta_[9,10] + delta_[10,9] = 1
  z_[9]: z_[9,10] - z_[10,9] = 0
+ z_[9]: - runway_[%s] + z_[9,10] - runway_[%s] >= -1
  z_[9]: - runway_[%s] + z_[9,10] - runway_[%s] >= -1
  z_[9]: - runway_[%s] + z_[9,10] - runway_[%s] >= -1
  x_set_U[10]: - x_[9] - 8 z_[9,10] + x_[10] + 485 delta_[10,9] >= 0
@@ -738,9 +874,11 @@ Subject To
  z_[9]: z_[9,11] - z_[11,9] = 0
  z_[9]: - runway_[%s] + z_[9,11] - runway_[%s] >= -1
  z_[9]: - runway_[%s] + z_[9,11] - runway_[%s] >= -1
+ z_[9]: - runway_[%s] + z_[9,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[9] - 15 z_[9,11] + x_[11] + 462 delta_[11,9] >= 0
  delta[9,12]: delta_[9,12] + delta_[12,9] = 1
  z_[9]: z_[9,12] - z_[12,9] = 0
+ z_[9]: - runway_[%s] + z_[9,12] - runway_[%s] >= -1
  z_[9]: - runway_[%s] + z_[9,12] - runway_[%s] >= -1
  z_[9]: - runway_[%s] + z_[9,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[9] - 15 z_[9,12] + x_[12] + 401 delta_[12,9] >= 0
@@ -748,13 +886,15 @@ Subject To
  z_[9]: z_[9,13] - z_[13,9] = 0
  z_[9]: - runway_[%s] + z_[9,13] - runway_[%s] >= -1
  z_[9]: - runway_[%s] + z_[9,13] - runway_[%s] >= -1
+ z_[9]: - runway_[%s] + z_[9,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[9] - 15 z_[9,13] + x_[13] + 386 delta_[13,9] >= 0
  delta[9,14]: delta_[9,14] + delta_[14,9] = 1
  z_[9]: z_[9,14] - z_[14,9] = 0
  z_[9]: - runway_[%s] + z_[9,14] - runway_[%s] >= -1
  z_[9]: - runway_[%s] + z_[9,14] - runway_[%s] >= -1
+ z_[9]: - runway_[%s] + z_[9,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[9] - 15 z_[9,14] + x_[14] + 376 delta_[14,9] >= 0
- runway_[10]: runway_[%s] + runway_[%s] = 1
+ runway_[10]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[10]: alpha_[10] + x_[10] >= 181
  Beta[10]: beta_[10] - x_[10] >= -181
  x[10]: alpha_[10] - beta_[10] + x_[10] = 181
@@ -762,9 +902,11 @@ Subject To
  z_[10]: - z_[0,10] + z_[10,0] = 0
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,0] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,0] >= -1
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,0] >= -1
  x_set_U[0]: x_[0] + 598 delta_[0,10] - x_[10] - 8 z_[10,0] >= 0
  delta[10,1]: delta_[1,10] + delta_[10,1] = 1
  z_[10]: - z_[1,10] + z_[10,1] = 0
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,1] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,1] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,1] >= -1
  x_set_U[1]: x_[1] + 593 delta_[1,10] - x_[10] - 8 z_[10,1] >= 0
@@ -772,9 +914,11 @@ Subject To
  z_[10]: - z_[2,10] + z_[10,2] = 0
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,2] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,2] >= -1
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,2] >= -1
  x_set_U[2]: x_[2] + 582 delta_[2,10] - x_[10] - 8 z_[10,2] >= 0
  delta[10,3]: delta_[3,10] + delta_[10,3] = 1
  z_[10]: - z_[3,10] + z_[10,3] = 0
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,3] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,3] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,3] >= -1
  x_set_U[3]: x_[3] + 575 delta_[3,10] - x_[10] - 8 z_[10,3] >= 0
@@ -782,9 +926,11 @@ Subject To
  z_[10]: - z_[4,10] + z_[10,4] = 0
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,4] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,4] >= -1
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,4] >= -1
  x_set_U[4]: x_[4] + 573 delta_[4,10] - x_[10] - 8 z_[10,4] >= 0
  delta[10,5]: delta_[5,10] + delta_[10,5] = 1
  z_[10]: - z_[5,10] + z_[10,5] = 0
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,5] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,5] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,5] >= -1
  x_set_U[5]: x_[5] + 573 delta_[5,10] - x_[10] - 8 z_[10,5] >= 0
@@ -792,9 +938,11 @@ Subject To
  z_[10]: - z_[6,10] + z_[10,6] = 0
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,6] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,6] >= -1
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,6] >= -1
  x_set_U[6]: x_[6] + 567 delta_[6,10] - x_[10] - 8 z_[10,6] >= 0
  delta[10,7]: delta_[7,10] + delta_[10,7] = 1
  z_[10]: - z_[7,10] + z_[10,7] = 0
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,7] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,7] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,7] >= -1
  x_set_U[7]: x_[7] + 548 delta_[7,10] - x_[10] - 8 z_[10,7] >= 0
@@ -802,9 +950,11 @@ Subject To
  z_[10]: - z_[8,10] + z_[10,8] = 0
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,8] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,8] >= -1
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,8] >= -1
  x_set_U[8]: x_[8] + 560 delta_[8,10] - x_[10] - 15 z_[10,8] >= 0
  delta[10,9]: delta_[9,10] + delta_[10,9] = 1
  z_[10]: - z_[9,10] + z_[10,9] = 0
+ z_[10]: - runway_[%s] - runway_[%s] + z_[10,9] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,9] >= -1
  z_[10]: - runway_[%s] - runway_[%s] + z_[10,9] >= -1
  x_set_U[9]: x_[9] + 530 delta_[9,10] - x_[10] - 8 z_[10,9] >= 0
@@ -812,9 +962,11 @@ Subject To
  z_[10]: z_[10,11] - z_[11,10] = 0
  z_[10]: - runway_[%s] + z_[10,11] - runway_[%s] >= -1
  z_[10]: - runway_[%s] + z_[10,11] - runway_[%s] >= -1
+ z_[10]: - runway_[%s] + z_[10,11] - runway_[%s] >= -1
  x_set_U[11]: - x_[10] - 15 z_[10,11] + x_[11] + 499 delta_[11,10] >= 0
  delta[10,12]: delta_[10,12] + delta_[12,10] = 1
  z_[10]: z_[10,12] - z_[12,10] = 0
+ z_[10]: - runway_[%s] + z_[10,12] - runway_[%s] >= -1
  z_[10]: - runway_[%s] + z_[10,12] - runway_[%s] >= -1
  z_[10]: - runway_[%s] + z_[10,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[10] - 15 z_[10,12] + x_[12] + 438 delta_[12,10] >= 0
@@ -822,13 +974,15 @@ Subject To
  z_[10]: z_[10,13] - z_[13,10] = 0
  z_[10]: - runway_[%s] + z_[10,13] - runway_[%s] >= -1
  z_[10]: - runway_[%s] + z_[10,13] - runway_[%s] >= -1
+ z_[10]: - runway_[%s] + z_[10,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[10] - 15 z_[10,13] + x_[13] + 423 delta_[13,10] >= 0
  delta[10,14]: delta_[10,14] + delta_[14,10] = 1
  z_[10]: z_[10,14] - z_[14,10] = 0
  z_[10]: - runway_[%s] + z_[10,14] - runway_[%s] >= -1
  z_[10]: - runway_[%s] + z_[10,14] - runway_[%s] >= -1
+ z_[10]: - runway_[%s] + z_[10,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[10] - 15 z_[10,14] + x_[14] + 413 delta_[14,10] >= 0
- runway_[11]: runway_[%s] + runway_[%s] = 1
+ runway_[11]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[11]: alpha_[11] + x_[11] >= 250
  Beta[11]: beta_[11] - x_[11] >= -250
  x[11]: alpha_[11] - beta_[11] + x_[11] = 250
@@ -836,9 +990,11 @@ Subject To
  z_[11]: - z_[0,11] + z_[11,0] = 0
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,0] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,0] >= -1
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,0] >= -1
  x_set_U[0]: x_[0] + 663 delta_[0,11] - x_[11] - 15 z_[11,0] >= 0
  delta[11,1]: delta_[1,11] + delta_[11,1] = 1
  z_[11]: - z_[1,11] + z_[11,1] = 0
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,1] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,1] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,1] >= -1
  x_set_U[1]: x_[1] + 658 delta_[1,11] - x_[11] - 15 z_[11,1] >= 0
@@ -846,9 +1002,11 @@ Subject To
  z_[11]: - z_[2,11] + z_[11,2] = 0
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,2] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,2] >= -1
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,2] >= -1
  x_set_U[2]: x_[2] + 647 delta_[2,11] - x_[11] - 15 z_[11,2] >= 0
  delta[11,3]: delta_[3,11] + delta_[11,3] = 1
  z_[11]: - z_[3,11] + z_[11,3] = 0
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,3] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,3] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,3] >= -1
  x_set_U[3]: x_[3] + 640 delta_[3,11] - x_[11] - 15 z_[11,3] >= 0
@@ -856,9 +1014,11 @@ Subject To
  z_[11]: - z_[4,11] + z_[11,4] = 0
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,4] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,4] >= -1
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,4] >= -1
  x_set_U[4]: x_[4] + 638 delta_[4,11] - x_[11] - 15 z_[11,4] >= 0
  delta[11,5]: delta_[5,11] + delta_[11,5] = 1
  z_[11]: - z_[5,11] + z_[11,5] = 0
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,5] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,5] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,5] >= -1
  x_set_U[5]: x_[5] + 638 delta_[5,11] - x_[11] - 15 z_[11,5] >= 0
@@ -866,9 +1026,11 @@ Subject To
  z_[11]: - z_[6,11] + z_[11,6] = 0
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,6] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,6] >= -1
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,6] >= -1
  x_set_U[6]: x_[6] + 632 delta_[6,11] - x_[11] - 15 z_[11,6] >= 0
  delta[11,7]: delta_[7,11] + delta_[11,7] = 1
  z_[11]: - z_[7,11] + z_[11,7] = 0
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,7] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,7] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,7] >= -1
  x_set_U[7]: x_[7] + 613 delta_[7,11] - x_[11] - 15 z_[11,7] >= 0
@@ -876,9 +1038,11 @@ Subject To
  z_[11]: - z_[8,11] + z_[11,8] = 0
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,8] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,8] >= -1
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,8] >= -1
  x_set_U[8]: x_[8] + 606 delta_[8,11] - x_[11] - 3 z_[11,8] >= 0
  delta[11,9]: delta_[9,11] + delta_[11,9] = 1
  z_[11]: - z_[9,11] + z_[11,9] = 0
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,9] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,9] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,9] >= -1
  x_set_U[9]: x_[9] + 595 delta_[9,11] - x_[11] - 15 z_[11,9] >= 0
@@ -886,9 +1050,11 @@ Subject To
  z_[11]: - z_[10,11] + z_[11,10] = 0
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,10] >= -1
  z_[11]: - runway_[%s] - runway_[%s] + z_[11,10] >= -1
+ z_[11]: - runway_[%s] - runway_[%s] + z_[11,10] >= -1
  x_set_U[10]: x_[10] + 587 delta_[10,11] - x_[11] - 15 z_[11,10] >= 0
  delta[11,12]: delta_[11,12] + delta_[12,11] = 1
  z_[11]: z_[11,12] - z_[12,11] = 0
+ z_[11]: - runway_[%s] + z_[11,12] - runway_[%s] >= -1
  z_[11]: - runway_[%s] + z_[11,12] - runway_[%s] >= -1
  z_[11]: - runway_[%s] + z_[11,12] - runway_[%s] >= -1
  x_set_U[12]: - x_[11] - 3 z_[11,12] + x_[12] + 484 delta_[12,11] >= 0
@@ -896,13 +1062,15 @@ Subject To
  z_[11]: z_[11,13] - z_[13,11] = 0
  z_[11]: - runway_[%s] + z_[11,13] - runway_[%s] >= -1
  z_[11]: - runway_[%s] + z_[11,13] - runway_[%s] >= -1
+ z_[11]: - runway_[%s] + z_[11,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[11] - 3 z_[11,13] + x_[13] + 469 delta_[13,11] >= 0
  delta[11,14]: delta_[11,14] + delta_[14,11] = 1
  z_[11]: z_[11,14] - z_[14,11] = 0
  z_[11]: - runway_[%s] + z_[11,14] - runway_[%s] >= -1
  z_[11]: - runway_[%s] + z_[11,14] - runway_[%s] >= -1
+ z_[11]: - runway_[%s] + z_[11,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[11] - 3 z_[11,14] + x_[14] + 459 delta_[14,11] >= 0
- runway_[12]: runway_[%s] + runway_[%s] = 1
+ runway_[12]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[12]: alpha_[12] + x_[12] >= 313
  Beta[12]: beta_[12] - x_[12] >= -313
  x[12]: alpha_[12] - beta_[12] + x_[12] = 313
@@ -910,9 +1078,11 @@ Subject To
  z_[12]: - z_[0,12] + z_[12,0] = 0
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,0] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,0] >= -1
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,0] >= -1
  x_set_U[0]: x_[0] + 709 delta_[0,12] - x_[12] - 15 z_[12,0] >= 0
  delta[12,1]: delta_[1,12] + delta_[12,1] = 1
  z_[12]: - z_[1,12] + z_[12,1] = 0
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,1] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,1] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,1] >= -1
  x_set_U[1]: x_[1] + 704 delta_[1,12] - x_[12] - 15 z_[12,1] >= 0
@@ -920,9 +1090,11 @@ Subject To
  z_[12]: - z_[2,12] + z_[12,2] = 0
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,2] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,2] >= -1
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,2] >= -1
  x_set_U[2]: x_[2] + 693 delta_[2,12] - x_[12] - 15 z_[12,2] >= 0
  delta[12,3]: delta_[3,12] + delta_[12,3] = 1
  z_[12]: - z_[3,12] + z_[12,3] = 0
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,3] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,3] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,3] >= -1
  x_set_U[3]: x_[3] + 686 delta_[3,12] - x_[12] - 15 z_[12,3] >= 0
@@ -930,9 +1102,11 @@ Subject To
  z_[12]: - z_[4,12] + z_[12,4] = 0
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,4] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,4] >= -1
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,4] >= -1
  x_set_U[4]: x_[4] + 684 delta_[4,12] - x_[12] - 15 z_[12,4] >= 0
  delta[12,5]: delta_[5,12] + delta_[12,5] = 1
  z_[12]: - z_[5,12] + z_[12,5] = 0
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,5] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,5] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,5] >= -1
  x_set_U[5]: x_[5] + 684 delta_[5,12] - x_[12] - 15 z_[12,5] >= 0
@@ -940,9 +1114,11 @@ Subject To
  z_[12]: - z_[6,12] + z_[12,6] = 0
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,6] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,6] >= -1
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,6] >= -1
  x_set_U[6]: x_[6] + 678 delta_[6,12] - x_[12] - 15 z_[12,6] >= 0
  delta[12,7]: delta_[7,12] + delta_[12,7] = 1
  z_[12]: - z_[7,12] + z_[12,7] = 0
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,7] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,7] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,7] >= -1
  x_set_U[7]: x_[7] + 659 delta_[7,12] - x_[12] - 15 z_[12,7] >= 0
@@ -950,9 +1126,11 @@ Subject To
  z_[12]: - z_[8,12] + z_[12,8] = 0
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,8] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,8] >= -1
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,8] >= -1
  x_set_U[8]: x_[8] + 652 delta_[8,12] - x_[12] - 3 z_[12,8] >= 0
  delta[12,9]: delta_[9,12] + delta_[12,9] = 1
  z_[12]: - z_[9,12] + z_[12,9] = 0
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,9] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,9] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,9] >= -1
  x_set_U[9]: x_[9] + 641 delta_[9,12] - x_[12] - 15 z_[12,9] >= 0
@@ -960,9 +1138,11 @@ Subject To
  z_[12]: - z_[10,12] + z_[12,10] = 0
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,10] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,10] >= -1
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,10] >= -1
  x_set_U[10]: x_[10] + 633 delta_[10,12] - x_[12] - 15 z_[12,10] >= 0
  delta[12,11]: delta_[11,12] + delta_[12,11] = 1
  z_[12]: - z_[11,12] + z_[12,11] = 0
+ z_[12]: - runway_[%s] - runway_[%s] + z_[12,11] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,11] >= -1
  z_[12]: - runway_[%s] - runway_[%s] + z_[12,11] >= -1
  x_set_U[11]: x_[11] + 591 delta_[11,12] - x_[12] - 3 z_[12,11] >= 0
@@ -970,13 +1150,15 @@ Subject To
  z_[12]: z_[12,13] - z_[13,12] = 0
  z_[12]: - runway_[%s] + z_[12,13] - runway_[%s] >= -1
  z_[12]: - runway_[%s] + z_[12,13] - runway_[%s] >= -1
+ z_[12]: - runway_[%s] + z_[12,13] - runway_[%s] >= -1
  x_set_U[13]: - x_[12] - 3 z_[12,13] + x_[13] + 515 delta_[13,12] >= 0
  delta[12,14]: delta_[12,14] + delta_[14,12] = 1
  z_[12]: z_[12,14] - z_[14,12] = 0
  z_[12]: - runway_[%s] + z_[12,14] - runway_[%s] >= -1
  z_[12]: - runway_[%s] + z_[12,14] - runway_[%s] >= -1
+ z_[12]: - runway_[%s] + z_[12,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[12] - 3 z_[12,14] + x_[14] + 505 delta_[14,12] >= 0
- runway_[13]: runway_[%s] + runway_[%s] = 1
+ runway_[13]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[13]: alpha_[13] + x_[13] >= 341
  Beta[13]: beta_[13] - x_[13] >= -341
  x[13]: alpha_[13] - beta_[13] + x_[13] = 341
@@ -984,9 +1166,11 @@ Subject To
  z_[13]: - z_[0,13] + z_[13,0] = 0
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,0] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,0] >= -1
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,0] >= -1
  x_set_U[0]: x_[0] + 768 delta_[0,13] - x_[13] - 15 z_[13,0] >= 0
  delta[13,1]: delta_[1,13] + delta_[13,1] = 1
  z_[13]: - z_[1,13] + z_[13,1] = 0
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,1] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,1] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,1] >= -1
  x_set_U[1]: x_[1] + 763 delta_[1,13] - x_[13] - 15 z_[13,1] >= 0
@@ -994,9 +1178,11 @@ Subject To
  z_[13]: - z_[2,13] + z_[13,2] = 0
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,2] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,2] >= -1
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,2] >= -1
  x_set_U[2]: x_[2] + 752 delta_[2,13] - x_[13] - 15 z_[13,2] >= 0
  delta[13,3]: delta_[3,13] + delta_[13,3] = 1
  z_[13]: - z_[3,13] + z_[13,3] = 0
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,3] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,3] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,3] >= -1
  x_set_U[3]: x_[3] + 745 delta_[3,13] - x_[13] - 15 z_[13,3] >= 0
@@ -1004,9 +1190,11 @@ Subject To
  z_[13]: - z_[4,13] + z_[13,4] = 0
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,4] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,4] >= -1
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,4] >= -1
  x_set_U[4]: x_[4] + 743 delta_[4,13] - x_[13] - 15 z_[13,4] >= 0
  delta[13,5]: delta_[5,13] + delta_[13,5] = 1
  z_[13]: - z_[5,13] + z_[13,5] = 0
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,5] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,5] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,5] >= -1
  x_set_U[5]: x_[5] + 743 delta_[5,13] - x_[13] - 15 z_[13,5] >= 0
@@ -1014,9 +1202,11 @@ Subject To
  z_[13]: - z_[6,13] + z_[13,6] = 0
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,6] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,6] >= -1
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,6] >= -1
  x_set_U[6]: x_[6] + 737 delta_[6,13] - x_[13] - 15 z_[13,6] >= 0
  delta[13,7]: delta_[7,13] + delta_[13,7] = 1
  z_[13]: - z_[7,13] + z_[13,7] = 0
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,7] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,7] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,7] >= -1
  x_set_U[7]: x_[7] + 718 delta_[7,13] - x_[13] - 15 z_[13,7] >= 0
@@ -1024,9 +1214,11 @@ Subject To
  z_[13]: - z_[8,13] + z_[13,8] = 0
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,8] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,8] >= -1
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,8] >= -1
  x_set_U[8]: x_[8] + 711 delta_[8,13] - x_[13] - 3 z_[13,8] >= 0
  delta[13,9]: delta_[9,13] + delta_[13,9] = 1
  z_[13]: - z_[9,13] + z_[13,9] = 0
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,9] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,9] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,9] >= -1
  x_set_U[9]: x_[9] + 700 delta_[9,13] - x_[13] - 15 z_[13,9] >= 0
@@ -1034,9 +1226,11 @@ Subject To
  z_[13]: - z_[10,13] + z_[13,10] = 0
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,10] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,10] >= -1
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,10] >= -1
  x_set_U[10]: x_[10] + 692 delta_[10,13] - x_[13] - 15 z_[13,10] >= 0
  delta[13,11]: delta_[11,13] + delta_[13,11] = 1
  z_[13]: - z_[11,13] + z_[13,11] = 0
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,11] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,11] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,11] >= -1
  x_set_U[11]: x_[11] + 650 delta_[11,13] - x_[13] - 3 z_[13,11] >= 0
@@ -1044,13 +1238,15 @@ Subject To
  z_[13]: - z_[12,13] + z_[13,12] = 0
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,12] >= -1
  z_[13]: - runway_[%s] - runway_[%s] + z_[13,12] >= -1
+ z_[13]: - runway_[%s] - runway_[%s] + z_[13,12] >= -1
  x_set_U[12]: x_[12] + 589 delta_[12,13] - x_[13] - 3 z_[13,12] >= 0
  delta[13,14]: delta_[13,14] + delta_[14,13] = 1
  z_[13]: z_[13,14] - z_[14,13] = 0
  z_[13]: - runway_[%s] + z_[13,14] - runway_[%s] >= -1
  z_[13]: - runway_[%s] + z_[13,14] - runway_[%s] >= -1
+ z_[13]: - runway_[%s] + z_[13,14] - runway_[%s] >= -1
  x_set_U[14]: - x_[13] - 3 z_[13,14] + x_[14] + 564 delta_[14,13] >= 0
- runway_[14]: runway_[%s] + runway_[%s] = 1
+ runway_[14]: runway_[%s] + runway_[%s] + runway_[%s] = 1
  Alpha[14]: alpha_[14] + x_[14] >= 342
  Beta[14]: beta_[14] - x_[14] >= -342
  x[14]: alpha_[14] - beta_[14] + x_[14] = 342
@@ -1058,9 +1254,11 @@ Subject To
  z_[14]: - z_[0,14] + z_[14,0] = 0
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,0] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,0] >= -1
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,0] >= -1
  x_set_U[0]: x_[0] + 746 delta_[0,14] - x_[14] - 15 z_[14,0] >= 0
  delta[14,1]: delta_[1,14] + delta_[14,1] = 1
  z_[14]: - z_[1,14] + z_[14,1] = 0
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,1] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,1] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,1] >= -1
  x_set_U[1]: x_[1] + 741 delta_[1,14] - x_[14] - 15 z_[14,1] >= 0
@@ -1068,9 +1266,11 @@ Subject To
  z_[14]: - z_[2,14] + z_[14,2] = 0
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,2] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,2] >= -1
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,2] >= -1
  x_set_U[2]: x_[2] + 730 delta_[2,14] - x_[14] - 15 z_[14,2] >= 0
  delta[14,3]: delta_[3,14] + delta_[14,3] = 1
  z_[14]: - z_[3,14] + z_[14,3] = 0
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,3] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,3] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,3] >= -1
  x_set_U[3]: x_[3] + 723 delta_[3,14] - x_[14] - 15 z_[14,3] >= 0
@@ -1078,9 +1278,11 @@ Subject To
  z_[14]: - z_[4,14] + z_[14,4] = 0
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,4] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,4] >= -1
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,4] >= -1
  x_set_U[4]: x_[4] + 721 delta_[4,14] - x_[14] - 15 z_[14,4] >= 0
  delta[14,5]: delta_[5,14] + delta_[14,5] = 1
  z_[14]: - z_[5,14] + z_[14,5] = 0
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,5] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,5] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,5] >= -1
  x_set_U[5]: x_[5] + 721 delta_[5,14] - x_[14] - 15 z_[14,5] >= 0
@@ -1088,9 +1290,11 @@ Subject To
  z_[14]: - z_[6,14] + z_[14,6] = 0
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,6] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,6] >= -1
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,6] >= -1
  x_set_U[6]: x_[6] + 715 delta_[6,14] - x_[14] - 15 z_[14,6] >= 0
  delta[14,7]: delta_[7,14] + delta_[14,7] = 1
  z_[14]: - z_[7,14] + z_[14,7] = 0
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,7] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,7] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,7] >= -1
  x_set_U[7]: x_[7] + 696 delta_[7,14] - x_[14] - 15 z_[14,7] >= 0
@@ -1098,9 +1302,11 @@ Subject To
  z_[14]: - z_[8,14] + z_[14,8] = 0
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,8] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,8] >= -1
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,8] >= -1
  x_set_U[8]: x_[8] + 689 delta_[8,14] - x_[14] - 3 z_[14,8] >= 0
  delta[14,9]: delta_[9,14] + delta_[14,9] = 1
  z_[14]: - z_[9,14] + z_[14,9] = 0
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,9] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,9] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,9] >= -1
  x_set_U[9]: x_[9] + 678 delta_[9,14] - x_[14] - 15 z_[14,9] >= 0
@@ -1108,9 +1314,11 @@ Subject To
  z_[14]: - z_[10,14] + z_[14,10] = 0
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,10] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,10] >= -1
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,10] >= -1
  x_set_U[10]: x_[10] + 670 delta_[10,14] - x_[14] - 15 z_[14,10] >= 0
  delta[14,11]: delta_[11,14] + delta_[14,11] = 1
  z_[14]: - z_[11,14] + z_[14,11] = 0
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,11] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,11] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,11] >= -1
  x_set_U[11]: x_[11] + 628 delta_[11,14] - x_[14] - 3 z_[14,11] >= 0
@@ -1118,9 +1326,11 @@ Subject To
  z_[14]: - z_[12,14] + z_[14,12] = 0
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,12] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,12] >= -1
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,12] >= -1
  x_set_U[12]: x_[12] + 567 delta_[12,14] - x_[14] - 3 z_[14,12] >= 0
  delta[14,13]: delta_[13,14] + delta_[14,13] = 1
  z_[14]: - z_[13,14] + z_[14,13] = 0
+ z_[14]: - runway_[%s] - runway_[%s] + z_[14,13] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,13] >= -1
  z_[14]: - runway_[%s] - runway_[%s] + z_[14,13] >= -1
  x_set_U[13]: x_[13] + 552 delta_[13,14] - x_[14] - 3 z_[14,13] >= 0
@@ -1171,79 +1381,79 @@ Bounds
  beta_[14] <= 473
  276 <= x_[14] <= 815
 Binaries
- runway_[%s] runway_[%s] delta_[0,0] z_[0,0] delta_[0,1] z_[0,1]
- delta_[0,2] z_[0,2] delta_[0,3] z_[0,3] delta_[0,4] z_[0,4] delta_[0,5]
- z_[0,5] delta_[0,6] z_[0,6] delta_[0,7] z_[0,7] delta_[0,8] z_[0,8]
- delta_[0,9] z_[0,9] delta_[0,10] z_[0,10] delta_[0,11] z_[0,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[0,0] z_[0,0] delta_[0,1]
+ z_[0,1] delta_[0,2] z_[0,2] delta_[0,3] z_[0,3] delta_[0,4] z_[0,4]
+ delta_[0,5] z_[0,5] delta_[0,6] z_[0,6] delta_[0,7] z_[0,7] delta_[0,8]
+ z_[0,8] delta_[0,9] z_[0,9] delta_[0,10] z_[0,10] delta_[0,11] z_[0,11]
  delta_[0,12] z_[0,12] delta_[0,13] z_[0,13] delta_[0,14] z_[0,14]
- runway_[%s] runway_[%s] delta_[1,0] z_[1,0] delta_[1,1] z_[1,1]
- delta_[1,2] z_[1,2] delta_[1,3] z_[1,3] delta_[1,4] z_[1,4] delta_[1,5]
- z_[1,5] delta_[1,6] z_[1,6] delta_[1,7] z_[1,7] delta_[1,8] z_[1,8]
- delta_[1,9] z_[1,9] delta_[1,10] z_[1,10] delta_[1,11] z_[1,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[1,0] z_[1,0] delta_[1,1]
+ z_[1,1] delta_[1,2] z_[1,2] delta_[1,3] z_[1,3] delta_[1,4] z_[1,4]
+ delta_[1,5] z_[1,5] delta_[1,6] z_[1,6] delta_[1,7] z_[1,7] delta_[1,8]
+ z_[1,8] delta_[1,9] z_[1,9] delta_[1,10] z_[1,10] delta_[1,11] z_[1,11]
  delta_[1,12] z_[1,12] delta_[1,13] z_[1,13] delta_[1,14] z_[1,14]
- runway_[%s] runway_[%s] delta_[2,0] z_[2,0] delta_[2,1] z_[2,1]
- delta_[2,2] z_[2,2] delta_[2,3] z_[2,3] delta_[2,4] z_[2,4] delta_[2,5]
- z_[2,5] delta_[2,6] z_[2,6] delta_[2,7] z_[2,7] delta_[2,8] z_[2,8]
- delta_[2,9] z_[2,9] delta_[2,10] z_[2,10] delta_[2,11] z_[2,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[2,0] z_[2,0] delta_[2,1]
+ z_[2,1] delta_[2,2] z_[2,2] delta_[2,3] z_[2,3] delta_[2,4] z_[2,4]
+ delta_[2,5] z_[2,5] delta_[2,6] z_[2,6] delta_[2,7] z_[2,7] delta_[2,8]
+ z_[2,8] delta_[2,9] z_[2,9] delta_[2,10] z_[2,10] delta_[2,11] z_[2,11]
  delta_[2,12] z_[2,12] delta_[2,13] z_[2,13] delta_[2,14] z_[2,14]
- runway_[%s] runway_[%s] delta_[3,0] z_[3,0] delta_[3,1] z_[3,1]
- delta_[3,2] z_[3,2] delta_[3,3] z_[3,3] delta_[3,4] z_[3,4] delta_[3,5]
- z_[3,5] delta_[3,6] z_[3,6] delta_[3,7] z_[3,7] delta_[3,8] z_[3,8]
- delta_[3,9] z_[3,9] delta_[3,10] z_[3,10] delta_[3,11] z_[3,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[3,0] z_[3,0] delta_[3,1]
+ z_[3,1] delta_[3,2] z_[3,2] delta_[3,3] z_[3,3] delta_[3,4] z_[3,4]
+ delta_[3,5] z_[3,5] delta_[3,6] z_[3,6] delta_[3,7] z_[3,7] delta_[3,8]
+ z_[3,8] delta_[3,9] z_[3,9] delta_[3,10] z_[3,10] delta_[3,11] z_[3,11]
  delta_[3,12] z_[3,12] delta_[3,13] z_[3,13] delta_[3,14] z_[3,14]
- runway_[%s] runway_[%s] delta_[4,0] z_[4,0] delta_[4,1] z_[4,1]
- delta_[4,2] z_[4,2] delta_[4,3] z_[4,3] delta_[4,4] z_[4,4] delta_[4,5]
- z_[4,5] delta_[4,6] z_[4,6] delta_[4,7] z_[4,7] delta_[4,8] z_[4,8]
- delta_[4,9] z_[4,9] delta_[4,10] z_[4,10] delta_[4,11] z_[4,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[4,0] z_[4,0] delta_[4,1]
+ z_[4,1] delta_[4,2] z_[4,2] delta_[4,3] z_[4,3] delta_[4,4] z_[4,4]
+ delta_[4,5] z_[4,5] delta_[4,6] z_[4,6] delta_[4,7] z_[4,7] delta_[4,8]
+ z_[4,8] delta_[4,9] z_[4,9] delta_[4,10] z_[4,10] delta_[4,11] z_[4,11]
  delta_[4,12] z_[4,12] delta_[4,13] z_[4,13] delta_[4,14] z_[4,14]
- runway_[%s] runway_[%s] delta_[5,0] z_[5,0] delta_[5,1] z_[5,1]
- delta_[5,2] z_[5,2] delta_[5,3] z_[5,3] delta_[5,4] z_[5,4] delta_[5,5]
- z_[5,5] delta_[5,6] z_[5,6] delta_[5,7] z_[5,7] delta_[5,8] z_[5,8]
- delta_[5,9] z_[5,9] delta_[5,10] z_[5,10] delta_[5,11] z_[5,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[5,0] z_[5,0] delta_[5,1]
+ z_[5,1] delta_[5,2] z_[5,2] delta_[5,3] z_[5,3] delta_[5,4] z_[5,4]
+ delta_[5,5] z_[5,5] delta_[5,6] z_[5,6] delta_[5,7] z_[5,7] delta_[5,8]
+ z_[5,8] delta_[5,9] z_[5,9] delta_[5,10] z_[5,10] delta_[5,11] z_[5,11]
  delta_[5,12] z_[5,12] delta_[5,13] z_[5,13] delta_[5,14] z_[5,14]
- runway_[%s] runway_[%s] delta_[6,0] z_[6,0] delta_[6,1] z_[6,1]
- delta_[6,2] z_[6,2] delta_[6,3] z_[6,3] delta_[6,4] z_[6,4] delta_[6,5]
- z_[6,5] delta_[6,6] z_[6,6] delta_[6,7] z_[6,7] delta_[6,8] z_[6,8]
- delta_[6,9] z_[6,9] delta_[6,10] z_[6,10] delta_[6,11] z_[6,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[6,0] z_[6,0] delta_[6,1]
+ z_[6,1] delta_[6,2] z_[6,2] delta_[6,3] z_[6,3] delta_[6,4] z_[6,4]
+ delta_[6,5] z_[6,5] delta_[6,6] z_[6,6] delta_[6,7] z_[6,7] delta_[6,8]
+ z_[6,8] delta_[6,9] z_[6,9] delta_[6,10] z_[6,10] delta_[6,11] z_[6,11]
  delta_[6,12] z_[6,12] delta_[6,13] z_[6,13] delta_[6,14] z_[6,14]
- runway_[%s] runway_[%s] delta_[7,0] z_[7,0] delta_[7,1] z_[7,1]
- delta_[7,2] z_[7,2] delta_[7,3] z_[7,3] delta_[7,4] z_[7,4] delta_[7,5]
- z_[7,5] delta_[7,6] z_[7,6] delta_[7,7] z_[7,7] delta_[7,8] z_[7,8]
- delta_[7,9] z_[7,9] delta_[7,10] z_[7,10] delta_[7,11] z_[7,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[7,0] z_[7,0] delta_[7,1]
+ z_[7,1] delta_[7,2] z_[7,2] delta_[7,3] z_[7,3] delta_[7,4] z_[7,4]
+ delta_[7,5] z_[7,5] delta_[7,6] z_[7,6] delta_[7,7] z_[7,7] delta_[7,8]
+ z_[7,8] delta_[7,9] z_[7,9] delta_[7,10] z_[7,10] delta_[7,11] z_[7,11]
  delta_[7,12] z_[7,12] delta_[7,13] z_[7,13] delta_[7,14] z_[7,14]
- runway_[%s] runway_[%s] delta_[8,0] z_[8,0] delta_[8,1] z_[8,1]
- delta_[8,2] z_[8,2] delta_[8,3] z_[8,3] delta_[8,4] z_[8,4] delta_[8,5]
- z_[8,5] delta_[8,6] z_[8,6] delta_[8,7] z_[8,7] delta_[8,8] z_[8,8]
- delta_[8,9] z_[8,9] delta_[8,10] z_[8,10] delta_[8,11] z_[8,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[8,0] z_[8,0] delta_[8,1]
+ z_[8,1] delta_[8,2] z_[8,2] delta_[8,3] z_[8,3] delta_[8,4] z_[8,4]
+ delta_[8,5] z_[8,5] delta_[8,6] z_[8,6] delta_[8,7] z_[8,7] delta_[8,8]
+ z_[8,8] delta_[8,9] z_[8,9] delta_[8,10] z_[8,10] delta_[8,11] z_[8,11]
  delta_[8,12] z_[8,12] delta_[8,13] z_[8,13] delta_[8,14] z_[8,14]
- runway_[%s] runway_[%s] delta_[9,0] z_[9,0] delta_[9,1] z_[9,1]
- delta_[9,2] z_[9,2] delta_[9,3] z_[9,3] delta_[9,4] z_[9,4] delta_[9,5]
- z_[9,5] delta_[9,6] z_[9,6] delta_[9,7] z_[9,7] delta_[9,8] z_[9,8]
- delta_[9,9] z_[9,9] delta_[9,10] z_[9,10] delta_[9,11] z_[9,11]
+ runway_[%s] runway_[%s] runway_[%s] delta_[9,0] z_[9,0] delta_[9,1]
+ z_[9,1] delta_[9,2] z_[9,2] delta_[9,3] z_[9,3] delta_[9,4] z_[9,4]
+ delta_[9,5] z_[9,5] delta_[9,6] z_[9,6] delta_[9,7] z_[9,7] delta_[9,8]
+ z_[9,8] delta_[9,9] z_[9,9] delta_[9,10] z_[9,10] delta_[9,11] z_[9,11]
  delta_[9,12] z_[9,12] delta_[9,13] z_[9,13] delta_[9,14] z_[9,14]
- runway_[%s] runway_[%s] delta_[10,0] z_[10,0] delta_[10,1] z_[10,1]
- delta_[10,2] z_[10,2] delta_[10,3] z_[10,3] delta_[10,4] z_[10,4]
+ runway_[%s] runway_[%s] runway_[%s] delta_[10,0] z_[10,0] delta_[10,1]
+ z_[10,1] delta_[10,2] z_[10,2] delta_[10,3] z_[10,3] delta_[10,4] z_[10,4]
  delta_[10,5] z_[10,5] delta_[10,6] z_[10,6] delta_[10,7] z_[10,7]
  delta_[10,8] z_[10,8] delta_[10,9] z_[10,9] delta_[10,10] z_[10,10]
  delta_[10,11] z_[10,11] delta_[10,12] z_[10,12] delta_[10,13] z_[10,13]
- delta_[10,14] z_[10,14] runway_[%s] runway_[%s] delta_[11,0] z_[11,0]
- delta_[11,1] z_[11,1] delta_[11,2] z_[11,2] delta_[11,3] z_[11,3]
+ delta_[10,14] z_[10,14] runway_[%s] runway_[%s] runway_[%s] delta_[11,0]
+ z_[11,0] delta_[11,1] z_[11,1] delta_[11,2] z_[11,2] delta_[11,3] z_[11,3]
  delta_[11,4] z_[11,4] delta_[11,5] z_[11,5] delta_[11,6] z_[11,6]
  delta_[11,7] z_[11,7] delta_[11,8] z_[11,8] delta_[11,9] z_[11,9]
  delta_[11,10] z_[11,10] delta_[11,11] z_[11,11] delta_[11,12] z_[11,12]
  delta_[11,13] z_[11,13] delta_[11,14] z_[11,14] runway_[%s] runway_[%s]
- delta_[12,0] z_[12,0] delta_[12,1] z_[12,1] delta_[12,2] z_[12,2]
- delta_[12,3] z_[12,3] delta_[12,4] z_[12,4] delta_[12,5] z_[12,5]
+ runway_[%s] delta_[12,0] z_[12,0] delta_[12,1] z_[12,1] delta_[12,2]
+ z_[12,2] delta_[12,3] z_[12,3] delta_[12,4] z_[12,4] delta_[12,5] z_[12,5]
  delta_[12,6] z_[12,6] delta_[12,7] z_[12,7] delta_[12,8] z_[12,8]
  delta_[12,9] z_[12,9] delta_[12,10] z_[12,10] delta_[12,11] z_[12,11]
  delta_[12,12] z_[12,12] delta_[12,13] z_[12,13] delta_[12,14] z_[12,14]
- runway_[%s] runway_[%s] delta_[13,0] z_[13,0] delta_[13,1] z_[13,1]
- delta_[13,2] z_[13,2] delta_[13,3] z_[13,3] delta_[13,4] z_[13,4]
+ runway_[%s] runway_[%s] runway_[%s] delta_[13,0] z_[13,0] delta_[13,1]
+ z_[13,1] delta_[13,2] z_[13,2] delta_[13,3] z_[13,3] delta_[13,4] z_[13,4]
  delta_[13,5] z_[13,5] delta_[13,6] z_[13,6] delta_[13,7] z_[13,7]
  delta_[13,8] z_[13,8] delta_[13,9] z_[13,9] delta_[13,10] z_[13,10]
  delta_[13,11] z_[13,11] delta_[13,12] z_[13,12] delta_[13,13] z_[13,13]
- delta_[13,14] z_[13,14] runway_[%s] runway_[%s] delta_[14,0] z_[14,0]
- delta_[14,1] z_[14,1] delta_[14,2] z_[14,2] delta_[14,3] z_[14,3]
+ delta_[13,14] z_[13,14] runway_[%s] runway_[%s] runway_[%s] delta_[14,0]
+ z_[14,0] delta_[14,1] z_[14,1] delta_[14,2] z_[14,2] delta_[14,3] z_[14,3]
  delta_[14,4] z_[14,4] delta_[14,5] z_[14,5] delta_[14,6] z_[14,6]
  delta_[14,7] z_[14,7] delta_[14,8] z_[14,8] delta_[14,9] z_[14,9]
  delta_[14,10] z_[14,10] delta_[14,11] z_[14,11] delta_[14,12] z_[14,12]

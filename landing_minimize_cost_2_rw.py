@@ -33,7 +33,7 @@ def optimizer_mult(file = file):
     h = data[:,5]  # penalty cost (≥0) per unit of time for landing after the target time
     s = np.zeros((planes,planes))
     
-    landing_cost = [0,0]
+    landing_cost = [0,0,0]
     
     runways = len(landing_cost)
     
@@ -191,9 +191,9 @@ def optimizer_mult(file = file):
     calc_time = datetime.now()-start_time
     print(calc_time)
     
-    return model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, z
+    return model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z
     
-model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, z = optimizer_mult()
+model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult()
 # model2, data2, S2, x2, alpha2, beta2, delta2, E2, T2, L2, planes2, calc_time2 = optimizer(file = 2)
 
     
