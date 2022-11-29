@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 #change this to optimize other files
-file =6
+file =2
 
 
 model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time = optimizer(file)
