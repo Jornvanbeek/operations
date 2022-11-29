@@ -58,6 +58,8 @@ def optimizer(file = file):
         alpha[i]=model.addVar(lb=0, ub=T[i] - E[i], vtype=GRB.INTEGER,name="alpha_[%s]"%(i)) #T[i] - E[i] = eq 15
         beta[i]=model.addVar(lb=0, ub=L[i] - T[i], vtype=GRB.INTEGER,name="beta_[%s]"%(i)) #eq 17 DONT FORGET TO CHANGE 0 TO i !!!
         x[i]=model.addVar(lb= E[i], ub=L[i], vtype=GRB.INTEGER,name="x_[%s]"%(i)) #eq 1 DONT FORGET TO CHANGE 0 TO i !!!
+        
+        
         for j in range(planes):
             delta[i,j]=model.addVar(lb=0, ub=1, vtype=GRB.BINARY,name="delta_[%s,%s]"%(i,j))
     
@@ -84,6 +86,8 @@ def optimizer(file = file):
         thisLHS = LinExpr()
         thisLHS += x[i]
         model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs= T[i] - alpha[i] + beta[i], name="x[%s]"%(i))
+        
+        
         
         for j in range(planes): # maybe remove the i part? though this should be fewer constraints overall
             if j != i:
