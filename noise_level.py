@@ -1,7 +1,8 @@
 from read_files import read_file
 import numpy as np
 
-def weight_indexes(spacing_array)
+
+def weight_indexes(spacing_array):
     S = spacing_array
     planes = len(S)
     avg_spacing = np.zeros(planes)

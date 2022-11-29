@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46bef095-9f0e-42d4-b631-0096facad0d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/noise_level.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/airland_data/airland1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/airland_data/airland1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/airland_data/airland10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/airland_data/airland10.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/airland_data/airland11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/airland_data/airland11.txt" afterDir="false" />
@@ -24,7 +26,9 @@
       <change beforePath="$PROJECT_DIR$/interesting_links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/interesting_links.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing_minimize_cost.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing_minimize_cost.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing_minimize_cost_2_rw.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing_minimize_cost_2_rw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model_formulation.lp" beforeDir="false" afterPath="$PROJECT_DIR$/model_formulation.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/noise_level.py" beforeDir="false" afterPath="$PROJECT_DIR$/noise_level.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_files.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
