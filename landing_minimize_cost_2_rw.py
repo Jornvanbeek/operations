@@ -34,7 +34,7 @@ for i in range(planes):
     temp = []
     for j in range(planes):
         if i != j:
-            temp.append(3)  # separation time, aanpassen!
+            temp.append(0)  # separation time, aanpassen!
         else:
             temp.append(0)
     s.append(temp)
