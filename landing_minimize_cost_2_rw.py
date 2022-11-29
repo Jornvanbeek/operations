@@ -175,7 +175,7 @@ model.update()
 
 # %%
 """Objective function"""
-print(rw)
+
 obj = LinExpr()  # Objective function (aanpassen)
 for i in range(planes):
     obj += g[i]*alpha[i]+h[i]*beta[i]
