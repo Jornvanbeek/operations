@@ -11,10 +11,11 @@ def objective(data,S,alpha,beta):
     h = data[:,5]                   # penalty cost (≥0) per unit of time for landing after the target time
     rwy_penalty = [10,2]            # weight of the noise impact per runway
     runways = len(rwy_penalty)
+    landing_cost = [0,0]
     z = 0                           # initialize the delay objective function
     
     # delay/early time per a/c
-    for i in range(planes):
+    for i in range(len(S)):
         z += g[i]*alpha[i]+h[i]*beta[i]
         for k in range(runways):
             z += landing_cost[k]*rw[i, k]
@@ -25,10 +26,10 @@ def objective(data,S,alpha,beta):
         SEL = weight_indexes(S)      # list of SEL in dBA per a/c
         # TODO split this per runway
         
-        LD += (-49.4 + 10 * np.log(np.sum(np.power(10, SEL·/10)))) * rwy_penalty[l]
+        LD += (-49.4 + 10 * np.log(np.sum(np.power(10, SEL/10)))) * rwy_penalty[l]
     
     # combine the objective functions for delay and noise
-    obj = 10 * z + 2* LD
+    obj = 10 * z + 2 * LD
     return obj
 
 # %%
@@ -40,24 +41,24 @@ def objective(data,S,alpha,beta):
 
 
 # get an initial solution
-model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, z = optimizer_mult()
+model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult()
 
 
-planes = len(S)
-rwy_forced = np.zeros(planes)
+amount = len(S)
+rwy_forced = np.zeros(amount)
 T = 1000    # "temperature"
-Z = []      # empty list to log solutions
+Z = [objective(data,S,alpha,beta)]      # list to log solutions
 reject = 0  # count the number of rejects in a row
 
 # %%
-
+"""
 while True:
     # swap runway for a random plane
-    idx = randint(0, planes - 1)    #index of the plane to swap
+    idx = randint(0, amount - 1)    #index of the plane to swap
     rwy_forced[idx] = 1
     
     # get a solution from the linear solver -> add constraint for swapped plane
-    model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, z = optimizer_mult()
+    model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult()
     
     
     # measure noise performance for this solution, compare to previous performance
@@ -78,4 +79,4 @@ while True:
     if reject == 8:
         break
 
-# print results
+# output results"""
