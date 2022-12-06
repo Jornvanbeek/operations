@@ -11,11 +11,12 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 #change this to optimize other files
-file =2
+file =3
+landing_cost = [0,0]
 
 
 # model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time = optimizer(file)
-model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult()
+model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult(file, landing_cost)
 
 solution = {'alpha': np.zeros(planes), "beta": np.zeros(planes), "x": np.zeros(planes), "delta": np.zeros((planes,planes)), "runway": np.zeros((planes,runways))}
 # Saving our solution in the form [name of variable, value of variable]
@@ -101,8 +102,9 @@ def gantt_mult(sort = False):
                         ax[runway].plot(sort_E[plane], plane_list[plane], color='green', marker='.', linestyle='None')
                         ax[runway].plot(sort_T[plane], plane_list[plane], color='yellow', marker='.', linestyle='None')
                         #ax[runway].plot(sort_L[plane], plane_list[plane], color='red', marker='.', linestyle='None')
-    
-            ax[runway].set_yticks(plane_list[solution['runway'][:,runway]>0])
+            if planes < 21:
+                ax[runway].set_yticks(plane_list[solution['runway'][:,runway]>0])
+            
             ax[runway].grid()
         for a in ax.flat:
             a.set(xlabel='Time [s]', ylabel='plane')
@@ -146,8 +148,8 @@ def gantt(sort = False):
         for plane in range(planes):
             color_index = solution['runway'][plane].argmax()
             ax.add_patch(Rectangle((sort_solution[plane], plane+0.5), sort_separation[plane], 1, color = colors[color_index]))
-    
-    plt.yticks(plane_list)
+    if planes < 21:
+        plt.yticks(plane_list)
     plt.ylabel('Plane')
     plt.xlabel('Time [s]')
     plt.grid()

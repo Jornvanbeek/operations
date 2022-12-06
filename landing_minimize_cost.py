@@ -12,7 +12,7 @@ from gurobipy import Model, GRB, LinExpr
 from datetime import datetime
 from read_files import read_file
 
-file = 2
+file = 9
 def optimizer(file = file):
     start_time = datetime.now()
     

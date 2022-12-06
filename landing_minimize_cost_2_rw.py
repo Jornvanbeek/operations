@@ -6,9 +6,9 @@ from datetime import datetime
 from read_files import read_file
 from landing_minimize_cost import optimizer
 
-
+landing_cost = [0,0]
 file = 2
-def optimizer_mult(file = file):
+def optimizer_mult(file = file, landing_cost = landing_cost):
     start_time = datetime.now()
     
     """Initiate model"""
@@ -33,7 +33,7 @@ def optimizer_mult(file = file):
     h = data[:,5]  # penalty cost (≥0) per unit of time for landing after the target time
     s = np.zeros((planes,planes))
     
-    landing_cost = [0,0,0]
+    
     
     runways = len(landing_cost)
     
@@ -64,7 +64,7 @@ def optimizer_mult(file = file):
         x[i] = model.addVar(lb=E[i], ub=L[i], vtype=GRB.INTEGER, name="x_[%s]" %
                             (i))  # eq 1 DONT FORGET TO CHANGE 0 TO i !!!
         for k in range(runways):
-            rw[i, k] = model.addVar(lb=0, ub=1, vtype=GRB.BINARY, name="runway_[%s]")
+            rw[i, k] = model.addVar(lb=0, ub=1, vtype=GRB.BINARY, name="runway_[%s,%s]" % (i,k))
     
         for j in range(planes):
             delta[i, j] = model.addVar(lb=0, ub=1, vtype=GRB.BINARY, name="delta_[%s,%s]" % (i, j))
@@ -116,7 +116,7 @@ def optimizer_mult(file = file):
                 thisLHS += z[i, j]
                 thisRHS = LinExpr()
                 thisRHS += z[j, i]
-                model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=thisRHS, name="z_[%s]" % (i))
+                model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=thisRHS, name="z_[%s,%s]" % (i, j))
                 
                 for k in range(runways):
                     thisLHS = LinExpr()
@@ -124,26 +124,26 @@ def optimizer_mult(file = file):
                     thisRHS = LinExpr()
                     # print(rw[i, k])
                     thisRHS += rw[i, k]+rw[j, k]-1
-                    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name="z_[%s]" % (i))
+                    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name="z_[%s,%s,%s]" % (i, j, k))
 
                 if L[i] < E[j] and L[i] + S[i, j] <= E[j]:  # set W
                     # constraint 6 (i before j is 1, as latest i is before earliest j)
                     thisLHS = LinExpr()
                     thisLHS += delta[i, j]
-                    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta_set_W[%s,%s]' % (i, j))
+                    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta_set_W[%s,%s,%s]' % (i, j, k))
 
                 elif L[i] < E[j] and L[i] + S[i, j] > E[j]:  # set V
                     # constraint 6 (i before j is 1, as latest i is before earliest j)
                     thisLHS = LinExpr()
                     thisLHS += delta[i, j]
-                    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta_set_V[%s,%s]' % (i, j))
+                    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1, name='delta_set_V[%s,%s,%s]' % (i, j, k))
 
                     # constraint 7 (xj is after xi plus separation)
                     thisLHS = LinExpr()
                     thisLHS += x[j]
                     thisRHS = LinExpr()
                     thisRHS += x[i] + S[i, j]*z[i, j]+s[i, j]*(1-z[i, j])
-                    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name='x_set_V[%s]' % (j))
+                    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name='x_set_V[%s,%s,%s]' % (i, j, k))
 
                 else:  # set U
                     # constraint 11 (either xj lands after xi with separation, or xj is after or equal to earliest j)
@@ -152,7 +152,7 @@ def optimizer_mult(file = file):
                     thisRHS = LinExpr()
                     thisRHS += x[i] + S[i, j]*z[i, j] + s[i][j] * \
                         (1-z[i, j]) - (L[i] + max(S[i, j], s[i, j]) - E[j])*delta[j, i]
-                    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name='x_set_U[%s]' % (j))
+                    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=thisRHS, name='x_set_U[%s,%s,%s]' % (i, j, k))
 
     # elif j == i:
     # make sure that delta ii gets skipped!
