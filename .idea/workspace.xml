@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46bef095-9f0e-42d4-b631-0096facad0d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/histogram.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
@@ -25,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/airland_data/airland9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/airland_data/airland9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/annealing.py" beforeDir="false" afterPath="$PROJECT_DIR$/annealing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/histogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/histogram.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interesting_links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/interesting_links.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing_minimize_cost.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing_minimize_cost.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landing_minimize_cost_2_rw.py" beforeDir="false" afterPath="$PROJECT_DIR$/landing_minimize_cost_2_rw.py" afterDir="false" />
@@ -69,7 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.landing_minimize_cost_2_rw">
+  <component name="RunManager" selected="Python.data_processing">
     <configuration name="annealing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -219,8 +219,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.landing_minimize_cost_2_rw" />
         <item itemvalue="Python.data_processing" />
+        <item itemvalue="Python.landing_minimize_cost_2_rw" />
         <item itemvalue="Python.noise_level" />
         <item itemvalue="Python.annealing" />
       </list>
