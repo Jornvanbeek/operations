@@ -36,7 +36,7 @@ def optimizer_mult(file=file, landing_cost=landing_cost):
 
     s = np.zeros((planes, planes))
 
-    landing_cost = [1, 1.5, 2]
+    landing_cost = [2, 1]
 
     runways = len(landing_cost)
 
@@ -168,7 +168,7 @@ def optimizer_mult(file=file, landing_cost=landing_cost):
     for i in range(planes):
         obj += g[i]*alpha[i]+h[i]*beta[i]
         for k in range(runways):
-            obj += landing_cost[k]*rw[i, k]*noise_cost
+            obj += landing_cost[k]*rw[i, k]*noise_cost[i]
 
     model.setObjective(obj, GRB.MINIMIZE)
     # Updating the model
@@ -184,6 +184,15 @@ def optimizer_mult(file=file, landing_cost=landing_cost):
 
     calc_time = datetime.now()-start_time
     print(calc_time)
+
+    final_delay_cost = 0
+    final_noise_cost = 0
+    for i in range(planes):
+        final_delay_cost += g[i]*alpha[i]+h[i]*beta[i]
+        for k in range(runways):
+            final_noise_cost += landing_cost[k]*rw[i, k]*noise_cost[i]
+    print('delay cost =',final_delay_cost)
+    print('noise cost =',final_noise_cost)
 
     return model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z
 

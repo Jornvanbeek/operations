@@ -20,8 +20,8 @@ def weight_indexes(spacing_array):
         unq_idx[unq_idx==j] = SEL[j]
     return unq_idx
 
+for i in range(13):
 
-file_number = 1
-
-S = read_file(file_number)[1]
-print(weight_indexes(S))
+    file_number = i+1
+    S = read_file(file_number)[1]
+    #print(i+1,weight_indexes(S))
