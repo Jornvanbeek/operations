@@ -11,9 +11,9 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 #change this to optimize other files
-file =3
-landing_cost = [0,0]
-
+file = 10
+K = .3
+landing_cost = [K * 1, K * 2]
 
 # model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time = optimizer(file)
 model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult(file, landing_cost)

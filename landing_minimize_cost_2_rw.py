@@ -7,12 +7,8 @@ from read_files import read_file
 from landing_minimize_cost import optimizer
 from noise_level import weight_indexes
 
-K = .06
-landing_cost = [K * 1, K * 2]
-file = 9
 
-
-def optimizer_mult(file=file, landing_cost=landing_cost):
+def optimizer_mult(file, landing_cost):
     start_time = datetime.now()
 
     """Initiate model"""
@@ -189,38 +185,42 @@ def optimizer_mult(file=file, landing_cost=landing_cost):
     calc_time = datetime.now()-start_time
     print(calc_time)
 
-
-
     return model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z
 
 
-model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult()
-# model2, data2, S2, x2, alpha2, beta2, delta2, E2, T2, L2, planes2, calc_time2 = optimizer(file = 2)
+if __name__ == "__main__":
 
-noise_cost = weight_indexes(S)
-solution = {'alpha': np.zeros(planes), "beta": np.zeros(planes), "x": np.zeros(planes),
-            "delta": np.zeros((planes, planes)), "runway": np.zeros((planes, runways))}
-# Saving our solution in the form [name of variable, value of variable]
-sol = []
-for v in model.getVars():
-    sol.append([v.varName, v.x])
+    K = .3
+    landing_cost = [K * 1, K * 2]
+    file = 10
 
-for i in range(planes):
-    solution['alpha'][i] = alpha[i].x
-    solution['beta'][i] = beta[i].x
-    solution['x'][i] = x[i].x
-    for j in range(planes):
-        solution['delta'][i, j] = delta[(i, j)].x
-    for k in range(runways):
-        solution['runway'][i, k] = rw[(i, k)].x
+    model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult(file, landing_cost)
+    # model2, data2, S2, x2, alpha2, beta2, delta2, E2, T2, L2, planes2, calc_time2 = optimizer(file = 2)
 
-final_delay_cost = 0
-for i in range(planes):
-    final_delay_cost += data[i,4] * solution['alpha'][i]+ data[i,5] * solution['beta'][i]
-final_noise_cost = 0
-for i in range(runways):
-    final_noise_cost += np.sum(landing_cost[i] * solution['runway'][:,i] * noise_cost)
+    noise_cost = weight_indexes(S)
+    solution = {'alpha': np.zeros(planes), "beta": np.zeros(planes), "x": np.zeros(planes),
+                "delta": np.zeros((planes, planes)), "runway": np.zeros((planes, runways))}
+    # Saving our solution in the form [name of variable, value of variable]
+    sol = []
+    for v in model.getVars():
+        sol.append([v.varName, v.x])
+
+    for i in range(planes):
+        solution['alpha'][i] = alpha[i].x
+        solution['beta'][i] = beta[i].x
+        solution['x'][i] = x[i].x
+        for j in range(planes):
+            solution['delta'][i, j] = delta[(i, j)].x
+        for k in range(runways):
+            solution['runway'][i, k] = rw[(i, k)].x
+
+    final_delay_cost = 0
+    for i in range(planes):
+        final_delay_cost += data[i,4] * solution['alpha'][i]+ data[i,5] * solution['beta'][i]
+    final_noise_cost = 0
+    for i in range(runways):
+        final_noise_cost += np.sum(landing_cost[i] * solution['runway'][:,i] * noise_cost)
 
 
-print('delay cost =',final_delay_cost)
-print('noise cost =',final_noise_cost)
+    print('delay cost =',final_delay_cost)
+    print('noise cost =',final_noise_cost)
