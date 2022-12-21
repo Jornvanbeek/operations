@@ -14,7 +14,7 @@ def weight_indexes(spacing_array):
     unq, unq_idx, unq_cnt = np.unique(avg_spacing, return_inverse=True, return_counts=True)
     
     # SEL per aircraft class in dBA
-    SEL = [67, 78, 90]
+    SEL = [10, 15, 20]
     
     for j in range(3):
         unq_idx[unq_idx==j] = SEL[j]

@@ -190,7 +190,7 @@ def optimizer_mult(file, landing_cost):
 
 if __name__ == "__main__":
 
-    K = .3
+    K = .24
     landing_cost = [K * 1, K * 2]
     file = 10
 
