@@ -13,8 +13,8 @@ import math
 from noise_level import weight_indexes
 
 #change this to optimize other files
-file = 2
-K = .3
+file = 1
+K = .0
 landing_cost = [K * 1, K * 2]
 files = np.arange(1,7)
 
@@ -61,6 +61,7 @@ for i in range(planes):
         solution['runway'][i,k] = rw[(i,k)].x
 
 # print(solution)
+landing_cost = [1 * 1, 1 * 2]
 
 final_delay_cost = 0.
 for i in range(planes):
@@ -158,7 +159,7 @@ def gantt_mult(sort = False):
             ax[runway].grid()
         temp = 1    
         for a in ax.flat:
-            a.set(xlabel='Time [s]', ylabel='Plane, Runway ' + str(temp))
+            a.set(xlabel='Time [unit]', ylabel='Plane, Runway ' + str(temp))
             temp +=1
             
             
@@ -206,7 +207,7 @@ def gantt(sort = False):
     if planes < 21:
         plt.yticks(plane_list)
     plt.ylabel('Plane')
-    plt.xlabel('Time [s]')
+    plt.xlabel('Time [unit]')
     plt.grid()
     legend_list = ["Earliest Landing Time", "Target Landing Time"]
     legend_list.extend(["Landing time plus separation runway " + str(i+1) for i in range(runways)])
@@ -244,7 +245,7 @@ def delay_histo(log = False, lowerlim = True, save = False):
         plt.title('Amount of Aircraft with Shifted Landing Times\n # of A/C with zero shift: ' + str(zero_val)+"\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))
     #plt.yticks(np.concatenate((np.arange(0,10), np.arange(10,100,10))))
     #plt.grid()
-    plt.xlabel('Time Shift [s]')
+    plt.xlabel('Time Shift [unit]')
     plt.ylabel("Number of aircraft")
     plt.show()
     
@@ -266,7 +267,8 @@ def noise_boxplot(save = False):
 
     
     
-    
+    if len(levels) == 1:
+        return print("only one noise level, will not give a boxplot per noise category")
     plt.figure()
     
     for runway in range(runways):
@@ -290,7 +292,7 @@ def gantt2():
     fig, ax = plt.subplots()
     colors = ['blue', 'red','red', 'blue', 'brown']
    
-    plt.title("Gantt Chart per Runway\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))
+    plt.title("Gantt Chart per Runway\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + "\n Delay cost = "+ str(round(final_delay_cost,1)) + ", Noise cost = " + str(round(final_noise_cost, 1)))
     # ax.plot(E, np.ones(20), color='green', marker='.', linestyle='None')
     ax.plot(solution['x'][0], -1, color='cyan', marker='.', linestyle='None')
     #ax.plot(L, plane_list, color='red', marker='.', linestyle='None')
@@ -318,7 +320,7 @@ def gantt2():
     plt.ylim(0,runways+1)
 
     plt.ylabel('Runway')
-    plt.xlabel('Time [s]')
+    plt.xlabel('Time [unit]')
     plt.grid()
 
     plt.show()
