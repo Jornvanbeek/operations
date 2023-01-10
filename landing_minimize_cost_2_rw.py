@@ -1,10 +1,7 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
 from gurobipy import Model, GRB, LinExpr, quicksum
 from datetime import datetime
 from read_files import read_file
-from landing_minimize_cost import optimizer
 from noise_level import weight_indexes
 
 
@@ -164,7 +161,7 @@ def optimizer_mult(file, landing_cost):
     # %%
     """Objective function"""
 
-    obj = LinExpr()  # Objective function (aanpassen)
+    obj = LinExpr()  # Objective function 
     for i in range(planes):
         obj += g[i]*alpha[i]+h[i]*beta[i]
         for k in range(runways):
@@ -177,7 +174,7 @@ def optimizer_mult(file, landing_cost):
     # %%
     """Modelling stuff"""
 
-    # Writing the .lp file. Important for debugging
+    # Writing the .lp file. 
     model.write('model_formulation.lp')
 
     model.optimize()

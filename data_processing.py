@@ -3,8 +3,15 @@
 Created on Wed Nov 23 15:08:09 2022
 
 @author: jornv
+
+This file is used to plot the results of the optimization, and run the optimization.
+It can plot gantt charts, timelines, boxplot of weight types per runway, histogram of delay per aircraft.
+
+Run this file for optimizing and showing results!
+
 """
-from landing_minimize_cost import optimizer
+
+
 from landing_minimize_cost_2_rw import optimizer_mult
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,11 +21,15 @@ from noise_level import weight_indexes
 
 #change this to optimize other files
 file = 1
-K = .0
+#scaling factor
+K = .24
+#landing cost relative to other runways. Lenght of this list is amount of runways
 landing_cost = [K * 1, K * 2]
-files = np.arange(1,7)
 
-def batch():
+
+#function to run a batch of files, for verification
+files = np.arange(1,7)
+def batch():                        
     batch_vals = [[],[],[],[]]
     costs = [0,0,0,0,0]
     for file in files:
@@ -31,11 +42,9 @@ def batch():
             batch_vals[1].append(calc_time)
             batch_vals[2].append(runways)
             batch_vals[3].append(file)
-        
-    
     return batch_vals
 
-# model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time = optimizer(file)
+# retreiving solution data
 model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, z = optimizer_mult(file, landing_cost)
 noise_levels = weight_indexes(S)
 solution = {'alpha': np.zeros(planes), "beta": np.zeros(planes), "x": np.zeros(planes), "delta": np.zeros((planes,planes)), "runway": np.zeros((planes,runways))}
@@ -82,6 +91,9 @@ for i in range(planes):
 plane_list = np.arange(1,planes+1)
 plt.close('all')
 
+#following loops are to determine the separation between aircraft, as they land on different rwy
+#and they might be switched
+
 ind = []
 actual_separation = np.zeros(planes)
 rwy_separation = np.zeros((runways,planes))
@@ -110,18 +122,9 @@ for rw in range(runways):
 
 
 
-# plt.figure()
-
-# plt.plot(E, plane_list, color='red', marker='o', linestyle='None')#, linewidth=2, markersize=12)
-# plt.plot(T, plane_list, color='yellow', marker='o', linestyle='None')
-# plt.plot(L, plane_list, color='blue', marker='o', linestyle='None')
-# plt.plot(solution['x'], plane_list, color='green', marker='+', linestyle='None', markersize=12)
-# plt.plot(solution['x'] + actual_separation, plane_list, color='blue', marker='+', linestyle='None', markersize=12)
-# plt.show()
 
 
-
-
+# plotting a gantt chart for each runway individually
 def gantt_mult(sort = False):
     try:
         fig, ax = plt.subplots(runways,figsize=(8,3*runways+2))
@@ -179,7 +182,7 @@ def gantt_mult(sort = False):
         plt.close()
 
 
-
+#plotting a gantt chart for all runways in one figure
 def gantt(sort = False):
     fig, ax = plt.subplots()
     colors = ['blue','red', 'grey', 'yellow', 'brown']
@@ -215,6 +218,9 @@ def gantt(sort = False):
 
     plt.show()
     
+    
+    #plotting a histogram with delays and the amount of aircraft in each delay bucket
+    
 def delay_histo(log = False, lowerlim = True, save = False):
     timedelta = -solution['alpha'] + solution['beta']
     if sum(timedelta) == 0:
@@ -249,9 +255,9 @@ def delay_histo(log = False, lowerlim = True, save = False):
     plt.ylabel("Number of aircraft")
     plt.show()
     
-def noise_boxplot(save = False):
     
-
+    # making a boxplot for each runway and noise category
+def noise_boxplot(save = False):
     all_levels = []
     all_counts = []
  
@@ -264,9 +270,6 @@ def noise_boxplot(save = False):
         all_levels.append(levels)
         all_counts.append(counts)
         
-
-    
-    
     if len(levels) == 1:
         return print("only one noise level, will not give a boxplot per noise category")
     plt.figure()
@@ -288,11 +291,12 @@ def noise_boxplot(save = False):
     plt.show()
 
 
-def gantt2():
+# Making a timeline per runway
+def timeline():
     fig, ax = plt.subplots()
     colors = ['blue', 'red','red', 'blue', 'brown']
    
-    plt.title("Gantt Chart per Runway\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + "\n Delay cost = "+ str(round(final_delay_cost,1)) + ", Noise cost = " + str(round(final_noise_cost, 1)))
+    plt.title("Timeline per Runway\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + "\n Delay cost = "+ str(round(final_delay_cost,1)) + ", Noise cost = " + str(round(final_noise_cost, 1)))
     # ax.plot(E, np.ones(20), color='green', marker='.', linestyle='None')
     ax.plot(solution['x'][0], -1, color='cyan', marker='.', linestyle='None')
     #ax.plot(L, plane_list, color='red', marker='.', linestyle='None')
@@ -326,12 +330,13 @@ def gantt2():
     plt.show()
 
 
+#plot everything
 def plot(sort = True):
     plt.close('all')
     delay_histo()
     noise_boxplot()
     gantt(sort)
-    gantt2()
+    timeline()
     if runways > 1:
         gantt_mult(sort)
     bats = 0

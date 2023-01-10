@@ -1,13 +1,20 @@
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Minimize
-  30 alpha_[0] + 30 beta_[0] + 0 delta_[0,0] + 0 z_[0,0] + 30 alpha_[1]
-   + 30 beta_[1] + 0 delta_[1,1] + 0 z_[1,1] + 30 alpha_[2] + 30 beta_[2]
-   + 0 delta_[2,2] + 0 z_[2,2] + 30 alpha_[3] + 30 beta_[3] + 0 delta_[3,3]
-   + 0 z_[3,3] + 30 alpha_[4] + 30 beta_[4] + 0 delta_[4,4] + 0 z_[4,4]
-   + 30 alpha_[5] + 30 beta_[5] + 0 delta_[5,5] + 0 z_[5,5] + 30 alpha_[6]
-   + 30 beta_[6] + 0 delta_[6,6] + 0 z_[6,6] + 10 alpha_[7] + 10 beta_[7]
-   + 0 delta_[7,7] + 0 z_[7,7] + 30 alpha_[8] + 30 beta_[8] + 0 delta_[8,8]
-   + 0 z_[8,8] + 10 alpha_[9] + 10 beta_[9] + 0 delta_[9,9] + 0 z_[9,9]
+  30 alpha_[0] + 30 beta_[0] + 2.4 runway_[0,0] + 4.8 runway_[0,1]
+   + 0 delta_[0,0] + 0 z_[0,0] + 30 alpha_[1] + 30 beta_[1]
+   + 2.4 runway_[1,0] + 4.8 runway_[1,1] + 0 delta_[1,1] + 0 z_[1,1]
+   + 30 alpha_[2] + 30 beta_[2] + 2.4 runway_[2,0] + 4.8 runway_[2,1]
+   + 0 delta_[2,2] + 0 z_[2,2] + 30 alpha_[3] + 30 beta_[3]
+   + 2.4 runway_[3,0] + 4.8 runway_[3,1] + 0 delta_[3,3] + 0 z_[3,3]
+   + 30 alpha_[4] + 30 beta_[4] + 2.4 runway_[4,0] + 4.8 runway_[4,1]
+   + 0 delta_[4,4] + 0 z_[4,4] + 30 alpha_[5] + 30 beta_[5]
+   + 2.4 runway_[5,0] + 4.8 runway_[5,1] + 0 delta_[5,5] + 0 z_[5,5]
+   + 30 alpha_[6] + 30 beta_[6] + 2.4 runway_[6,0] + 4.8 runway_[6,1]
+   + 0 delta_[6,6] + 0 z_[6,6] + 10 alpha_[7] + 10 beta_[7]
+   + 3.6 runway_[7,0] + 7.2 runway_[7,1] + 0 delta_[7,7] + 0 z_[7,7]
+   + 30 alpha_[8] + 30 beta_[8] + 2.4 runway_[8,0] + 4.8 runway_[8,1]
+   + 0 delta_[8,8] + 0 z_[8,8] + 10 alpha_[9] + 10 beta_[9]
+   + 3.6 runway_[9,0] + 7.2 runway_[9,1] + 0 delta_[9,9] + 0 z_[9,9]
 Subject To
  runway_[0]: runway_[0,0] + runway_[0,1] = 1
  Alpha[0]: alpha_[0] + x_[0] >= 98
