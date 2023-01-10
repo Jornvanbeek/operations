@@ -13,7 +13,7 @@ import math
 from noise_level import weight_indexes
 
 #change this to optimize other files
-file = 5
+file = 10
 K = .3
 landing_cost = [K * 1, K * 2]
 files = np.arange(1,7)
@@ -150,9 +150,9 @@ def gantt_mult(sort = False):
             
         
         if sort == False:
-            plt.suptitle("Non-Sorted Gantt Chart\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(model.objVal))
+            plt.suptitle("Non-Sorted Gantt Chart\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))
         elif sort == True:
-            plt.suptitle("Sorted Gantt Chart\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(model.objVal))
+            plt.suptitle("Sorted Gantt Chart\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))
         
         plt.legend(["Landing Time plus Separation", "Earliest Landing Time", "Latest Landing Time"])
         plt.show()
@@ -169,7 +169,7 @@ def gantt(sort = False):
     fig, ax = plt.subplots()
     colors = ['blue','red', 'grey', 'yellow', 'brown']
     if sort == False:
-        plt.title("Non-Sorted Gantt Chart\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(model.objVal))
+        plt.title("Non-Sorted Gantt Chart\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))
         ax.plot(E, plane_list, color='green', marker='.', linestyle='None')
         ax.plot(T, plane_list, color='yellow', marker='.', linestyle='None')
         #ax.plot(L, plane_list, color='red', marker='.', linestyle='None')
@@ -179,7 +179,7 @@ def gantt(sort = False):
             ax.add_patch(Rectangle((solution['x'][plane], plane+0.5), actual_separation[plane], 1, color = colors[color_index]))
     
     elif sort == True:
-        plt.title("Sorted Gantt Chart\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(model.objVal))
+        plt.title("Sorted Gantt Chart\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))
         sort_separation = actual_separation[solution['x'].argsort()]
         sort_solution = solution['x'][solution['x'].argsort()]
         ax.plot(E[solution['x'].argsort()], plane_list, color='green', marker='.', linestyle='None')
@@ -227,7 +227,7 @@ def delay_histo(log = False, lowerlim = True, save = False):
         
         plt.ylim(0,math.ceil(ylimiter/10)*10)
         zero_val = len(timedelta)-np.count_nonzero(timedelta)
-        plt.title('Amount of Aircraft with Shifted Landing Times\n # of A/C with zero shift: ' + str(zero_val)+"\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(model.objVal))
+        plt.title('Amount of Aircraft with Shifted Landing Times\n # of A/C with zero shift: ' + str(zero_val)+"\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))
     #plt.yticks(np.concatenate((np.arange(0,10), np.arange(10,100,10))))
     #plt.grid()
     plt.xlabel('Time Shift [s]')
@@ -267,8 +267,8 @@ def noise_boxplot(save = False):
         plt.ylim(0,max(np.concatenate(all_counts))+2)
         plt.title('Runway ' + str(runway+1))
         plt.xlabel("Noise Penalty: " + str(landing_cost[runway]))
-    plt.suptitle("Number of Aircraft per Noise Category, per Runway\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(model.objVal))
-        
+        plt.grid(axis = 'y') 
+    plt.suptitle("Number of Aircraft per Noise Category, per Runway\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))    
     plt.show()
 
 
@@ -276,7 +276,7 @@ def gantt2():
     fig, ax = plt.subplots()
     colors = ['blue', 'red','red', 'blue', 'brown']
    
-    plt.title("Gantt Chart per Runway\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(model.objVal))
+    plt.title("Gantt Chart per Runway\nFile: "+ str(file)+  ", # of Runways: " + str(runways) + ", Cost = "+ str(round(model.objVal,1)))
     # ax.plot(E, np.ones(20), color='green', marker='.', linestyle='None')
     ax.plot(solution['x'][0], -1, color='cyan', marker='.', linestyle='None')
     #ax.plot(L, plane_list, color='red', marker='.', linestyle='None')
