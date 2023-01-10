@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Nov 23 15:08:09 2022
 
-@author: jornv
 
 This file is used to plot the results of the optimization, and run the optimization.
 It can plot gantt charts, timelines, boxplot of weight types per runway, histogram of delay per aircraft.
@@ -22,7 +20,7 @@ from noise_level import weight_indexes
 #change this to optimize other files
 file = 1
 #scaling factor
-K = .24
+K = .0
 #landing cost relative to other runways. Lenght of this list is amount of runways
 landing_cost = [K * 1, K * 2]
 
