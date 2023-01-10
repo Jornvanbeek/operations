@@ -13,7 +13,7 @@ import math
 from noise_level import weight_indexes
 
 #change this to optimize other files
-file = 10
+file = 2
 K = .3
 landing_cost = [K * 1, K * 2]
 files = np.arange(1,7)
@@ -40,6 +40,12 @@ model, data, S, x, alpha, beta, delta, E, T, L, planes, calc_time, rw, runways, 
 noise_levels = weight_indexes(S)
 solution = {'alpha': np.zeros(planes), "beta": np.zeros(planes), "x": np.zeros(planes), "delta": np.zeros((planes,planes)), "runway": np.zeros((planes,runways))}
 # Saving our solution in the form [name of variable, value of variable]
+
+
+
+
+
+
 sol = []
 for v in model.getVars():
     sol.append([v.varName, v.x])
@@ -55,6 +61,14 @@ for i in range(planes):
         solution['runway'][i,k] = rw[(i,k)].x
 
 # print(solution)
+
+final_delay_cost = 0.
+for i in range(planes):
+    final_delay_cost += data[i,4] * solution['alpha'][i]+ data[i,5] * solution['beta'][i]
+final_noise_cost = 0.
+for i in range(runways):
+    final_noise_cost += np.sum(landing_cost[i] * solution['runway'][:,i] * noise_levels)
+
 
 """"generate array with time spacings"""
 spacing = np.zeros((planes, planes))
@@ -323,3 +337,6 @@ def plot(sort = True):
     return bats
 
 bats = plot()
+
+print('delay cost =',final_delay_cost)
+print('noise cost =',final_noise_cost)
